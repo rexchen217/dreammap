@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#12172b">
+<title>梦想地图 · 把梦想拆成今天就能做完的事</title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ══════════ 开机动画 ══════════ -->
+<div id="boot">
+  <div class="boot-sky"></div>
+  <div class="boot-inner">
+    <div class="boot-logo">梦想地图</div>
+    <div class="boot-sub">DREAM MAP · PIXEL TRAVELOGUE</div>
+    <div class="boot-bar"><i></i></div>
+    <div class="boot-tip" id="boot-tip">正在摊开地图…</div>
+  </div>
+</div>
+
+<!-- ══════════ 首次进入引导 ══════════ -->
+<div id="onboard" hidden>
+  <div class="ob-box">
+    <div class="ob-steps"><i class="on"></i><i></i><i></i></div>
+
+    <!-- 步骤 1：昵称 -->
+    <div class="ob-step on" data-step="0">
+      <div class="ob-kicker">STEP 1 / 3</div>
+      <h2 class="ob-title">先给你自己取个名字</h2>
+      <p class="ob-desc">这张地图只属于你。之后每一块便利贴，都会写上你亲手做的事。</p>
+      <input id="ob-nick" class="pix-input" maxlength="12" placeholder="输入昵称，最多 12 个字" autocomplete="off">
+      <div class="ob-hint">没想好？先用「旅人」也行，之后可以改。</div>
+    </div>
+
+    <!-- 步骤 2：梦想 -->
+    <div class="ob-step" data-step="1">
+      <div class="ob-kicker">STEP 2 / 3</div>
+      <h2 class="ob-title">写下你的梦想</h2>
+      <p class="ob-desc">不用写得很漂亮，写你真正想要的那个。它会一直钉在墙上最显眼的位置。</p>
+      <textarea id="ob-dream" class="pix-input" rows="3" maxlength="40" placeholder="例如：考上 XX 大学 / 考公上岸 / 出一本自己的画集"></textarea>
+      <div class="ob-examples">
+        <span class="ob-ex-label">参考：</span>
+        <button class="chip" data-dream="考上理想的大学">考上理想的大学</button>
+        <button class="chip" data-dream="考公上岸">考公上岸</button>
+        <button class="chip" data-dream="跑完一次半程马拉松">跑完一次半马</button>
+        <button class="chip" data-dream="存下人生第一笔十万块">存下第一笔十万</button>
+      </div>
+    </div>
+
+    <!-- 步骤 3：形象 -->
+    <div class="ob-step" data-step="2">
+      <div class="ob-kicker">STEP 3 / 3</div>
+      <h2 class="ob-title">挑一个陪你出发的伙伴</h2>
+      <p class="ob-desc">十位旅人，还有五只猫、五只狗。选定了就一起走完全程。</p>
+      <div class="ob-gender">
+        <button class="gbtn on" data-g="m">男生 5 位</button>
+        <button class="gbtn" data-g="f">女生 5 位</button>
+        <button class="gbtn" data-g="c">猫咪 5 只</button>
+        <button class="gbtn" data-g="d">狗狗 5 只</button>
+      </div>
+      <div class="ob-alist" id="ob-alist"></div>
+      <div class="ob-picked">已选择：<b id="ob-picked-name">—</b></div>
+    </div>
+
+    <div class="ob-actions">
+      <button class="pix-btn ghost" id="ob-back" hidden>返回</button>
+      <button class="pix-btn" id="ob-next">继续</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 主界面 ══════════ -->
+<div id="app" hidden>
+
+  <header id="topbar">
+    <button id="p-avatar" class="avatar" title="点击更换形象"></button>
+    <div class="tb-who">
+      <div class="tb-nick" id="p-nick">旅人</div>
+      <div class="tb-motto" id="p-motto">今天也走一小步</div>
+    </div>
+    <div class="tb-coin" title="心愿币">
+      <i class="coin-ico">◆</i><span id="p-coins">0</span>
+    </div>
+    <button id="p-sync" class="sync-dot" title="云同步状态">☁</button>
+  </header>
+
+  <main id="views">
+
+    <!-- ─── 目标墙 ─── -->
+    <section class="view on" id="v-wall">
+      <div class="wall-bar">
+        <div class="wb-title">目标墙</div>
+        <div class="wb-hint">双击 = 完成 · 点空白 = 新增 · 可缩放拖动</div>
+        <button class="pix-btn sm" id="w-add">＋ 新增便利贴</button>
+      </div>
+      <div class="wall-dreamzone" id="w-dreamzone">
+        <div class="dz-label">梦 想</div>
+        <div class="dz-tools">
+          <span id="dz-zoom-val">100%</span>
+          <button id="dz-zoom-out" title="缩小梦想区">－</button>
+          <button id="dz-zoom-in" title="放大梦想区">＋</button>
+          <button id="dz-zoom-reset" title="复位梦想区">⤢</button>
+        </div>
+        <div class="dz-slot" id="w-dreams"></div>
+      </div>
+      <div class="wall-canvas" id="wall">
+        <div class="wall-pan" id="wall-pan"></div>
+        <div class="wall-empty" id="w-empty">
+          <div class="we-art" id="w-empty-art"></div>
+          <div class="we-t">墙上还是空的</div>
+          <div class="we-d">点一下空白处，写下今天就能做完的那件小事。</div>
+        </div>
+        <div class="wall-tools">
+          <span id="w-zoom-val">100%</span>
+          <button id="w-zoom-out" title="缩小">－</button>
+          <button id="w-zoom-in" title="放大">＋</button>
+          <button id="w-zoom-reset" title="复位视图">⤢</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 抽卡 ─── -->
+    <section class="view" id="v-gacha">
+      <div class="g-hero">
+        <div class="gh-bg"></div>
+        <div class="gh-inner">
+          <div class="gh-k">随机目的地</div>
+          <div class="gh-t">出发抽一张</div>
+          <div class="gh-d"><span id="g-total">20 个地区 · 400 张</span>真实风景。抽到的是你还没收集过的那一张。</div>
+          <div class="g-btns">
+            <button class="pix-btn big" id="g-draw">▶ 出发 <b class="cost">100 ◆</b></button>
+            <button class="pix-btn ghost" id="g-ten">✦ 十连 <b class="cost">900 ◆</b></button>
+          </div>
+          <div class="gh-note" id="g-hero-note"></div>
+        </div>
+      </div>
+      <div class="g-pools">
+        <div class="gp-head">
+          <span id="g-pool-count">奖池</span>
+          <span class="gp-sub">用该地区单抽券可精准抽取</span>
+        </div>
+        <div class="gp-grid" id="g-pools"></div>
+      </div>
+      <div class="panel">
+        <h2>抽卡记录 <button class="qbtn" data-q="glog">？ 说明</button></h2>
+        <div class="qbody" data-qbody="glog" hidden>每次抽卡都会记在这里，最近 60 条。抽到的卡片品质不在卡面上显示，只在这个记录和相册详情里能看到。</div>
+        <div class="g-log" id="g-log"></div>
+      </div>
+    </section>
+
+    <!-- ─── 图鉴相册 ─── -->
+    <section class="view" id="v-codex">
+      <div class="cx-bar">
+        <div class="cx-title">旅行相册</div>
+        <div class="cx-sub" id="cx-sub">—</div>
+      </div>
+      <div class="cx-cont" id="cx-cont"></div>
+      <div class="cx-tabs" id="cx-tabs"></div>
+      <div class="album" id="album">
+        <div class="album-book" id="cx-book"></div>
+        <div class="album-nav">
+          <button class="pix-btn ghost sm" id="cx-prev">◀ 上一页</button>
+          <span class="cx-page" id="cx-page">1 / 4</span>
+          <button class="pix-btn ghost sm" id="cx-next">下一页 ▶</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>成就 <button class="qbtn" data-q="cxr">？ 说明</button></h2>
+        <div class="qbody" data-qbody="cxr" hidden>旅行成就覆盖事件、梦想、收藏、打卡、抽卡和存钱罐，达成后点「领取」才会到账。下面的收集成就按地区划分：每个地区集满 5 / 10 / 15 / 20 张都有奖励；把一处全部 20 张集齐，会额外获得该地区单抽券与心愿币。整片地方是一个国家的（如冰岛、瑞士），最后一档写作「集齐一个国」。</div>
+        <div class="cx-rewards" id="cx-rewards"></div>
+        <div class="hand-tools">
+          <button class="pix-btn ghost sm" id="cx-book-btn">✦ 导出一本旅行手账</button>
+          <button class="pix-btn ghost sm" id="cx-save-btn">↓ 导出全部照片</button>
+          <span class="hand-tip">整理成一页可打印、可存成 PDF 的手账，或把已收集的照片原图存到本机；照片取自 Wikimedia Commons 的公开实景图，版权归原作者，仅作个人收藏。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 地图星球 ─── -->
+    <section class="view" id="v-map">
+      <div class="mp-bar">
+        <div class="mp-title">旅行星球</div>
+        <div class="mp-sub" id="mp-sub">—</div>
+      </div>
+      <div class="mp-stage" id="mp-stage">
+        <canvas class="mp-canvas" id="mp-canvas"></canvas>
+        <div class="mp-hint">拖动旋转 · 滚轮/双指缩放 · 点亮点去相册</div>
+        <div class="mp-tools">
+          <span id="mp-zoom-val">100%</span>
+          <button id="mp-zoom-out" title="缩小">－</button>
+          <button id="mp-zoom-in" title="放大">＋</button>
+          <button id="mp-zoom-reset" title="复位">⤢</button>
+        </div>
+        <div class="mp-legend" id="mp-legend"></div>
+      </div>
+      <div class="panel">
+        <h2>二十个地区 <button class="qbtn" data-q="mp1">？ 说明</button></h2>
+        <div class="qbody" data-qbody="mp1" hidden>地球上的每个亮点都是一处你能收集的地方。亮点带数字的是你已收集的进度；点亮点或点下面的名字，都能直接翻到那处的相册。</div>
+        <div class="mp-grid" id="mp-grid"></div>
+      </div>
+    </section>
+
+    <!-- ─── 商店 ─── -->
+    <section class="view" id="v-shop">
+      <div class="panel">
+        <h2>便利贴纸色 <button class="qbtn" data-q="shop1">？ 说明</button></h2>
+        <div class="qbody" data-qbody="shop1" hidden>买下就永久可用。颜色只影响便利贴的外观，不影响任何数值。已拥有的颜色会标记为「已解锁」。</div>
+        <div class="shop-grid" id="s-colors"></div>
+      </div>
+      <div class="panel">
+        <h2>图钉与贴纸</h2>
+        <div class="shop-grid" id="s-stickers"></div>
+      </div>
+      <div class="panel">
+        <h2>心愿存钱罐 <button class="qbtn" data-q="shop3">？ 说明</button></h2>
+        <div class="qbody" data-qbody="shop3" hidden>把暂时用不上的心愿币存进来，每过一天按余额涨 2% 的利息，最多存 800 ◆。随时可以全部取回，取的永远是本金加利息。利息按天结算，存得越久越划算。</div>
+        <div class="piggy" id="piggy"></div>
+      </div>
+      <div class="panel">
+        <h2>地区单抽券 <button class="qbtn" data-q="shop2">？ 说明</button></h2>
+        <div class="qbody" data-qbody="shop2" hidden>直接用心愿币抽卡是 100 ◆ 一次，但地区是随机决定的。买一张地区单抽券要 140 ◆，贵一点，但你想补哪一处就抽哪一处。完成「目标」和「梦想」也有机会直接掉落地区券；集齐一处后，打卡链还会把下一站的券塞给你。</div>
+        <div class="shop-grid" id="s-tickets"></div>
+      </div>
+    </section>
+
+    <!-- ─── 足迹统计 ─── -->
+    <section class="view" id="v-stats">
+      <div class="panel">
+        <h2>总览 <button class="qbtn" data-q="st1">？ 说明</button></h2>
+        <div class="qbody" data-qbody="st1" hidden>所有数字都由你已完成的便利贴算出来，不做任何额外记录。完成的便利贴会从墙上消失，但不会从数据里消失。</div>
+        <div class="st-grid" id="st-overview"></div>
+      </div>
+      <div class="panel">
+        <h2>小目标 · 近 30 天</h2>
+        <div class="st-note" id="st-heat-note"></div>
+        <div class="heat" id="st-heat"></div>
+      </div>
+      <div class="panel">
+        <h2>三档目标对比</h2>
+        <div class="st-note">不同档次用不同形式呈现：小目标看「频率」，目标看「投入」，梦想看「里程碑」。</div>
+        <div class="st-tiers" id="st-tiers"></div>
+      </div>
+      <div class="panel">
+        <h2>目标的投入</h2>
+        <div class="tier-bars" id="st-goalbar"></div>
+      </div>
+      <div class="panel">
+        <h2>梦想里程碑</h2>
+        <div class="dream-ms" id="st-dreams"></div>
+      </div>
+      <div class="panel">
+        <h2>心愿币收支</h2>
+        <div class="coin-stat" id="st-coins"></div>
+      </div>
+      <div class="panel">
+        <h2>来时路 · 完成时间轴</h2>
+        <div class="st-note">从最近一次完成往回看。你走过的每一步都在这儿。</div>
+        <div class="timeline" id="st-timeline"></div>
+      </div>
+    </section>
+  </main>
+
+  <nav id="tabbar">
+    <button data-tab="wall" class="on"><i>▤</i><span>目标墙</span></button>
+    <button data-tab="gacha"><i>✦</i><span>抽卡</span></button>
+    <button data-tab="map"><i>◍</i><span>地图</span></button>
+    <button data-tab="codex"><i>▣</i><span>相册</span></button>
+    <button data-tab="shop"><i>◈</i><span>商店</span></button>
+    <button data-tab="stats"><i>◱</i><span>足迹</span></button>
+  </nav>
+</div>
+
+<!-- ══════════ 浮层 ══════════ -->
+<div id="fx"></div>
+<div id="reveal" hidden></div>
+<div id="modal" hidden></div>
+<div id="toasts"></div>
+<div id="composer" hidden></div>
+
+<script src="js/cards.data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/sfx.js"></script>
+<script src="js/avatars.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ach.js"></script>
+<script src="js/wall.js"></script>
+<script src="js/gacha.js"></script>
+<script src="js/land.data.js"></script>
+<script src="js/globe.js"></script>
+<script src="js/codex.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

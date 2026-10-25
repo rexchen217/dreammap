@@ -1,0 +1,27 @@
+{
+  "citySlug": "tokyo",
+  "city": "东京",
+  "sub": "TOKYO",
+  "cards": [
+    {"id":"tokyo-01","name":"富士山与樱花","rarity":"UR","intro":"富士山与樱花是日本最经典的一帧，也是东京一带最负盛名的一景。顶着积雪的火山口浮在远处，近景的染井吉野樱开成一片粉白。清晨的河口湖人少风轻，花枝与雪峰在水中同映，安静得近乎不真实。","subject":"Mount Fuji with its snow-capped peak behind a foreground of blooming pink cherry blossom trees at Lake Kawaguchi, clear spring morning"},
+    {"id":"tokyo-02","name":"浅草寺雷门","rarity":"SR","intro":"浅草寺的雷门是东京最古老寺院的门户，门楼漆成赤红，中央悬着一盏巨大的灯笼。穿过雷门便是仲见世商店街，两侧铺子连成一片。香炉的青烟与游人的笑语交织，把江户以来的热闹一直延续到今天。","subject":"the Kaminarimon gate of Senso-ji temple in Asakusa Tokyo, giant red paper lantern, temple street beyond"},
+    {"id":"tokyo-03","name":"东京塔","rarity":"SR","intro":"东京塔由红白两色的钢架层层交错而成，是这座城市辨识度极高的信号塔。入夜后塔身亮起暖橙的灯光，像一枚悬在夜里的灯标。站在塔下仰望，钢桁与灯火交织，繁华与怀旧落在同一个轮廓里。","subject":"Tokyo Tower, red and white steel lattice structure lit warm orange at night, city lights below"},
+    {"id":"tokyo-04","name":"涩谷十字路口","rarity":"SR","intro":"涩谷十字路口大概是全世界最繁忙的路口，绿灯一亮，人潮便从各个方向同时涌出，又在对角线交错。上方的巨屏与霓虹不停变换，脚步声与广播声混成一片。这里几乎就是东京节奏最浓缩的一幕。","subject":"the Shibuya scramble crossing in Tokyo seen from above, dense crowds flowing in every direction, giant screens and neon"},
+    {"id":"tokyo-05","name":"明治神宫","rarity":"SR","intro":"明治神宫的入口立着巨大的木制鸟居，碎石路穿过茂密的森林，光线从枝叶间一束束落下。这座森林是在都会中央人工培育起来的，百年成林。走在其中，喧嚣被隔在树外，只余风声与不时的鸟鸣。","subject":"Meiji Shrine in Tokyo, massive wooden torii gate on a gravel path, dense forest, shafts of sunlight"},
+    {"id":"tokyo-06","name":"千鸟渊樱花","rarity":"SR","intro":"千鸟渊是皇居护城河的一段，两岸的樱花向水面垂落，织成一条花廊。春天花瓣落进水里，浮在碧波与游船之间。坐在小船上缓缓划过，头顶是花影，脚下是落花，是东京最温柔的一段春色。，无需多言便已动人。","subject":"Chidorigafuchi moat in Tokyo lined with cherry blossom trees, petals floating on the water, rowing boats"},
+    {"id":"tokyo-07","name":"上野公园","rarity":"SR","intro":"上野公园是东京最古老的公园，开阔的道路在樱花季节被染成粉色。园中散布着博物馆与喷泉，赏花的人铺开垫子席地而坐。一家老小走过花下，日常与花期叠在一起，热闹里透着一份安稳。，也把春天分给了每个人。","subject":"Ueno Park in Tokyo, wide path under cherry blossoms, museums and fountains, families strolling"},
+    {"id":"tokyo-08","name":"秋叶原电器街","rarity":"SR","intro":"秋叶原的街面上叠着层层动漫招牌与游戏厅的霓虹，是电器与二次元文化交汇的圣地。橱窗里摆满最新的电子产品和周边，巷子深处藏着女仆咖啡与模型店。人潮涌动，这里几乎是流行文化的一座灯塔。","subject":"Akihabara electric town in Tokyo, layered anime billboards and game arcade signage, crowded sidewalk, neon"},
+    {"id":"tokyo-09","name":"新宿歌舞伎町夜景","rarity":"SR","intro":"歌舞伎町是新宿的不夜街，夜里的招牌一层压着一层，霓虹亮得街道都泛着光。雨后路面反着彩色的倒影，人潮在灯下穿行。这里是东京夜生活最喧闹的所在，热闹得几乎不留一丝余白。，却也把夜的气息点得滚烫。","subject":"Kabukicho in Shinjuku Tokyo at night, stacked glowing signs, wet street reflecting neon, crowds"},
+    {"id":"tokyo-10","name":"皇居二重桥","rarity":"SR","intro":"二重桥是皇居正门前的一座石桥，桥身与水中倒影合为双层，因此得名。桥前黑松低垂，护城河水面平静，石墙在绿荫里泛着青灰。四周车马稀少，这一片静谧与身后的都会形成了鲜明的对照。","subject":"the Nijubashi bridge at the Imperial Palace Tokyo, stone bridge, black pines, moat reflection"},
+    {"id":"tokyo-11","name":"筑地场外市场","rarity":"SR","intro":"筑地场外市场由狭窄的巷子串起，两侧挤满海产摊、刀具铺与寿司店。清晨蒸汽从摊上腾起，商贩的吆喝声不断。这里虽不再承担批发拍卖，却仍保留着东京早起忙碌、鲜活热络的那一面。，让人想起市井最初的香气。","subject":"Tsukiji outer market in Tokyo, narrow alley packed with seafood stalls, knife shops and sushi counters, morning steam"},
+    {"id":"tokyo-12","name":"台场彩虹大桥","rarity":"SR","intro":"彩虹大桥横跨东京湾，白色的悬索与桥塔在夜里亮起灯来，如同一道垂落的虹。台场的海滨步道正对着桥身，水面映着灯影。晚风从海湾吹过，城市的轮廓在夜色里显得既现代又辽远。，桥与湾共成一幅夜景。","subject":"the Rainbow Bridge spanning Tokyo Bay at night, illuminated white suspension bridge, Odaiba waterfront skyline"},
+    {"id":"tokyo-13","name":"东京晴空塔","rarity":"SR","intro":"东京晴空塔以六百余米的高度居世界高塔前列，银白的钢格结构在暮色中渐次亮起渐变的灯色。站在塔上俯瞰，隅田川与低矮的城区一直铺到天边。塔身纤细而挺拔，是东京天空里最醒目的一竖。","subject":"Tokyo Skytree, tallest tower, lattice steel structure lit in colour gradient at dusk, river and low city below"},
+    {"id":"tokyo-14","name":"银座中央通","rarity":"SR","intro":"银座的中央通在周末会封成步行街，宽阔的路面上只余行人与店铺。老牌百货与高级精品店沿街并列，橱窗陈列考究。阳光洒在石板路上，购物的人从容往来，这里保留着东京优雅而成熟的一面。","subject":"Chuo-dori in Ginza Tokyo on a car-free weekend, upscale department stores and boutiques, pedestrians in the road"},
+    {"id":"tokyo-15","name":"谷中银座老街","rarity":"SR","intro":"谷中银座是一条下町风情的老商店街，铺子不大，卖着点心、果蔬与杂货。街尾的台阶正对落日，常有猫蹲在台阶边上。暮色里灯牌次第亮起，满是市井的温情，与都会的冷峻截然不同。，走一段便觉心里暖了。","subject":"Yanaka Ginza shopping street in Tokyo, small old shops, cat figures, stairs at the end framing a sunset"},
+    {"id":"tokyo-16","name":"井之头公园","rarity":"SR","intro":"井之头公园以一片平静的池塘为中心，天鹅造型的小船在水面缓缓划动。樱花枝从岸边垂向水面，风一吹便点出一圈涟漪。人们在树下散步、发呆，午后的节奏慢下来，公园像一座可以停靠的绿洲。","subject":"Inokashira Park in Tokyo, swan boats on a pond, cherry branches hanging to the water, peaceful afternoon"},
+    {"id":"tokyo-17","name":"目黑川夜樱","rarity":"SR","intro":"目黑川两岸种满樱树，花枝向河面垂落，几乎连成一条花隧。入夜后灯笼亮起，映得水面泛出一片粉红，花瓣落在流水上顺流而下。沿河慢慢走，看灯光与花影叠影，是东京春夜里最动人的一段。","subject":"cherry trees lining the Meguro River in Tokyo at night, lanterns glowing, pink petals and reflections on the stream"},
+    {"id":"tokyo-18","name":"原宿竹下通","rarity":"SR","intro":"竹下通的窄街两旁挤满色彩鲜明的潮流小店与可丽饼摊，年轻人的装扮各不相同。招牌与服饰把街道填得满满当当，人流几乎摩肩接踵。这里是原宿流行文化的发源地，青春的气息扑面而来。，热闹里自有它的秩序。","subject":"Takeshita Street in Harajuku Tokyo, brightly coloured fashion shops and crepe stands, crowds of teenagers"},
+    {"id":"tokyo-19","name":"东京站红砖站舍","rarity":"SR","intro":"东京站的丸之内站舍是明治时期的红砖建筑，圆顶与拱窗排列整齐。暮色中暖色的灯光打在砖面上，站前的广场上出租车往来。它既是一座仍在运转的车站，也是这座城市近代风貌的一件纪念品。","subject":"the red brick Tokyo Station Marunouchi building at dusk, domed roof, warm facade lighting, taxi rank"},
+    {"id":"tokyo-20","name":"高尾山","rarity":"SR","intro":"高尾山距东京市区约一小时车程，山道在密林间蜿蜒，缆车与登山步道并行。山腰有古刹山门，登顶后可远眺富士山的轮廓。空气清冽，树影斑驳，这里是都市人最容易抵达的一片山林。，一程便可换半天清静。","subject":"Mount Takao near Tokyo, forested hiking trail with a cable car, temple gate, distant Fuji visible from the summit"}
+  ]
+}

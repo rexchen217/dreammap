@@ -1,0 +1,25 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist-desktop/
+build/
+desktop/build/
+desktop/_generated/
+android-app/www/
+android-app/android/.gradle/
+android-app/android/build/
+android-app/android/app/build/
+android-app/android/.idea/
+android-app/android/local.properties
+android-app/android/keystore.properties
+*.exe
+
+# 签名与私密数据
+*.keystore
+*.jks
+server-data/
+
+# 系统文件
+.DS_Store
+Thumbs.db

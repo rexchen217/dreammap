@@ -1,0 +1,18 @@
+{
+  "name": "dreammap-android",
+  "version": "1.0.0",
+  "private": true,
+  "description": "梦想地图 安卓版（Capacitor 封装）",
+  "scripts": {
+    "www": "node copy-www.js",
+    "sync": "cap sync android",
+    "apk": "cd android && gradlew.bat assembleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3"
+  }
+}

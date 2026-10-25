@@ -1,0 +1,11 @@
+{
+  "appId": "com.dreammap.app",
+  "appName": "梦想地图",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "citySlug": "beijing",
+  "city": "北京",
+  "sub": "BEIJING",
+  "cards": [
+    {"id":"beijing-01","name":"故宫太和殿","rarity":"UR","intro":"太和殿坐落在紫禁城中轴线的核心，是北京最负盛名的一景。三层汉白玉台基层层托起金瓦重檐，殿前开阔的广场曾见证帝王登基与颁诏盛典。晴日蓝天之下金顶灼灼生辉，檐角脊兽静守六百年光阴，庄严得让人不由得放轻脚步。","subject":"the Hall of Supreme Harmony at the Forbidden City, golden double-eave roof, white marble terrace, deep blue sky"},
+    {"id":"beijing-02","name":"八达岭长城","rarity":"SR","intro":"八达岭长城沿燕山山脊起伏，明代砖石在青翠群峰间蜿蜒如龙。城墙每隔数百米便设一座敌楼，垛口与箭窗曾用于瞭望御敌。最陡的台阶几乎垂直向上，拾级而登，脚下山谷开阔，风把六百年的烽火吹得很远。","subject":"the Great Wall of China at Badaling winding over green mountain ridges, watchtowers, clear sky"},
+    {"id":"beijing-03","name":"天坛祈年殿","rarity":"SR","intro":"祈年殿是北京天坛的核心，三重圆形蓝瓦檐顶层层收拢，寄托着天圆地方的礼制想象。殿身以木构件榫卯相扣，不用一根铁钉。明清帝王每年在此祭天祈谷，蓝天下檐影深深，仿佛仍回荡着编钟与祝祷的余音。","subject":"the Hall of Prayer for Good Harvests at the Temple of Heaven, triple round blue-tile roof, marble altar courtyard"},
+    {"id":"beijing-04","name":"颐和园十七孔桥","rarity":"SR","intro":"十七孔桥横卧在昆明湖上，是园中最长的一座石桥。桥身由十七个拱券组成，中间一孔最为高阔，桥上石栏雕有数百只小狮。黄昏时西山夕照顺势落入湖面，桥洞与天光层层叠起，倒影碎成一片金色。","subject":"the Seventeen-Arch Bridge at the Summer Palace, Kunming Lake, distant Western Hills, golden sunset reflection"},
+    {"id":"beijing-05","name":"正阳门箭楼","rarity":"SR","intro":"正阳门箭楼矗立在前门大街的尽头，灰砖墩台上重檐高耸，是北京旧城中保存完整的一座城门楼。墙面开有箭窗，昔日兼具瞭望与防御之用。清晨光线掠过檐下的瓦当，老街深处的市声也正好醒过来。","subject":"the Zhengyangmen archery tower at Qianmen Beijing, grey brick gate tower with double-eave roof, historic commercial street beyond, morning light"},
+    {"id":"beijing-06","name":"北海白塔","rarity":"SR","intro":"北海白塔立在琼华岛的最高处，是一座藏式覆钵形佛塔，白色塔身顶着细长的相轮。塔影倒映在北海平静的水面，四周柳枝垂拂。登岛回望，塔、桥与湖光连成一景，安静得像一幅被岁月磨旧的画。","subject":"the White Dagoba on Jade Flower Island in Beihai Park, mirrored in calm lake water, willows"},
+    {"id":"beijing-07","name":"圆明园大水法遗址","rarity":"SR","intro":"大水法遗址是圆明园西洋楼景区残存的一组石构，巴洛克风格的拱门与雕花石柱如今只剩断壁。柱础间的野草年年生长，午后的光线斜照，把残石的阴影拖得很长，无声地记录着一场浩劫与百年沧桑。","subject":"the ruined stone arches of the Dashuifa fountain at Yuanmingyuan Old Summer Palace, overgrown grass, dramatic light"},
+    {"id":"beijing-08","name":"北京胡同","rarity":"SR","intro":"北京的胡同由青砖灰瓦合围而成，窄巷两侧是门墩、朱门与老槐树。墙根下常靠着一辆自行车，鸽哨声从半空掠过，邻居隔着院墙闲谈。这样的日常并不喧哗，却是老北京最耐看的一段市井风景。","subject":"a traditional Beijing hutong alley, grey brick walls, red doorways, old locust trees, bicycle leaning"},
+    {"id":"beijing-09","name":"景山俯瞰紫禁城","rarity":"SR","intro":"登上景山最高处的万春亭，紫禁城的全景便铺展在眼前。连绵的金色屋脊在中轴线上层层排开，琉璃瓦在阳光里泛起暖光，远景与近景深浅分明。这里是俯瞰皇城的最佳位置，一眼便能读懂北京纵贯南北的格局。","subject":"panoramic view of the Forbidden City golden rooftops from the Wanchun Pavilion on Jingshan Hill"},
+    {"id":"beijing-10","name":"雍和宫万福阁","rarity":"SR","intro":"万福阁是雍和宫内最高的一座楼阁，三层重檐下供奉着巨大的弥勒佛像。这里原是清代皇家寺院，后成为藏传佛教格鲁派道场。殿前香火袅袅，经幡轻扬，诵经声与檐角的风声交织，庄严又安静。","subject":"the Wanfu Pavilion at Yonghe Temple, tall three-storey Tibetan Buddhist hall, incense smoke, prayer flags"},
+    {"id":"beijing-11","name":"什刹海银锭桥","rarity":"SR","intro":"银锭桥横架在什刹海的水面上，桥身小巧，形似一枚银锭。桥下摇橹的船夫哼着调子慢行，岸边是连片的四合院与老树。站在桥上西望，能看见远处的西山轮廓，是老北京少见的开阔视角，寻常里透着旧城的从容。","subject":"the Yinding Bridge at Shichahai, stone arch over the lake, old courtyard houses along the shore"},
+    {"id":"beijing-12","name":"香山红叶","rarity":"SR","intro":"每到深秋，香山的黄栌便由绿转红，漫山层林如被点燃。坡地上的树叶一簇簇压着枝头，逆光时分外透亮，风一吹便簌簌落满石阶。游人多在这个季节赶来，只为看一眼这短暂而热烈的秋色，也把整季的秋意收进记忆。","subject":"autumn red maple foliage covering Fragrant Hills Park, sea of crimson leaves, hazy sunlight"},
+    {"id":"beijing-13","name":"鸟巢国家体育场","rarity":"SR","intro":"国家体育场以交织的钢架编织出巨大的巢形轮廓，因此被称作鸟巢，是北京奥运留下的现代地标。黄昏时钢架亮起暖色灯光，线条纵横分明。它把体育的张力与城市的雄心凝在一处，极具纪念意味。","subject":"the Bird's Nest National Stadium in Beijing at dusk, woven steel structure glowing warm, modern architecture"},
+    {"id":"beijing-14","name":"国子监辟雍","rarity":"SR","intro":"辟雍是国子监内的一座方形重檐殿宇，四面环以圆形水池，取天圆地方之意。这里曾是古代最高学府的讲学之所，帝王亦会亲临授课。殿前古树参天，池水如镜，一砖一瓦都透着书卷与礼制的气息。","subject":"the Biyong Hall at the Imperial College Guozijian, square double-eave pavilion surrounded by a round pool"},
+    {"id":"beijing-15","name":"卢沟桥石狮","rarity":"SR","intro":"卢沟桥横跨永定河，桥身由坚固的青石铺就。栏板上雕着数百尊石狮，大小错落，神态各不相同，几乎找不到两只完全一样的。晨雾里桥面泛着微光，石狮静静蹲踞，守着一河流水与数百年的往来。","subject":"the Lugou Bridge over the Yongding River, rows of carved stone lions on balustrades, misty morning"},
+    {"id":"beijing-16","name":"恭王府花园","rarity":"SR","intro":"恭王府花园是清代王府园林的典范，亭台、假山与曲径错落相间。回廊依地势绕行，池水穿过石桥，柳暗花明之间一步一景。府主几度更迭，园中的花木却年年如故，把旧时的富贵气藏进细处。","subject":"the garden of Prince Gong's Mansion, traditional rockery, winding corridors, pond and pavilions"},
+    {"id":"beijing-17","name":"明十三陵神道","rarity":"SR","intro":"明十三陵的神道自石牌坊起步，两侧立着成对的石象生，狮、象、麒麟与文武石官依次排列。松柏森森夹道，路面被岁月磨得平实。沿着这条长路走向陵宫，仿佛走进一段被石像默默守护的明代往事。","subject":"the sacred way of the Ming Tombs, stone animal statues lining a long path, ancient cypress trees"},
+    {"id":"beijing-18","name":"前门大栅栏","rarity":"SR","intro":"大栅栏是前门外一条百年商业老街，幌子与招幡在檐下招展。瑞蚨祥、同仁堂等老字号至今开门迎客，叫卖声和炒货的香气混在一起。青砖铺就的街面上人流不断，是北京最热闹的市井一角，也是几代人的老记忆。","subject":"Dashilan old commercial street near Qianmen, hanging shop banners, traditional Chinese storefronts, evening glow"},
+    {"id":"beijing-19","name":"慕田峪长城秋色","rarity":"SR","intro":"慕田峪长城的墙面苍劲古朴，随山势高低起伏。秋天红叶与黄叶铺满山梁，与青灰的砖石相映，色彩浓烈而不失沉稳。这里游人较少，视野开阔，适合静静看一段长城如何蜿蜒进层叠的山色里。","subject":"the Mutianyu section of the Great Wall in autumn, red and orange foliage beside weathered stone ramparts"},
+    {"id":"beijing-20","name":"古北水镇司马台","rarity":"SR","intro":"古北水镇的河道被夜灯点亮，乌篷船缓缓划过，两岸屋檐映在水里。远处山脊上，险峻的司马台长城在月色与灯光间若隐若现。水乡的温柔与长城的刚劲遥遥相对，构成一幅奇妙又安静的夜景。","subject":"Gubei Water Town at night with lantern-lit canals, the steep Simatai Great Wall on the ridge behind"}
+  ]
+}
