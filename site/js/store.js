@@ -134,6 +134,7 @@
     };
     if (o.cardId) n.cardId = o.cardId;
     if (o.img) n.img = o.img;
+    if (o.font) n.font = o.font;
     S.notes.push(n);
     if (n.type === 'dream' && !S.profile.dream) { S.profile.dream = n.text; S.profile.updatedAt = at; }
     touch('notes'); return n;

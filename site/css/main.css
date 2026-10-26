@@ -23,6 +23,62 @@
   font-weight: 700; font-display: swap;
 }
 
+/* 激励语可选字体：楷书 / 行书 / 草书（中文），连笔 / 花体 / 圆体（英文） */
+@font-face {
+  font-family: 'QuoteKai';
+  src: url('../fonts/quote/MaShanZheng-CN.woff2') format('woff2');
+  unicode-range: U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'QuoteKai';
+  src: url('../fonts/quote/MaShanZheng-Latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+2000-206F;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'QuoteXing';
+  src: url('../fonts/quote/ZhiMangXing-CN.woff2') format('woff2');
+  unicode-range: U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'QuoteXing';
+  src: url('../fonts/quote/ZhiMangXing-Latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+2000-206F;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'QuoteCao';
+  src: url('../fonts/quote/LiuJianMaoCao-CN.woff2') format('woff2');
+  unicode-range: U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'QuoteCao';
+  src: url('../fonts/quote/LiuJianMaoCao-Latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+2000-206F;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'QuoteScript';
+  src: url('../fonts/quote/DancingScript-Latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+2000-206F;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'QuoteFancy';
+  src: url('../fonts/quote/GreatVibes-Latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+2000-206F;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'QuoteRound';
+  src: url('../fonts/quote/VarelaRound-Latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+2000-206F;
+  font-display: swap;
+}
+
 :root {
   --font-pix: 'Zpix', 'Silkscreen', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --font-hand: 'Kaiti SC', 'KaiTi', 'STKaiti', '楷体', 'Zpix', cursive;
@@ -479,19 +535,49 @@ button:focus-visible, input:focus-visible, textarea:focus-visible {
 .note.t-goal { border-top: 4px solid rgba(0, 0, 0, .18); }
 .note.t-goal .n-tag { color: #8a4a12; opacity: .8; }
 
-/* 激励语便利贴：换成像素字，和手写体的其他便利贴区分开，像一句印在纸上的标语 */
-.note.t-quote { padding-left: 17px; }
+/* 激励语便利贴：窄长条，宽度只容一行，长度随文字多少增减；字体可选 */
+.note.t-quote {
+  width: 124px; height: auto; min-height: 96px;
+  padding: 22px 12px 34px 18px;
+}
 .note.t-quote::before {
-  content: ''; position: absolute; left: 8px; top: 16px; bottom: 22px; width: 2px;
+  content: ''; position: absolute; left: 8px; top: 18px; bottom: 32px; width: 2px;
   background: rgba(0, 0, 0, .16);
 }
 .note.t-quote .n-txt {
-  font-family: var(--font-pix); font-size: 12.5px; font-weight: 400;
-  line-height: 1.85; letter-spacing: .02em; -webkit-line-clamp: 5;
+  display: block; overflow: visible; overflow-wrap: anywhere;
+  font-family: 'QuoteKai', 'KaiTi', 'STKaiti', '楷体', serif;
+  font-size: 16px; font-weight: 400; line-height: 1.65; letter-spacing: .01em;
 }
 .note.t-quote .n-txt::before { content: '「'; opacity: .4; }
 .note.t-quote .n-txt::after { content: '」'; opacity: .4; }
 .note.t-quote .n-tag { color: #6b4a06; opacity: .85; font-size: 8.5px; letter-spacing: .18em; }
+
+/* 字数多时便利贴自己变长，标签与日期跟着走 */
+.note.t-quote .n-meta { bottom: 8px; }
+
+/* 六种字体风格 */
+.note.qf-kai .n-txt { font-family: 'QuoteKai', 'KaiTi', 'STKaiti', '楷体', serif; }
+.note.qf-xing .n-txt { font-family: 'QuoteXing', 'STXingkai', '华文行楷', 'KaiTi', cursive; }
+.note.qf-cao .n-txt { font-family: 'QuoteCao', 'STXingkai', '华文行楷', cursive; }
+.note.qf-script .n-txt { font-family: 'QuoteScript', 'Segoe Script', 'Dancing Script', cursive; }
+.note.qf-fancy .n-txt { font-family: 'QuoteFancy', 'Segoe Script', 'Great Vibes', cursive; }
+.note.qf-round .n-txt { font-family: 'QuoteRound', 'Varela Round', 'Comic Sans MS', sans-serif; }
+
+/* 写字弹窗里的字体选择 */
+.cp-fonts { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.qfb {
+  padding: 5px 7px; font-size: 14px; line-height: 1.35; color: var(--ink-2);
+  background: rgba(0, 0, 0, .26); border: 2px solid var(--line);
+}
+.qfb:hover { border-color: var(--line-2); }
+.qfb.on { color: #241d05; background: var(--amber); border-color: #7a5410; }
+.qfb[data-f="kai"] { font-family: 'QuoteKai', 'KaiTi', '楷体', serif; font-size: 16px; }
+.qfb[data-f="xing"] { font-family: 'QuoteXing', 'STXingkai', '华文行楷', cursive; font-size: 17px; }
+.qfb[data-f="cao"] { font-family: 'QuoteCao', 'STXingkai', '华文行楷', cursive; font-size: 17px; }
+.qfb[data-f="script"] { font-family: 'QuoteScript', 'Segoe Script', cursive; font-size: 17px; }
+.qfb[data-f="fancy"] { font-family: 'QuoteFancy', 'Segoe Script', cursive; font-size: 18px; }
+.qfb[data-f="round"] { font-family: 'QuoteRound', 'Varela Round', 'Comic Sans MS', sans-serif; font-size: 15px; }
 
 /* 梦想便利贴：鎏金纸 + 缎带 */
 .note.dream {

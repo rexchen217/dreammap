@@ -11,6 +11,36 @@
   const DREAM_W = 200, DREAM_H = 132;
   const NOTE_W = 152, NOTE_H = 116;
   const PHOTO_W = 176, PHOTO_H = 204;
+  const QUOTE_W = 124;
+
+  /* ── 激励语字体 ── */
+  const QUOTE_FONTS = [
+    { id: 'kai', name: '楷书' },
+    { id: 'xing', name: '行书' },
+    { id: 'cao', name: '草书' },
+    { id: 'script', name: '连笔' },
+    { id: 'fancy', name: '花体' },
+    { id: 'round', name: '圆体' }
+  ];
+  const FONT_STACK = {
+    kai: "'QuoteKai','KaiTi','STKaiti','楷体',serif",
+    xing: "'QuoteXing','STXingkai','华文行楷','KaiTi',cursive",
+    cao: "'QuoteCao','STXingkai','华文行楷',cursive",
+    script: "'QuoteScript','Segoe Script','Dancing Script',cursive",
+    fancy: "'QuoteFancy','Segoe Script','Great Vibes',cursive",
+    round: "'QuoteRound','Varela Round','Comic Sans MS',sans-serif"
+  };
+  const fontOf = id => FONT_STACK[id] || FONT_STACK.kai;
+
+  /* 激励语是窄长条，按字数估算它会长到多高（用于贴墙时避免越界） */
+  function quoteHeight(text) {
+    let units = 0;
+    for (const ch of String(text || '')) {
+      units += /[\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF]/.test(ch) ? 1 : 0.55;
+    }
+    const lines = Math.max(1, Math.ceil((units + 1) / 5.4));
+    return 50 + lines * 27;
+  }
 
   let editId = null, pendingPos = null;
 
@@ -21,8 +51,10 @@
     return (h % 9) - 4;
   }
 
-  const sizeOf = type => type === 'dream' ? { w: DREAM_W, h: DREAM_H }
-    : type === 'photo' ? { w: PHOTO_W, h: PHOTO_H } : { w: NOTE_W, h: NOTE_H };
+  const sizeOf = (type, n) => type === 'dream' ? { w: DREAM_W, h: DREAM_H }
+    : type === 'photo' ? { w: PHOTO_W, h: PHOTO_H }
+      : type === 'quote' ? { w: QUOTE_W, h: n ? quoteHeight(n.text) : 130 }
+        : { w: NOTE_W, h: NOTE_H };
   const PAN = () => el('wall-pan');
   const containerFor = type => type === 'dream' ? el('w-dreams') : PAN();
   const typeLabel = { small: '小目标', goal: '目标', dream: '梦想', photo: '照片', quote: '激励语' };
@@ -149,7 +181,7 @@
     const cw = host.clientWidth || W0 || 1180, ch = host.clientHeight || H0 || 820;
     const busy = ST.activeNotes()
       .filter(n => containerFor(n.type) === host)
-      .map(n => { const s = sizeOf(n.type); return { x: n.x, y: n.y, w: s.w, h: s.h }; });
+      .map(n => { const s = sizeOf(n.type, n); return { x: n.x, y: n.y, w: s.w, h: s.h }; });
     for (let y = 12; y < ch - h - 12; y += 26) {
       for (let x = 12; x < cw - w - 12; x += 26) {
         const hit = busy.some(b => !(x + w + 10 < b.x || b.x + b.w + 10 < x || y + h + 10 < b.y || b.y + b.h + 10 < y));
@@ -166,7 +198,8 @@
   function noteNode(n) {
     const c = colorOf(n.color), sk = stickerOf(n.sticker);
     const d = document.createElement('div');
-    d.className = 'note t-' + n.type + (n.type === 'dream' ? ' dream' : '');
+    d.className = 'note t-' + n.type + (n.type === 'dream' ? ' dream' : '') +
+      (n.type === 'quote' ? ' qf-' + (n.font || 'kai') : '');
     d.dataset.id = n.id;
     d.style.left = n.x + 'px';
     d.style.top = n.y + 'px';
@@ -239,7 +272,7 @@
       // 手指按下时抖几像素很常见，给长按留一点余量，别一动就把菜单取消掉
       if (moved > 8 && lpTimer) { clearTimeout(lpTimer); lpTimer = null; }
       if (moved <= 5) return;
-      const sz = sizeOf(n.type);
+      const sz = sizeOf(n.type, n);
       const cw = host.clientWidth, ch = host.clientHeight;
       const nx = clamp(ox + dx, 4, Math.max(4, cw - sz.w - 4));
       const ny = clamp(oy + dy, 4, Math.max(4, ch - sz.h - 4));
@@ -481,7 +514,7 @@
 
     // 窗口尺寸变化后，旧坐标可能落在墙外，渲染时统一收进可视范围
     const fix = (n, host) => {
-      const sz = sizeOf(n.type);
+      const sz = sizeOf(n.type, n);
       const cw = host.clientWidth, ch = host.clientHeight;
       const x = clamp(n.x, 4, Math.max(4, cw - sz.w - 4));
       const y = clamp(n.y, 4, Math.max(4, ch - sz.h - 4));
@@ -544,7 +577,8 @@
       color: n ? n.color : 'sun',
       sticker: n ? n.sticker : 'pin',
       text: n ? n.text : '',
-      img: (n && n.img) || ''
+      img: (n && n.img) || '',
+      font: (n && n.font) || 'kai'
     };
     pendingPos = o.pos || null;
 
@@ -565,6 +599,10 @@
       '</div>' +
       '<div class="cp-lbl">写点什么</div>' +
       '<textarea id="cp-text" class="pix-input" rows="2" maxlength="60" placeholder="' + PLACE[st.type] + '">' + esc(st.text) + '</textarea>' +
+      '<div class="cp-sec" id="cp-sec-font" hidden>' +
+      '<div class="cp-lbl">字体风格</div>' +
+      '<div class="cp-fonts" id="cp-fonts"></div>' +
+      '</div>' +
       '<div class="cp-sec" id="cp-sec-img">' +
       '<div class="cp-lbl">配一张图<span class="cp-warn" id="cp-img-warn"></span></div>' +
       '<div class="cp-imgrow">' +
@@ -623,7 +661,21 @@
         });
       });
     }
-    paintColors(); paintStickers();
+    function paintFonts() {
+      el('cp-fonts').innerHTML = QUOTE_FONTS.map(f =>
+        '<button class="qfb' + (st.font === f.id ? ' on' : '') + '" data-f="' + f.id + '" type="button">' + f.name + '</button>').join('');
+      $$('#cp-fonts .qfb').forEach(b => b.onclick = () => {
+        st.font = b.dataset.f;
+        paintFonts(); paintPreview();
+      });
+    }
+    function paintPreview() {
+      const t = el('cp-text');
+      if (!t) return;
+      t.style.fontFamily = st.type === 'quote' ? fontOf(st.font) : '';
+      t.style.fontSize = st.type === 'quote' ? '17px' : '';
+    }
+    paintColors(); paintStickers(); paintFonts();
 
     /* ── 梦想配图：选图 → 等比压缩成小 jpg → 预览 ── */
     function paintImg() {
@@ -655,7 +707,9 @@
     function syncType() {
       el('cp-sec-color').hidden = (st.type === 'dream');
       el('cp-sec-img').hidden = (st.type !== 'dream');
+      el('cp-sec-font').hidden = (st.type !== 'quote');
       $('.pix-input', box).placeholder = PLACE[st.type];
+      paintPreview();
       $$('#cp-type button').forEach(x => x.classList.toggle('on', x.dataset.t === st.type));
     }
     $$('#cp-type button').forEach(b => b.onclick = () => { st.type = b.dataset.t; syncType(); });
@@ -670,21 +724,30 @@
       if (editId) {
         const old = ST.noteById(editId);
         const moved = old && old.type !== st.type;
-        ST.updateNote(editId, { text: txt, color: st.color, sticker: st.sticker, type: st.type, img: st.type === 'dream' ? (st.img || '') : '' });
+        ST.updateNote(editId, {
+          text: txt, color: st.color, sticker: st.sticker, type: st.type,
+          img: st.type === 'dream' ? (st.img || '') : '',
+          font: st.type === 'quote' ? st.font : ''
+        });
         if (moved && old.type === 'dream') { /* 类型变了，重新计算位置 */ }
         close(); render(); toast('已更新', 'ok');
       } else {
         const host = containerFor(st.type);
-        const sz = sizeOf(st.type);
+        const sz = sizeOf(st.type, { text: txt });
         let pos = pendingPos;
         if (!pos) pos = freeSpot(host, sz.w, sz.h);
         else {
           const cw = host.clientWidth, ch = host.clientHeight;
           pos = { x: clamp(pos.x - sz.w / 2, 4, Math.max(4, cw - sz.w - 4)), y: clamp(pos.y - sz.h / 2, 4, Math.max(4, ch - sz.h - 4)) };
         }
-        ST.addNote({ type: st.type, text: txt, color: st.color, sticker: st.sticker, x: pos.x, y: pos.y, img: st.type === 'dream' ? (st.img || '') : '' });
+        ST.addNote({
+          type: st.type, text: txt, color: st.color, sticker: st.sticker,
+          x: pos.x, y: pos.y, img: st.type === 'dream' ? (st.img || '') : '',
+          font: st.type === 'quote' ? st.font : ''
+        });
         close(); render();
-        toast('贴上了', 'ok', st.type === 'dream' ? '这是梦想，慢慢来' : '双击它就能标记完成');
+        toast('贴上了', 'ok', st.type === 'dream' ? '这是梦想，慢慢来'
+          : st.type === 'quote' ? '这句话会一直在墙上陪着你' : '双击它就能标记完成');
         if (window.APP && APP.refresh) APP.refresh();
       }
     };
