@@ -11,7 +11,7 @@
   const DREAM_W = 200, DREAM_H = 132;
   const NOTE_W = 152, NOTE_H = 116;
   const PHOTO_W = 176, PHOTO_H = 204;
-  const QUOTE_W = 124;
+  const QUOTE_H = 68;
 
   /* ── 激励语字体 ── */
   const QUOTE_FONTS = [
@@ -32,14 +32,13 @@
   };
   const fontOf = id => FONT_STACK[id] || FONT_STACK.kai;
 
-  /* 激励语是窄长条，按字数估算它会长到多高（用于贴墙时避免越界） */
-  function quoteHeight(text) {
+  /* 激励语只有一行，宽度按字数估算（中文 16px、英文约 8.8px，再加括号与内边距） */
+  function quoteWidth(text) {
     let units = 0;
     for (const ch of String(text || '')) {
-      units += /[\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF]/.test(ch) ? 1 : 0.55;
+      units += /[\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF]/.test(ch) ? 16 : 8.8;
     }
-    const lines = Math.max(1, Math.ceil((units + 1) / 5.4));
-    return 50 + lines * 27;
+    return Math.max(104, Math.round(units + 32 + 36));
   }
 
   let editId = null, pendingPos = null;
@@ -53,7 +52,7 @@
 
   const sizeOf = (type, n) => type === 'dream' ? { w: DREAM_W, h: DREAM_H }
     : type === 'photo' ? { w: PHOTO_W, h: PHOTO_H }
-      : type === 'quote' ? { w: QUOTE_W, h: n ? quoteHeight(n.text) : 130 }
+      : type === 'quote' ? { w: n ? quoteWidth(n.text) : 150, h: QUOTE_H }
         : { w: NOTE_W, h: NOTE_H };
   const PAN = () => el('wall-pan');
   const containerFor = type => type === 'dream' ? el('w-dreams') : PAN();

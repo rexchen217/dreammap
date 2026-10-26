@@ -535,26 +535,26 @@ button:focus-visible, input:focus-visible, textarea:focus-visible {
 .note.t-goal { border-top: 4px solid rgba(0, 0, 0, .18); }
 .note.t-goal .n-tag { color: #8a4a12; opacity: .8; }
 
-/* 激励语便利贴：窄长条，宽度只容一行，长度随文字多少增减；字体可选 */
+/* 激励语便利贴：像「」括起来的横条，宽度只放一行文字，不够长就自己变长 */
 .note.t-quote {
-  width: 124px; height: auto; min-height: 96px;
-  padding: 22px 12px 34px 18px;
+  width: max-content; min-width: 104px; height: 68px;
+  padding: 20px 16px 22px 18px;
 }
 .note.t-quote::before {
-  content: ''; position: absolute; left: 8px; top: 18px; bottom: 32px; width: 2px;
+  content: ''; position: absolute; left: 8px; top: 12px; bottom: 20px; width: 2px;
   background: rgba(0, 0, 0, .16);
 }
 .note.t-quote .n-txt {
-  display: block; overflow: visible; overflow-wrap: anywhere;
+  display: block; overflow: visible; white-space: nowrap;
   font-family: 'QuoteKai', 'KaiTi', 'STKaiti', '楷体', serif;
-  font-size: 16px; font-weight: 400; line-height: 1.65; letter-spacing: .01em;
+  font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: .01em;
 }
 .note.t-quote .n-txt::before { content: '「'; opacity: .4; }
 .note.t-quote .n-txt::after { content: '」'; opacity: .4; }
-.note.t-quote .n-tag { color: #6b4a06; opacity: .85; font-size: 8.5px; letter-spacing: .18em; }
+.note.t-quote .n-tag { display: none; }
 
-/* 字数多时便利贴自己变长，标签与日期跟着走 */
-.note.t-quote .n-meta { bottom: 8px; }
+/* 日期贴在横条右下角 */
+.note.t-quote .n-meta { bottom: 5px; }
 
 /* 六种字体风格 */
 .note.qf-kai .n-txt { font-family: 'QuoteKai', 'KaiTi', 'STKaiti', '楷体', serif; }
