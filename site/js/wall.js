@@ -42,6 +42,7 @@
   }
 
   let editId = null, pendingPos = null;
+  let zTop = 20;   // 谁被抓住，谁就到最上层；层级跟着存档走
 
   /* ── 稳定倾斜角（由 id 派生，刷新不变） ── */
   function tiltOf(id) {
@@ -202,6 +203,7 @@
     d.dataset.id = n.id;
     d.style.left = n.x + 'px';
     d.style.top = n.y + 'px';
+    if (n.z) d.style.zIndex = n.z;
     d.style.setProperty('--bg', c.bg);
     d.style.setProperty('--ink', c.ink);
     d.style.setProperty('--tilt', tiltOf(n.id) + 'deg');
@@ -255,6 +257,9 @@
       sx = e.clientX; sy = e.clientY; ox = n.x; oy = n.y; moved = 0; dragging = true; lpFired = false;
       try { node.setPointerCapture(pid); } catch (_) { }
       node.classList.add('grab');
+      // 抓住谁，谁就浮到最上层（先只改图层，松手后再落存档，避免拖动途中被重绘打断）
+      n.z = ++zTop;
+      node.style.zIndex = n.z;
       lpTimer = setTimeout(() => {
         lpTimer = null; lpFired = true; dragging = false;
         node.classList.remove('grab');
@@ -287,7 +292,7 @@
       if (!dragging) return;
       dragging = false;
       if (moved > 5) {
-        ST.updateNote(n.id, { x: +node.dataset.nx || n.x, y: +node.dataset.ny || n.y });
+        ST.updateNote(n.id, { x: +node.dataset.nx || n.x, y: +node.dataset.ny || n.y, z: n.z });
         n.x = +node.dataset.nx || n.x; n.y = +node.dataset.ny || n.y;
         return;
       }
@@ -502,6 +507,7 @@
   function render() {
     layout(); zoomUI();
     const all = ST.activeNotes();
+    zTop = all.reduce((m, n) => Math.max(m, n.z || 0), 20);
     const dreams = all.filter(n => n.type === 'dream');
     const others = all.filter(n => n.type !== 'dream');
 
