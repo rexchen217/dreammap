@@ -28,7 +28,7 @@
     return {
       v: 1, rev: 0,
       profile: { nickname: '', avatar: 'm1', dream: '', bio: '', createdAt: '', updatedAt: '' },
-      notes: [], tombstones: [],
+      notes: [], tombstones: [], links: [],
       acc: { earned: START_COINS, spent: 0, tickE: {}, tickS: {}, pickE: 0, pickS: 0 },
       own: {}, pulls: {}, pity: {},
       piggy: { at: '', saved: 0, total: 0 },
@@ -54,7 +54,24 @@
     s.set = Object.assign(b.set, s.set || {});
     if (typeof s.set.sfx !== 'number' || !isFinite(s.set.sfx)) s.set.sfx = 0.6;
     s.set.sfx = Math.max(0, Math.min(1, s.set.sfx));
-    ['notes', 'tombstones', 'log'].forEach(k => { if (!Array.isArray(s[k])) s[k] = []; });
+    ['notes', 'tombstones', 'log', 'links'].forEach(k => { if (!Array.isArray(s[k])) s[k] = []; });
+    // 便利贴字段修补：防旧版本 / 部分写入 / sync merge 引入脏 x/y/z
+    const fixNote = n => {
+      if (!n || typeof n !== 'object' || !n.id) return null;
+      const W = n.type === 'dream' ? 200 : n.type === 'photo' ? 176 : n.type === 'quote' ? 150 : 152;
+      const H = n.type === 'dream' ? 132 : n.type === 'photo' ? 204 : n.type === 'quote' ? 68 : 116;
+      const x = Math.round(+n.x);
+      const y = Math.round(+n.y);
+      n.x = isFinite(x) && x >= -40000 ? x : 60;
+      n.y = isFinite(y) && y >= -40000 ? y : 60;
+      if (n.z != null) { const z = +n.z; if (!isFinite(z) || z < 0) n.z = 0; }
+      n.type = n.type || 'small';
+      n.text = n.text || '';
+      n.status = n.status || 'active';
+      return n;
+    };
+    s.notes = s.notes.map(fixNote).filter(Boolean);
+    s.links = s.links.filter(l => l && l.id && l.from && l.to && l.from !== l.to);
     ['own', 'pulls', 'pity', 'claimed'].forEach(k => { if (!s[k] || typeof s[k] !== 'object') s[k] = {}; });
     if (!s.unlock || typeof s.unlock !== 'object') s.unlock = { colors: [], stickers: [] };
     ['colors', 'stickers'].forEach(k => { if (!Array.isArray(s.unlock[k])) s.unlock[k] = []; });
@@ -149,6 +166,11 @@
     const at = nowISO();
     S.notes = S.notes.filter(x => x.id !== id);
     S.tombstones.push({ id, deletedAt: at });
+    // 便利贴没了，跟它有关的连线也一起作废
+    S.links.filter(l => l.from === id || l.to === id).forEach(l => {
+      S.tombstones.push({ id: l.id, deletedAt: at });
+    });
+    S.links = S.links.filter(l => l.from !== id && l.to !== id);
     touch('notes');
   }
   // 标记完成：便利贴留在数据里（统计要用），墙上不再显示
@@ -181,6 +203,26 @@
   const doneNotes = () => S.notes.filter(n => n.status === 'done');
   const noteById = id => S.notes.find(n => n.id === id);
   const notesOf = type => S.notes.filter(n => n.type === type);
+
+  /* ══════ 便利贴连线 ══════ */
+  const links = () => S.links;
+  function addLink(from, to) {
+    if (!from || !to || from === to) return null;
+    if (!noteById(from) || !noteById(to)) return null;
+    if (S.links.some(l => (l.from === from && l.to === to) || (l.from === to && l.to === from))) return null;
+    const at = nowISO();
+    const l = { id: uid('lk'), from, to, createdAt: at, updatedAt: at };
+    S.links.push(l);
+    touch('links');
+    return l;
+  }
+  function dropLink(id) {
+    if (!S.links.some(l => l.id === id)) return false;
+    S.links = S.links.filter(l => l.id !== id);
+    S.tombstones.push({ id, deletedAt: nowISO() });
+    touch('links');
+    return true;
+  }
 
   /* ══════ 收集 ══════ */
   const hasCard = id => !!S.own[id];
@@ -428,6 +470,19 @@
     out.tombstones.forEach(t => { dead[t.id] = new Date(t.deletedAt || 0).getTime(); });
     out.notes = Object.values(map).filter(n => !(dead[n.id] && new Date(n.updatedAt || 0).getTime() <= dead[n.id]));
 
+    // 连线：按 id 后写胜出，删除同样靠墓碑
+    const live = {};
+    out.notes.forEach(n => { live[n.id] = 1; });
+    const lmap = {};
+    (L.links || []).concat(R.links || []).forEach(l => {
+      if (!l || !l.id) return;
+      const t = new Date(l.updatedAt || l.createdAt || 0).getTime();
+      if (!lmap[l.id] || new Date(lmap[l.id].updatedAt || lmap[l.id].createdAt || 0).getTime() < t) lmap[l.id] = l;
+    });
+    out.links = Object.values(lmap)
+      .filter(l => l.from !== l.to && live[l.from] && live[l.to])
+      .filter(l => !(dead[l.id] && new Date(l.updatedAt || l.createdAt || 0).getTime() <= dead[l.id]));
+
     // 进度类：只增不减
     out.acc.earned = numMax(L.acc.earned, R.acc.earned);
     out.acc.spent = numMax(L.acc.spent, R.acc.spent);
@@ -554,6 +609,7 @@
     tickets, ticketsAll, giveTicket, useTicket, randomTicketCity,
     picks, givePick, usePick,
     addNote, updateNote, dropNote, doneNote, activeNotes, doneNotes, noteById, notesOf,
+    addLink, dropLink, links,
     hasCard, ownCard, cityOwned, cityPulled, totalOwned, own: () => S.own,
     pityOf, addLog, addLogRecord: addLog,
     fullSlugs, chainNext, chainGift, featuredSlug, isFeatured,

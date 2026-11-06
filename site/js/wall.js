@@ -44,6 +44,10 @@
   let editId = null, pendingPos = null;
   let zTop = 20;   // 谁被抓住，谁就到最上层；层级跟着存档走
 
+  /* 连线：先选中一张便利贴，再点同一块板上的另一张 */
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  let linkFrom = null, linkRaf = 0;
+
   /* ── 稳定倾斜角（由 id 派生，刷新不变） ── */
   function tiltOf(id) {
     let h = 0;
@@ -73,10 +77,11 @@
     pan.style.height = H0 + 'px';
     applyView();
 
-    // 梦想区：槽位固定为可视区大小，缩放靠 transform
+    // 梦想区：铺成一块跟背景板一样能缩放拖动的大画布
     const dz = el('w-dreams'), zone = el('w-dreamzone');
     if (dz && zone) {
-      DW = zone.clientWidth; DH = zone.clientHeight;
+      DW = Math.max(1240, Math.round(zone.clientWidth * 2));
+      DH = Math.max(560, Math.round(zone.clientHeight * 3));
       dz.style.width = DW + 'px';
       dz.style.height = DH + 'px';
       applyDView();
@@ -85,7 +90,7 @@
   }
 
   /* ── 梦想区视图（独立缩放 / 拖动） ── */
-  const DZ_MIN = 0.7, DZ_MAX = 2.2;
+  const DZ_MIN = 0.25, DZ_MAX = 5;
   let dview = { s: 1, tx: 0, ty: 0 };
   let DW = 0, DH = 0;
 
@@ -175,15 +180,128 @@
     zoomAt(f, r.left + r.width / 2, r.top + r.height / 2);
   }
 
-  /* ── 找一个不重叠的位置 ── */
-  function freeSpot(host, w, h) {
+  /* ══════ 连线（背景板与梦想区各自一张 SVG 层） ══════ */
+  function linkLayer(host, id) {
+    let svg = $('#' + id, host);
+    if (!svg) {
+      svg = document.createElementNS(SVGNS, 'svg');
+      svg.setAttribute('id', id);
+      svg.setAttribute('class', 'link-layer');
+      host.insertBefore(svg, host.firstChild);
+    }
+    const w = host.clientWidth || 1, h = host.clientHeight || 1;
+    svg.setAttribute('width', w);
+    svg.setAttribute('height', h);
+    svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+    return svg;
+  }
+
+  // 便利贴的当前位置以节点上的实际坐标为准，拖动过程中也能跟着走
+  function noteCenter(node) {
+    return {
+      x: (parseFloat(node.style.left) || 0) + node.offsetWidth / 2,
+      y: (parseFloat(node.style.top) || 0) + node.offsetHeight / 2
+    };
+  }
+
+  function paintLinks(host, id) {
+    if (!host) return;
+    const svg = linkLayer(host, id);
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    const add = (tag, attrs) => {
+      const e = document.createElementNS(SVGNS, tag);
+      Object.keys(attrs).forEach(k => e.setAttribute(k, attrs[k]));
+      svg.appendChild(e);
+      return e;
+    };
+
+    ST.links().forEach(l => {
+      const a = $('.note[data-id="' + l.from + '"]', host);
+      const b = $('.note[data-id="' + l.to + '"]', host);
+      if (!a || !b) return;   // 有一头已经完成/撕掉，这条线就不画
+      const p1 = noteCenter(a), p2 = noteCenter(b);
+      const dx = p2.x - p1.x, dy = p2.y - p1.y;
+      const len = Math.hypot(dx, dy) || 1;
+      const bend = Math.min(46, len * 0.2);
+      const cx = Math.round((p1.x + p2.x) / 2 - (dy / len) * bend);
+      const cy = Math.round((p1.y + p2.y) / 2 + (dx / len) * bend);
+      const d = 'M' + Math.round(p1.x) + ' ' + Math.round(p1.y) +
+        ' Q' + cx + ' ' + cy + ' ' + Math.round(p2.x) + ' ' + Math.round(p2.y);
+
+      const hit = add('path', { d, class: 'link-hit' });
+      hit.addEventListener('pointerdown', e => e.stopPropagation());
+      hit.addEventListener('click', e => { e.stopPropagation(); askRemoveLink(l.id); });
+      add('path', { d, class: 'link-path' });
+      add('circle', { cx: Math.round(p1.x), cy: Math.round(p1.y), r: 3, class: 'link-cap' });
+      add('circle', { cx: Math.round(p2.x), cy: Math.round(p2.y), r: 3, class: 'link-cap' });
+    });
+  }
+
+  function drawLinks() {
+    paintLinks(PAN(), 'w-links');
+    paintLinks(el('w-dreams'), 'dz-links');
+  }
+
+  // 拖动时每帧只重画一次
+  function queueLinks() {
+    if (linkRaf) return;
+    linkRaf = requestAnimationFrame(() => { linkRaf = 0; drawLinks(); });
+  }
+
+  function askRemoveLink(id) {
+    confirmDlg('删掉这条连线？', '两张便利贴都还在墙上。', '删掉', true).then(ok => {
+      if (!ok) return;
+      ST.dropLink(id);
+      drawLinks();
+    });
+  }
+
+  function cancelLink() {
+    if (!linkFrom) return;
+    $$('.note.linking').forEach(x => x.classList.remove('linking'));
+    linkFrom = null;
+  }
+
+  function startLink(id) {
+    cancelLink();
+    linkFrom = id;
+    const nd = $('.note[data-id="' + id + '"]');
+    if (nd) nd.classList.add('linking');
+    toast('再点一张便利贴，就把它们连起来', 'ok', '点空白处可取消');
+  }
+
+  /* ── 新便利贴的落点 ── */
+  /* 当前屏幕上能看到的那一块画布（画布被放大后，新便利贴要落在看得见的地方） */
+  function spotBox(host) {
+    if (host === el('w-dreams')) {
+      const zone = el('w-dreamzone');
+      if (!zone) return null;
+      return {
+        x0: -dview.tx / dview.s, y0: -dview.ty / dview.s,
+        x1: (-dview.tx + zone.clientWidth) / dview.s, y1: (-dview.ty + zone.clientHeight) / dview.s
+      };
+    }
+    const wall = el('wall');
+    if (!wall) return null;
+    return {
+      x0: -view.tx / view.s, y0: -view.ty / view.s,
+      x1: (-view.tx + wall.clientWidth) / view.s, y1: (-view.ty + wall.clientHeight) / view.s
+    };
+  }
+
+  function freeSpot(host, w, h, scope) {
     // 墙可能因为切到别的页签而暂时隐藏，这时 clientWidth 是 0，退回上次算出的画布尺寸
     const cw = host.clientWidth || W0 || 1180, ch = host.clientHeight || H0 || 820;
+    const x0 = scope ? clamp(scope.x0, 8, Math.max(8, cw - w - 8)) : 12;
+    const y0 = scope ? clamp(scope.y0, 8, Math.max(8, ch - h - 8)) : 12;
+    const x1 = scope ? Math.min(cw - w - 8, scope.x1 - w) : cw - w - 12;
+    const y1 = scope ? Math.min(ch - h - 8, scope.y1 - h) : ch - h - 12;
     const busy = ST.activeNotes()
       .filter(n => containerFor(n.type) === host)
       .map(n => { const s = sizeOf(n.type, n); return { x: n.x, y: n.y, w: s.w, h: s.h }; });
-    for (let y = 12; y < ch - h - 12; y += 26) {
-      for (let x = 12; x < cw - w - 12; x += 26) {
+    for (let y = y0; y < y1; y += 26) {
+      for (let x = x0; x < x1; x += 26) {
         const hit = busy.some(b => !(x + w + 10 < b.x || b.x + b.w + 10 < x || y + h + 10 < b.y || b.y + b.h + 10 < y));
         if (!hit) return { x, y };
       }
@@ -283,6 +401,7 @@
       node.style.left = nx + 'px';
       node.style.top = ny + 'px';
       node.dataset.nx = nx; node.dataset.ny = ny;
+      queueLinks();
     });
 
     node.addEventListener('pointerup', e => {
@@ -294,6 +413,21 @@
       if (moved > 5) {
         ST.updateNote(n.id, { x: +node.dataset.nx || n.x, y: +node.dataset.ny || n.y, z: n.z });
         n.x = +node.dataset.nx || n.x; n.y = +node.dataset.ny || n.y;
+        return;
+      }
+      // 连线模式：这一下点的就是另一头
+      if (linkFrom) {
+        const src = ST.noteById(linkFrom);
+        if (!src) { cancelLink(); return; }
+        if (src.id === n.id) { cancelLink(); toast('取消连线', 'warn'); return; }
+        if (containerFor(src.type) !== containerFor(n.type)) {
+          toast('连线只在同一块板上进行', 'warn');
+          return;
+        }
+        const made = ST.addLink(src.id, n.id);
+        cancelLink();
+        if (made) { drawLinks(); toast('连起来了', 'ok'); }
+        else toast('这两张已经连着了', 'warn');
         return;
       }
       // 单击 → 判定双击
@@ -341,7 +475,7 @@
       const add = () => {
         const v = ($('#sp-txt', host) || {}).value || '';
         if (!v.trim()) return;
-        const spot = freeSpot(PAN(), NOTE_W, NOTE_H);
+        const spot = freeSpot(PAN(), NOTE_W, NOTE_H, spotBox(PAN()));
         if (ST.addStep(id, v, spot)) { render(); paint(host); if (window.APP && APP.refresh) APP.refresh(); }
       };
       const btn = $('#sp-ok', host);
@@ -377,9 +511,11 @@
       ok: '标记完成',
       cancel: '取消',
       body: '<div class="md-row"><button class="pix-btn ghost sm" data-x="edit">编辑内容</button>' +
+        '<button class="pix-btn ghost sm" data-x="link">连线到另一张</button>' +
         '<button class="pix-btn ghost sm" data-x="del">撕掉这张</button></div>',
       onMount: (m, close) => {
         $('[data-x="edit"]', m).onclick = () => { close(false); openComposer({ editId: id }); };
+        $('[data-x="link"]', m).onclick = () => { close(false); startLink(id); };
         $('[data-x="del"]', m).onclick = () => {
           close(false);
           confirmDlg('撕掉这张便利贴？', '「' + n.text + '」会从墙上消失，不计入完成统计。', '撕掉', true).then(ok => {
@@ -439,7 +575,7 @@
     layout();
     const host = PAN();
     const sz = sizeOf('photo');
-    const pos = freeSpot(host, sz.w, sz.h);
+    const pos = freeSpot(host, sz.w, sz.h, spotBox(host));
     ST.addNote({ type: 'photo', text: card.name, cardId: card.id, x: pos.x, y: pos.y });
     render();
     if (window.APP && APP.refresh) APP.refresh();
@@ -517,12 +653,18 @@
     $$('.note', dz).forEach(n => n.remove());
     $$('.note', wl).forEach(n => n.remove());
 
-    // 窗口尺寸变化后，旧坐标可能落在墙外，渲染时统一收进可视范围
+    // 窗口尺寸变化后 / 恢复后，旧坐标或脏值统一收进可视范围
     const fix = (n, host) => {
       const sz = sizeOf(n.type, n);
       const cw = host.clientWidth, ch = host.clientHeight;
-      const x = clamp(n.x, 4, Math.max(4, cw - sz.w - 4));
-      const y = clamp(n.y, 4, Math.max(4, ch - sz.h - 4));
+      // 先把脏值拉回合法数字（兜底：normalize 之外的双重保险）
+      let x = Math.round(+n.x);
+      let y = Math.round(+n.y);
+      if (!isFinite(x) || x < -40000) x = 60;
+      if (!isFinite(y) || y < -40000) y = 60;
+      // 再 clamp 到当前可视画布
+      x = clamp(x, 4, Math.max(4, cw - sz.w - 4));
+      y = clamp(y, 4, Math.max(4, ch - sz.h - 4));
       if (x !== n.x || y !== n.y) { ST.updateNote(n.id, { x, y }); n.x = x; n.y = y; }
       return n;
     };
@@ -535,6 +677,11 @@
     } else if (de) de.remove();
 
     el('w-empty').hidden = others.length > 0;
+
+    // 连线跟着便利贴走；渲染后重画一遍
+    if (linkFrom && !$('.note[data-id="' + linkFrom + '"]')) linkFrom = null;
+    if (linkFrom) { const nd = $('.note[data-id="' + linkFrom + '"]'); if (nd) nd.classList.add('linking'); }
+    drawLinks();
   }
 
   /* ── 选中的图压成小 jpg，长边不超过 560 ── */
@@ -740,7 +887,7 @@
         const host = containerFor(st.type);
         const sz = sizeOf(st.type, { text: txt });
         let pos = pendingPos;
-        if (!pos) pos = freeSpot(host, sz.w, sz.h);
+        if (!pos) pos = freeSpot(host, sz.w, sz.h, spotBox(host));
         else {
           const cw = host.clientWidth, ch = host.clientHeight;
           pos = { x: clamp(pos.x - sz.w / 2, 4, Math.max(4, cw - sz.w - 4)), y: clamp(pos.y - sz.h / 2, 4, Math.max(4, ch - sz.h - 4)) };
@@ -789,6 +936,7 @@
       if (!wasTap) return;
       const t = dTarget || e.target;
       if (t.closest('.note')) return;
+      if (linkFrom) { cancelLink(); toast('取消连线', 'warn'); return; }
       if (e.target.closest('.dz-empty') || t.closest('.dz-empty')) { openComposer({ type: 'dream' }); return; }
       const r = zone.getBoundingClientRect();
       openComposer({
@@ -860,6 +1008,7 @@
       const wasTap = !moved && tapPt;
       pan0 = null; moved = false;
       if (wasTap) {
+        if (linkFrom) { cancelLink(); toast('取消连线', 'warn'); return; }
         const r = wall.getBoundingClientRect();
         const lx = clamp((tapPt.x - r.left - view.tx) / view.s, 0, W0);
         const ly = clamp((tapPt.y - r.top - view.ty) / view.s, 0, H0);
