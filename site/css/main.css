@@ -619,9 +619,9 @@ button:focus-visible, input:focus-visible, textarea:focus-visible {
   box-shadow: -8px -8px 12px rgba(0, 0, 0, .16);
 }
 /* 灰雾：默认关闭，在个人资料里打开 */
-.wall.fog-on .note.od-1 .n-wear { box-shadow: 0 0 0 10px rgba(168, 170, 162, .12), 0 0 30px 16px rgba(150, 152, 146, .26); }
-.wall.fog-on .note.od-2 .n-wear { box-shadow: 0 0 0 14px rgba(168, 170, 162, .16), 0 0 40px 22px rgba(150, 152, 146, .34); }
-.wall.fog-on .note.od-3 .n-wear { box-shadow: 0 0 0 20px rgba(168, 170, 162, .20), 0 0 52px 30px rgba(150, 152, 146, .42); }
+.wall-canvas.fog-on .note.od-1 .n-wear { box-shadow: 0 0 0 10px rgba(168, 170, 162, .12), 0 0 30px 16px rgba(150, 152, 146, .26); }
+.wall-canvas.fog-on .note.od-2 .n-wear { box-shadow: 0 0 0 14px rgba(168, 170, 162, .16), 0 0 40px 22px rgba(150, 152, 146, .34); }
+.wall-canvas.fog-on .note.od-3 .n-wear { box-shadow: 0 0 0 20px rgba(168, 170, 162, .20), 0 0 52px 30px rgba(150, 152, 146, .42); }
 
 /* 时间徽标：中性文案，「迟了 N 天」不用「失败」 */
 .n-due {

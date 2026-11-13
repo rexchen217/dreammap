@@ -17,9 +17,9 @@ BrandingText "梦想地图 · 旅行与目标手账"
 ShowInstDetails nevershow
 ShowUninstDetails nevershow
 
-VIProductVersion "1.0.0.0"
+VIProductVersion "1.1.0.0"
 VIAddVersionKey "ProductName" "梦想地图"
-VIAddVersionKey "ProductVersion" "1.0.0"
+VIAddVersionKey "ProductVersion" "1.1.0"
 VIAddVersionKey "CompanyName" "DreamMap"
 VIAddVersionKey "FileDescription" "梦想地图 安装程序"
 VIAddVersionKey "LegalCopyright" "DreamMap"
