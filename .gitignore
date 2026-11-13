@@ -20,6 +20,9 @@ android-app/android/keystore.properties
 *.jks
 server-data/
 
+# 素材备份
+_art_ai_backup/
+
 # 系统文件
 .DS_Store
 Thumbs.db

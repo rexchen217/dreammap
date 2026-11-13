@@ -179,6 +179,105 @@ window.DM_CITIES = [
   "kind": "city",
   "total": 20,
   "urId": "sydney-01"
+ },
+ {
+  "slug": "munich",
+  "city": "慕尼黑",
+  "sub": "MUNICH",
+  "cont": "europe",
+  "kind": "city",
+  "total": 20,
+  "urId": "munich-01"
+ },
+ {
+  "slug": "toronto",
+  "city": "多伦多",
+  "sub": "TORONTO",
+  "cont": "namerica",
+  "kind": "city",
+  "total": 20,
+  "urId": "toronto-01"
+ },
+ {
+  "slug": "vancouver",
+  "city": "温哥华",
+  "sub": "VANCOUVER",
+  "cont": "namerica",
+  "kind": "city",
+  "total": 20,
+  "urId": "vancouver-01"
+ },
+ {
+  "slug": "chicago",
+  "city": "芝加哥",
+  "sub": "CHICAGO",
+  "cont": "namerica",
+  "kind": "city",
+  "total": 20,
+  "urId": "chicago-01"
+ },
+ {
+  "slug": "washingtondc",
+  "city": "华盛顿特区",
+  "sub": "WASHINGTON D.C.",
+  "cont": "namerica",
+  "kind": "city",
+  "total": 20,
+  "urId": "washingtondc-01"
+ },
+ {
+  "slug": "sanfrancisco",
+  "city": "旧金山",
+  "sub": "SAN FRANCISCO",
+  "cont": "namerica",
+  "kind": "city",
+  "total": 20,
+  "urId": "sanfrancisco-01"
+ },
+ {
+  "slug": "losangeles",
+  "city": "洛杉矶",
+  "sub": "LOS ANGELES",
+  "cont": "namerica",
+  "kind": "city",
+  "total": 20,
+  "urId": "losangeles-01"
+ },
+ {
+  "slug": "buenosaires",
+  "city": "布宜诺斯艾利斯",
+  "sub": "BUENOS AIRES",
+  "cont": "samerica",
+  "kind": "city",
+  "total": 20,
+  "urId": "buenosaires-01"
+ },
+ {
+  "slug": "lhasa",
+  "city": "拉萨",
+  "sub": "LHASA",
+  "cont": "asia",
+  "kind": "city",
+  "total": 20,
+  "urId": "lhasa-01"
+ },
+ {
+  "slug": "urumqi",
+  "city": "乌鲁木齐",
+  "sub": "URUMQI",
+  "cont": "asia",
+  "kind": "city",
+  "total": 20,
+  "urId": "urumqi-01"
+ },
+ {
+  "slug": "seoul",
+  "city": "首尔",
+  "sub": "SEOUL",
+  "cont": "asia",
+  "kind": "city",
+  "total": 20,
+  "urId": "seoul-01"
  }
 ];
 window.DM_CARDS = [
@@ -4181,5 +4280,2205 @@ window.DM_CARDS = [
   "rarity": "SR",
   "intro": "沃森湾在海港入口的南侧，渡轮靠岸后就是一片安静的沙滩与草地。沿着崖边的小路走到盖普，陡直的岩壁直插海面，浪在下方翻卷。这里视野正对太平洋，日出时海平线被拉成一条细亮的线。",
   "file": "art/sydney/20.jpg"
+ },
+ {
+  "id": "munich-01",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 1,
+  "name": "新市政厅",
+  "rarity": "UR",
+  "intro": "新市政厅矗立在玛利亚广场北侧，砖砌的哥特式立面布满尖塔与雕像，中央钟楼高耸入云。每天上午，钟楼上的木偶钟准时转动，铜绿色人偶伴着钟声起舞，复现巴伐利亚的古老传说。广场上的人仰头驻足，看这座钟把时间演成一场小戏剧。",
+  "file": "art/munich/01.jpg"
+ },
+ {
+  "id": "munich-02",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 2,
+  "name": "圣母教堂",
+  "rarity": "SR",
+  "intro": "圣母教堂的两座红砖塔楼顶着绿色洋葱形圆顶，是慕尼黑天际线最醒目的标志。教堂建于十五世纪，内部能容纳两万人，长长的中殿被高窗照亮。传说魔鬼在门口窥见无窗的侧墙而大笑，如今登上塔顶，阿尔卑斯山的雪峰在晴日里清晰可见。",
+  "file": "art/munich/02.jpg"
+ },
+ {
+  "id": "munich-03",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 3,
+  "name": "宁芬堡宫",
+  "rarity": "SR",
+  "intro": "宁芬堡宫是巴伐利亚王室的夏宫，淡黄色的巴洛克长立面横贯运河，中央穹顶绘满湿壁画。宫前的水池里天鹅游弋，两岸林荫道笔直伸向远处。穿过镜厅与美人画廊，再走进后花园，喷泉与修剪成形的绿篱一路铺展，安静得像一场旧梦。",
+  "file": "art/munich/03.jpg"
+ },
+ {
+  "id": "munich-04",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 4,
+  "name": "英国花园",
+  "rarity": "SR",
+  "intro": "英国花园顺着伊萨尔河铺开，是欧洲最大的城市公园之一。园中草坪开阔，中国塔下摆着长桌，人们端着啤酒晒太阳。夏天，冰河上的冲浪者踩着浪头在河道里回转，围观的人挤满桥栏。城市与野趣在这里挨得很近，散步的人常一走就是整个下午。",
+  "file": "art/munich/04.jpg"
+ },
+ {
+  "id": "munich-05",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 5,
+  "name": "玛利亚广场",
+  "rarity": "SR",
+  "intro": "玛利亚广场是慕尼黑老城的心脏，中央的圣母柱顶着金色圣母像，四周是鱼泉、老市政厅与新市政厅。石板路上人流不断，街头艺人拉着手风琴，电车从广场边缘缓缓驶过。节日时市集与表演轮番登场，这里始终是全城最热闹的会客厅。",
+  "file": "art/munich/05.jpg"
+ },
+ {
+  "id": "munich-06",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 6,
+  "name": "维克图阿连市场",
+  "rarity": "SR",
+  "intro": "维克图阿连市场紧邻玛利亚广场，是慕尼黑最老的食品市集。摊位一排挨着一排，堆着芦笋、莓果、奶酪与香料，空气里混着烤香肠和鲜花的气味。市场中央立着五月柱，蓝白格子的遮阳篷下，本地人端着啤酒杯站着聊天，市井气十足。",
+  "file": "art/munich/06.jpg"
+ },
+ {
+  "id": "munich-07",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 7,
+  "name": "奥林匹克公园",
+  "rarity": "SR",
+  "intro": "奥林匹克公园为一九七二年奥运会而建，帐篷式的透明屋顶像蛛网般罩住体育场与场馆。公园里的湖面映着草坡，跑步和骑车的人绕着水岸穿行。登上奥林匹克塔俯瞰，慕尼黑的屋顶一直铺到地平线，天气好时还能望见远处的雪山。",
+  "file": "art/munich/07.jpg"
+ },
+ {
+  "id": "munich-08",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 8,
+  "name": "宝马世界",
+  "rarity": "SR",
+  "intro": "宝马世界坐落在奥林匹克公园旁，双锥形的玻璃塔与悬浮的云状屋顶相互交错。展厅里车辆沿螺旋坡道陈列，行人可以顺着坡道一路向上，从不同高度看车与光。建筑把工业与未来感揉在一起，免费开放，是车迷们来慕尼黑必到的一站。",
+  "file": "art/munich/08.jpg"
+ },
+ {
+  "id": "munich-09",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 9,
+  "name": "安联球场",
+  "rarity": "SR",
+  "intro": "安联球场是拜仁慕尼黑的主场，外立面由上千块菱形气垫拼成，像一只巨大的白色橡皮艇。比赛夜里，外墙会被灯光染成拜仁红，远远望去整座建筑像在燃烧。看台上歌声不断，草坪在灯光下绿得发亮，足球在这里几乎成了一种信仰。",
+  "file": "art/munich/09.jpg"
+ },
+ {
+  "id": "munich-10",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 10,
+  "name": "德意志博物馆",
+  "rarity": "SR",
+  "intro": "德意志博物馆坐落在伊萨尔河中的小岛上，是世界上规模最大的科技博物馆之一。馆内从矿井、印刷机到飞机与船只，层层展品铺满长廊，许多老机器仍能运转。按下按钮听齿轮咬合，孩子们在展厅里跑来跑去，科学被做成了可以触摸的乐园。",
+  "file": "art/munich/10.jpg"
+ },
+ {
+  "id": "munich-11",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 11,
+  "name": "慕尼黑王宫",
+  "rarity": "SR",
+  "intro": "慕尼黑王宫曾是巴伐利亚王室的居所，如今开放的部分宫殿连成一片迷宫。古物厅的拱顶与壁画金碧辉煌，银器室陈列着精致的餐具，庭院里安静得能听见脚步。从王宫花园走到音乐厅广场，几百年的权力与审美在几步之间换了模样。",
+  "file": "art/munich/11.jpg"
+ },
+ {
+  "id": "munich-12",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 12,
+  "name": "皇家啤酒馆",
+  "rarity": "SR",
+  "intro": "皇家啤酒馆创立于一五八九年，是慕尼黑最有名的啤酒大厅。长条木桌被磨得发亮，穿巴伐利亚服饰的乐手在中央演奏，侍者两手托着七八只大杯穿行。铜管乐队一响，满堂的人举杯应和，喧闹声与麦芽香一起在拱顶下回荡。",
+  "file": "art/munich/12.jpg"
+ },
+ {
+  "id": "munich-13",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 13,
+  "name": "阿萨姆教堂",
+  "rarity": "SR",
+  "intro": "阿萨姆教堂藏在一条窄街里，立面窄小，推门却是一次视觉冲击。洛可可式的内部几乎不留空白，柱身盘绕金饰，天顶画在光线里浮起，连祭坛都像被雕刻的火焰包住。兄弟俩把私人礼拜堂做成了艺术品，站在里面只觉得空间向上翻涌。",
+  "file": "art/munich/13.jpg"
+ },
+ {
+  "id": "munich-14",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 14,
+  "name": "圣彼得教堂",
+  "rarity": "SR",
+  "intro": "圣彼得教堂是慕尼黑最古老的教堂之一，钟楼被本地人叫作老彼得。登上塔顶的观景平台，玛利亚广场与新旧市政厅就在脚下，老城的红屋顶一路铺到远方。教堂内部朴素安静，烛光在侧廊里摇晃，与外头广场的喧闹恰成两种世界。",
+  "file": "art/munich/14.jpg"
+ },
+ {
+  "id": "munich-15",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 15,
+  "name": "音乐厅广场",
+  "rarity": "SR",
+  "intro": "音乐厅广场是慕尼黑老城北端的门户，统帅堂的拱廊与狮子雕像守在街口，后面是黄墙圆顶的圣特阿蒂纳教堂。广场上常有街头乐手与画家，电动自行车从石路驶过。坐在台阶上晒一会儿太阳，能同时看见王宫、教堂与来往的行人。",
+  "file": "art/munich/15.jpg"
+ },
+ {
+  "id": "munich-16",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 16,
+  "name": "伊萨尔河",
+  "rarity": "SR",
+  "intro": "伊萨尔河从阿尔卑斯山流来，穿过慕尼黑时被石滩分成几股清浅的水道。夏天，人们把脚泡在河水里，或干脆躺在岸边看书，河风带着青草味。桥上看去，水流在卵石间翻出白色浪花，城市的喧闹被水声冲淡，只剩一种松弛的日常。",
+  "file": "art/munich/16.jpg"
+ },
+ {
+  "id": "munich-17",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 17,
+  "name": "老绘画陈列馆",
+  "rarity": "SR",
+  "intro": "老绘画陈列馆是世界上最古老的公共美术馆之一，长长的立面安静地立在博物馆区。馆内收藏着丢勒、鲁本斯与伦勃朗的作品，展厅之间光线柔和，看画的人不紧不慢。走累了在台阶上坐一会儿，庭前的草坪和树影也像一幅画。",
+  "file": "art/munich/17.jpg"
+ },
+ {
+  "id": "munich-18",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 18,
+  "name": "和平天使纪念碑",
+  "rarity": "SR",
+  "intro": "和平天使纪念碑立在伊萨尔河东岸的高台上，金色天使展开双翼，举着橄榄枝俯瞰城市。纪念碑为纪念和平而建，柱身与台阶一层层抬升。黄昏时分，天使的轮廓被夕照镀亮，远处教堂的圆顶渐渐隐进暮色，风把河面吹得细碎。",
+  "file": "art/munich/18.jpg"
+ },
+ {
+  "id": "munich-19",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 19,
+  "name": "慕尼黑大学",
+  "rarity": "SR",
+  "intro": "慕尼黑大学的主楼靠近英国花园，白色立面与拱门庄重低调。校园里学生抱着书匆匆穿过庭院，喷泉边坐着聊天的人。白玫瑰运动的记忆仍留在这座城市，主楼前的广场常有人摆花。学术与日常在这里并行，安静里有一种坚持的力量。",
+  "file": "art/munich/19.jpg"
+ },
+ {
+  "id": "munich-20",
+  "city": "慕尼黑",
+  "citySlug": "munich",
+  "idx": 20,
+  "name": "巴伐利亚国家歌剧院",
+  "rarity": "SR",
+  "intro": "巴伐利亚国家歌剧院守着音乐厅广场的一角，门廊与立面的雕像在暮色里显出轮廓。这里曾是瓦格纳多部歌剧首演的地方，乐季里几乎每晚都有演出。开演前，观众在石阶上低声交谈，铜管声从门缝漏出来，整座广场都像在等待开场。",
+  "file": "art/munich/20.jpg"
+ },
+ {
+  "id": "toronto-01",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 1,
+  "name": "CN塔",
+  "rarity": "UR",
+  "intro": "CN塔立在安大略湖边的市中心，混凝土针身高达五百多米，曾独占世界最高建筑的名号多年。高速电梯几十秒就把人送上观景层，脚下的玻璃地板透出街道与车流。黄昏时登塔，湖面被夕照染成铜色，整座多伦多的灯一盏盏亮起来。",
+  "file": "art/toronto/01.jpg"
+ },
+ {
+  "id": "toronto-02",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 2,
+  "name": "罗杰斯中心",
+  "rarity": "SR",
+  "intro": "罗杰斯中心紧挨着CN塔，巨大的白色穹顶能在几分钟内开合，是世界最早的可伸缩屋顶球场之一。蓝鸟队主场比赛时，看台铺满蓝色，欢呼声在闭合的穹顶下回荡。天气好时屋顶滑开，阳光落进草地，棒球与天空一起涌进场内。",
+  "file": "art/toronto/02.jpg"
+ },
+ {
+  "id": "toronto-03",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 3,
+  "name": "里普利水族馆",
+  "rarity": "SR",
+  "intro": "里普利水族馆就在CN塔脚下，透明的海底隧道从头顶弯过，鲨鱼与海龟贴着玻璃缓缓游过。水母展厅在暗处泛着蓝紫的光，像一池漂浮的灯。孩子们趴在玻璃前不肯走，大人也仰着头，看鱼群像云一样从上方掠过。",
+  "file": "art/toronto/03.jpg"
+ },
+ {
+  "id": "toronto-04",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 4,
+  "name": "圣劳伦斯市场",
+  "rarity": "SR",
+  "intro": "圣劳伦斯市场从十九世纪营业至今，石砌的老楼里摊位数不清，奶酪、熏肉与新鲜蔬果堆得满满。周六的农夫市集最热闹，本地人提着布袋挑面包，摊主大声招呼熟人。柜台前排队买豌豆培根三明治，热气混着咖啡香在市场里打转。",
+  "file": "art/toronto/04.jpg"
+ },
+ {
+  "id": "toronto-05",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 5,
+  "name": "多伦多市政厅",
+  "rarity": "SR",
+  "intro": "多伦多市政厅由两栋弧形高楼合抱一座低矮的圆顶议事厅，像两只手托着一颗蛋。清水混凝土的曲线在阳光下显得干净利落，广场上的水池映着建筑的轮廓。办完事的人在台阶上坐一会儿，看鸽子与来往的行人。",
+  "file": "art/toronto/05.jpg"
+ },
+ {
+  "id": "toronto-06",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 6,
+  "name": "内森菲利普斯广场",
+  "rarity": "SR",
+  "intro": "内森菲利普斯广场铺在市政厅前，夏天是浅浅的倒影池，冬天灌水成露天冰场。三色的TORONTO字牌立在池边，游客排着队拍照。节庆时舞台搭起来，音乐与人群把广场填满，这里像是整座城市的客厅。",
+  "file": "art/toronto/06.jpg"
+ },
+ {
+  "id": "toronto-07",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 7,
+  "name": "皇家安大略博物馆",
+  "rarity": "SR",
+  "intro": "皇家安大略博物馆的老馆是厚重的石造立面，新馆却以几块倾斜的玻璃晶体刺出来，新旧撞在一起。馆内有恐龙骨架、中国壁画与埃及木乃伊，展柜一层接一层。走在晶体内部，光从斜顶漏下，像走进一块裂开的矿石。",
+  "file": "art/toronto/07.jpg"
+ },
+ {
+  "id": "toronto-08",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 8,
+  "name": "安大略美术馆",
+  "rarity": "SR",
+  "intro": "安大略美术馆的正立面被弗兰克·盖里改造成一道波浪形的玻璃，像一艘停在街边的船。馆内收藏从七人画派到当代装置，木质的螺旋楼梯在中央盘旋而上。看完画出来，门口的老树与长椅也像被谁摆好的构图。",
+  "file": "art/toronto/08.jpg"
+ },
+ {
+  "id": "toronto-09",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 9,
+  "name": "卡萨罗马城堡",
+  "rarity": "SR",
+  "intro": "卡萨罗马城堡建在山坡高处，是二十世纪初的哥特复兴式宅邸，塔楼、拱廊与秘密通道一应俱全。站在塔顶能望见市中心的玻璃高楼，花园里的喷泉层层落水。走廊铺着长毯，房间按旧时布置，像一页翻开的贵族旧账。",
+  "file": "art/toronto/09.jpg"
+ },
+ {
+  "id": "toronto-10",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 10,
+  "name": "多伦多大学",
+  "rarity": "SR",
+  "intro": "多伦多大学的校园没有围墙，哥特式的石楼与常春藤混在市中心。草坪上学生躺着看书，钟楼在整点时敲响。老图书馆的彩窗下有人安静翻页，走廊里飘着咖啡味。几步之外就是车流，校园却像被树影隔出的另一段时间。",
+  "file": "art/toronto/10.jpg"
+ },
+ {
+  "id": "toronto-11",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 11,
+  "name": "央街-登打士广场",
+  "rarity": "SR",
+  "intro": "央街与登打士街交会的这块广场被大屏幕围住，广告的光从早到晚不熄。街头艺人轮番登场，滑板少年在边缘试动作，路人举着手机拍霓虹。雨夜里灯光落在湿漉漉的地面上，广场像一块亮着的屏幕。",
+  "file": "art/toronto/11.jpg"
+ },
+ {
+  "id": "toronto-12",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 12,
+  "name": "湖心岛",
+  "rarity": "SR",
+  "intro": "从市区码头坐十几分钟渡轮就能到湖心岛，岛上没有汽车，只有草坪、自行车道和小木屋。回望对岸，CN塔与高楼排成一线，倒影落在湖面。野餐毯铺在树下，海鸥在脚边踱步，城市忽然退到水的那一边。",
+  "file": "art/toronto/12.jpg"
+ },
+ {
+  "id": "toronto-13",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 13,
+  "name": "酿酒厂区",
+  "rarity": "SR",
+  "intro": "酿酒厂区原是十九世纪的威士忌工厂，红砖厂房与鹅卵石街道被完整保留下来。如今里面开满画廊、独立店与咖啡馆，铸铁招牌还挂在老墙上。冬天的圣诞市集最热闹，灯串缠满烟囱，热红酒的香气在巷子里飘。",
+  "file": "art/toronto/13.jpg"
+ },
+ {
+  "id": "toronto-14",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 14,
+  "name": "高地公园",
+  "rarity": "SR",
+  "intro": "高地公园是多伦多市内最大的绿地，春天樱花一开，山坡就被人潮铺满。格勒纳迪尔池塘边芦苇摇动，苍鹭站在浅水里一动不动。林间小路通向观景台，抬头是树，低头是草，城市的声响被枝叶筛得很轻。",
+  "file": "art/toronto/14.jpg"
+ },
+ {
+  "id": "toronto-15",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 15,
+  "name": "冰球名人堂",
+  "rarity": "SR",
+  "intro": "冰球名人堂藏在市中心一栋老银行的建筑里，大理石柱与穹顶透着庄重。展柜里摆着斯坦利杯，银光在灯下显得沉甸甸，老球杆、旧球衣与黑白照片排成一条时间线。加拿大人走进这里，脚步会不自觉地慢下来。",
+  "file": "art/toronto/15.jpg"
+ },
+ {
+  "id": "toronto-16",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 16,
+  "name": "士嘉堡悬崖",
+  "rarity": "SR",
+  "intro": "士嘉堡悬崖在城东的湖岸上，白色黏土崖壁被风雨刻出层层褶皱，像一排竖起的沙堡。崖顶的步道沿着湖延伸，风把草吹得伏下去。傍晚坐在崖边，湖面一直铺到天边，城市的轮廓在远处缩成一条细线。",
+  "file": "art/toronto/16.jpg"
+ },
+ {
+  "id": "toronto-17",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 17,
+  "name": "约克维尔",
+  "rarity": "SR",
+  "intro": "约克维尔是市中心的一片安静街区，十九世纪的红砖小楼被改成精品店与咖啡馆。橱窗布置得讲究，街角的花店把桶摆到人行道上。午后坐在露台，看人牵着狗慢慢走过，玻璃高楼就在几个街区外反着光。",
+  "file": "art/toronto/17.jpg"
+ },
+ {
+  "id": "toronto-18",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 18,
+  "name": "多伦多唐人街",
+  "rarity": "SR",
+  "intro": "多伦多的唐人街沿斯帕迪纳大道铺开，中文招牌挤在骑楼上，烧腊的油光挂在橱窗里。菜市场把青菜与活鱼摆到门口，药材铺的味道混着面香。傍晚最热闹，推车与行人挤在一起，几种语言在同一条街上交错。",
+  "file": "art/toronto/18.jpg"
+ },
+ {
+  "id": "toronto-19",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 19,
+  "name": "皇后码头",
+  "rarity": "SR",
+  "intro": "皇后码头沿着湖岸伸展，木栈道与玻璃栏杆把水边让给散步的人。夏天有街头艺人弹琴，观光船在港湾里慢慢掉头。坐在长椅上，看帆船的桅杆一片片竖起，对岸的岛屿压着低低的天空，水鸟在木桩上站着。",
+  "file": "art/toronto/19.jpg"
+ },
+ {
+  "id": "toronto-20",
+  "city": "多伦多",
+  "citySlug": "toronto",
+  "idx": 20,
+  "name": "肯辛顿市场",
+  "rarity": "SR",
+  "intro": "肯辛顿市场是移民与波希米亚混出来的街区，维多利亚式的联排屋被涂成彩色的店面。肉铺、香料店与二手衣铺挤在窄巷里，墙上是大幅壁画。周末街上不许行车，人端着咖啡在摊位间穿行，味道与颜色都格外浓。",
+  "file": "art/toronto/20.jpg"
+ },
+ {
+  "id": "vancouver-01",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 1,
+  "name": "斯坦利公园海堤",
+  "rarity": "UR",
+  "intro": "斯坦利公园的海堤沿着海岸绕出一整圈，一边是太平洋的浪，一边是雪松与冷杉的深绿。骑单车的人、慢跑的人和推婴儿车的人各占一条道，海风把衣角吹得鼓起来。走到 Prospect Point 回望，狮门桥跨在海湾上，雪山压在城市的背后。",
+  "file": "art/vancouver/01.jpg"
+ },
+ {
+  "id": "vancouver-02",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 2,
+  "name": "加拿大广场",
+  "rarity": "SR",
+  "intro": "加拿大广场的白色屋顶像五排张开的帆，插在煤港的水边，远远就能认出来。这里是邮轮码头，也是会议中心，玻璃幕墙把海与山收进室内。站在观景平台，水上飞机起落，海鸥贴着栏杆掠过。",
+  "file": "art/vancouver/02.jpg"
+ },
+ {
+  "id": "vancouver-03",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 3,
+  "name": "煤气镇蒸汽钟",
+  "rarity": "SR",
+  "intro": "煤气镇的街角立着一座蒸汽钟，铜绿的钟体每隔一刻钟喷出白汽， whistle 声在砖楼之间传开。石板路两旁是旧仓库改的店铺，酒吧的霓虹刚刚亮起。游客围着钟等下一轮汽笛，本地人从旁边匆匆走过。",
+  "file": "art/vancouver/03.jpg"
+ },
+ {
+  "id": "vancouver-04",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 4,
+  "name": "格兰维尔岛",
+  "rarity": "SR",
+  "intro": "格兰维尔岛在福溪南岸，原是一片工业区，如今是公共市场与手工作坊的聚集地。市场里堆着水果、奶酪与刚出炉的面包，桥下的艺术家在店里吹玻璃。坐在码头边看小船进出，头顶是格兰维尔桥的钢架。",
+  "file": "art/vancouver/04.jpg"
+ },
+ {
+  "id": "vancouver-05",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 5,
+  "name": "卡皮拉诺吊桥",
+  "rarity": "SR",
+  "intro": "卡皮拉诺吊桥横跨一条深深的峡谷，一百三十多米的桥面在脚下轻轻晃动。桥下是急流与长满苔藓的巨石，两侧是雨林一样的杉木。走到对岸，树顶步道架在几十米高的枝干间，雾气从林隙里慢慢升上来。",
+  "file": "art/vancouver/05.jpg"
+ },
+ {
+  "id": "vancouver-06",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 6,
+  "name": "松鸡山",
+  "rarity": "SR",
+  "intro": "松鸡山从市区北边拔起，缆车沿山坡升到一千多米的高处，温哥华与海湾在脚下摊开。山顶有伐木表演与圈养的灰熊，冬天则是滑雪场。黄昏坐缆车下山，城市的灯像撒在海岸边的一把碎金，风冷得让人清醒。",
+  "file": "art/vancouver/06.jpg"
+ },
+ {
+  "id": "vancouver-07",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 7,
+  "name": "英吉利湾",
+  "rarity": "SR",
+  "intro": "英吉利湾是温哥华看日落的地方，沙滩前的草坪上总坐满了人。因纽特石人雕像立在岸边，被夕阳拉出长长的影子。夏天水面浮着划板与皮艇，冬天的风把浪推到堤上。太阳沉进岛屿后面，天空慢慢烧成橘红。",
+  "file": "art/vancouver/07.jpg"
+ },
+ {
+  "id": "vancouver-08",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 8,
+  "name": "基斯兰奴海滩",
+  "rarity": "SR",
+  "intro": "基斯兰奴海滩有一片开阔的沙地与一座露天海水泳池，背后是住宅区的绿树。排球网在沙上排开，孩子在水边挖坑。坐在防波堤上，北岸的雪山正好框在海湾尽头，夏天这里像被拉长的周末，海风把沙滩上的毛巾吹得翻起。",
+  "file": "art/vancouver/08.jpg"
+ },
+ {
+  "id": "vancouver-09",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 9,
+  "name": "温哥华水族馆",
+  "rarity": "SR",
+  "intro": "温哥华水族馆在斯坦利公园里，是加拿大最早的水族馆之一。亚马逊展区的雨林潮湿闷热，玻璃后是藤蔓与鱼群；北极区里白鲸缓慢转身，水声低低地回响。室外的海豹池边总围着孩子，拍手叫喊。",
+  "file": "art/vancouver/09.jpg"
+ },
+ {
+  "id": "vancouver-10",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 10,
+  "name": "温哥华唐人街",
+  "rarity": "SR",
+  "intro": "唐人街的千禧门立在彭德街上，红柱绿瓦的中式牌楼对着西式老楼。中山公园里是仿明的园林，白墙、曲桥与一池锦鲤把喧闹隔在墙外。街边的干货铺把药材与海味摆到门口，招牌在风里轻轻作响。",
+  "file": "art/vancouver/10.jpg"
+ },
+ {
+  "id": "vancouver-11",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 11,
+  "name": "伊丽莎白女王公园",
+  "rarity": "SR",
+  "intro": "伊丽莎白女王公园建在一座小山上，原是采石场，如今凹下去的石壁被改成花园与瀑布。温室的玻璃穹顶下四季开着热带花，园外的坡地春天铺满樱花。站在观景台，温哥华的天际线与北岸雪山一次看全。",
+  "file": "art/vancouver/11.jpg"
+ },
+ {
+  "id": "vancouver-12",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 12,
+  "name": "范度森植物园",
+  "rarity": "SR",
+  "intro": "范度森植物园里种着来自世界各地的树木，小径在杜鹃与枫树之间弯来弯去。中心的游客中心屋顶做成兰花的形状，木结构一层层展开。园内的树篱迷宫不高，却总有人在里面转圈，笑声从绿墙后传来。",
+  "file": "art/vancouver/12.jpg"
+ },
+ {
+  "id": "vancouver-13",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 13,
+  "name": "科学世界",
+  "rarity": "SR",
+  "intro": "科学世界顶着巨大的银色测地线穹顶，立在被福溪环抱的半岛上，晴天像一颗放大的高尔夫球。馆内的展品可以动手，孩子追着电流与光影跑。夜里穹顶被灯染亮，倒影落在水面，桥与天车从旁边经过。",
+  "file": "art/vancouver/13.jpg"
+ },
+ {
+  "id": "vancouver-14",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 14,
+  "name": "狮门桥",
+  "rarity": "SR",
+  "intro": "狮门桥横跨布拉德内湾，两座桥塔把钢索拉成弧形，桥面从斯坦利公园直通北岸。车流在桥上排成光带，桥下的水被风吹皱。从公园的观景点看过去，桥、海与山叠在一起，温哥华的门面就在这儿。",
+  "file": "art/vancouver/14.jpg"
+ },
+ {
+  "id": "vancouver-15",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 15,
+  "name": "不列颠哥伦比亚大学",
+  "rarity": "SR",
+  "intro": "UBC 的校园伸到半岛的尽头，一边是森林，一边是悬崖下的海。人类学博物馆的巨型木梁与图腾柱最出名，玻璃幕墙外就是海景。学生抱着书穿过草地，远处渡轮慢慢驶过，校园像一座临海的小城。",
+  "file": "art/vancouver/15.jpg"
+ },
+ {
+  "id": "vancouver-16",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 16,
+  "name": "日落海滩",
+  "rarity": "SR",
+  "intro": "日落海滩在福溪的入口，沙滩不宽，却正对着市中心的高楼。傍晚人坐在石阶上，看玻璃幕墙把落日反射成一片橙。皮艇从水面滑过，岸边的步道一直通到英吉利湾，慢跑的人络绎不绝，海面收走最后一点光。",
+  "file": "art/vancouver/16.jpg"
+ },
+ {
+  "id": "vancouver-17",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 17,
+  "name": "格兰维尔街",
+  "rarity": "SR",
+  "intro": "格兰维尔街是市中心的娱乐街，剧院、酒吧与店铺的招牌一路延伸到夜里。周末的夜晚最热闹，人群从各处涌来，街头艺人在路口唱歌。霓虹映在湿路面上，天车从头顶的高架驶过，光在车窗里闪。",
+  "file": "art/vancouver/17.jpg"
+ },
+ {
+  "id": "vancouver-18",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 18,
+  "name": "朗斯代尔码头",
+  "rarity": "SR",
+  "intro": "从市中心坐海上巴士，几分钟就能到北温哥华的朗斯代尔码头。市场里卖水果、咖啡与手工艺品，码头的露台正对温哥华的天际线。买一杯咖啡坐在水边，看渡轮往返，城市隔着一道海湾显得安静。",
+  "file": "art/vancouver/18.jpg"
+ },
+ {
+  "id": "vancouver-19",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 19,
+  "name": "本拿比山",
+  "rarity": "SR",
+  "intro": "本拿比山在城市的东侧，山顶的草坪与步道对着整片低陆平原。西蒙弗雷泽大学的校园散在山脊上，天气好时可以望见海湾与远处的雪山。傍晚风大，云被吹成一条条，山下的灯一点点亮起，风把云推得很快。",
+  "file": "art/vancouver/19.jpg"
+ },
+ {
+  "id": "vancouver-20",
+  "city": "温哥华",
+  "citySlug": "vancouver",
+  "idx": 20,
+  "name": "西摩山",
+  "rarity": "SR",
+  "intro": "西摩山在北岸的森林里，冬天是滑雪与雪鞋的场地，夏天则换成登山与野餐。缆车穿过湿冷的杉林，山顶的雾随时会漫上来。从观景处往下看，温哥华的灯被云层切成几块，安静得能听见雪落。",
+  "file": "art/vancouver/20.jpg"
+ },
+ {
+  "id": "chicago-01",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 1,
+  "name": "云门",
+  "rarity": "UR",
+  "intro": "云门是一整块抛光不锈钢做成的豆形雕塑，立在千禧公园的广场上。镜面把天空、高楼与每一个走近的人都揉进同一张画面，边缘弯成哈哈镜。人从底下走过，看见自己被拉长又压扁，笑声在金属穹顶下回响，城市也在这里照见自己。",
+  "file": "art/chicago/01.jpg"
+ },
+ {
+  "id": "chicago-02",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 2,
+  "name": "威利斯大厦",
+  "rarity": "SR",
+  "intro": "威利斯大厦曾是世界最高楼，黑色的铝与玻璃立面一格一格升到四百多米。第一百零三层的观景台伸出几只玻璃盒子，人站进去，脚下就是街道与车流。黄昏时整座芝加哥铺在下方，密歇根湖像一块灰蓝色的铁。",
+  "file": "art/chicago/02.jpg"
+ },
+ {
+  "id": "chicago-03",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 3,
+  "name": "约翰·汉考克中心",
+  "rarity": "SR",
+  "intro": "约翰·汉考克中心是一根带交叉钢撑的黑色方柱，在一群平顶高楼里格外显眼。顶层的观景台能把人向外倾斜，玻璃贴着鼻尖，街道直直落下去。傍晚在这里看湖岸线，灯从北边一路亮到南边，风把整座城市吹得清醒。",
+  "file": "art/chicago/03.jpg"
+ },
+ {
+  "id": "chicago-04",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 4,
+  "name": "千禧公园",
+  "rarity": "SR",
+  "intro": "千禧公园沿密歇根湖铺开，云门、皇冠喷泉与普利兹克露天音乐厅挤在同一片绿地上。喷泉的两座塔用 LED 播着市民的脸，水从嘴里喷出来，孩子在下面尖叫着跑。夏天草坪上坐满听音乐会的人，风从湖面吹过来。",
+  "file": "art/chicago/04.jpg"
+ },
+ {
+  "id": "chicago-05",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 5,
+  "name": "海军码头",
+  "rarity": "SR",
+  "intro": "海军码头一直伸进密歇根湖，木栈道两侧是游乐场、剧院与卖爆米花的小摊。百年摩天轮慢慢转，转到最高处能看见整条湖岸与市中心。夏天的傍晚，游船进港，孩子们的棉花糖在风里晃，湖面被夕阳照得发红。",
+  "file": "art/chicago/05.jpg"
+ },
+ {
+  "id": "chicago-06",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 6,
+  "name": "芝加哥艺术博物馆",
+  "rarity": "SR",
+  "intro": "芝加哥艺术博物馆门口蹲着两只青铜狮子，石阶被几代人踩得发亮。馆内从修拉的《大碗岛的星期天》到霍普的《夜鹰》，展厅一间连着一间。美国之翼的玻璃窗对着公园，看画的人坐在窗前休息，光落在地板上。",
+  "file": "art/chicago/06.jpg"
+ },
+ {
+  "id": "chicago-07",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 7,
+  "name": "菲尔德自然史博物馆",
+  "rarity": "SR",
+  "intro": "菲尔德博物馆的大厅里站着一具霸王龙骨架，编号 Sue，头骨低低地朝向前方。展柜里有埃及木乃伊、北美原住民的图腾与一颗颗陨石。孩子在骨骼下仰头张望，讲解员敲着石头讲地层，时间在这里被拉成几亿年。",
+  "file": "art/chicago/07.jpg"
+ },
+ {
+  "id": "chicago-08",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 8,
+  "name": "谢德水族馆",
+  "rarity": "SR",
+  "intro": "谢德水族馆立在小半岛上，白色石造建筑对着湖与天际线。亚马逊展厅的雨林湿气扑面，玻璃后是游动的鱼群与盘绕的藤蔓；加勒比礁池里，鲨鱼与珊瑚共享一池蓝。门口的石阶上常有人坐着，看湖面被风吹皱。",
+  "file": "art/chicago/08.jpg"
+ },
+ {
+  "id": "chicago-09",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 9,
+  "name": "白金汉喷泉",
+  "rarity": "SR",
+  "intro": "白金汉喷泉在格兰特公园中央，是芝加哥最大的喷泉，水柱能喷到四十多米高。粉色花岗岩的基座雕着海马与神话人物，晚上灯光从水下打上来，水雾变成一层彩色的幕。夏天傍晚，人坐在池边，风把细水珠吹到脸上。",
+  "file": "art/chicago/09.jpg"
+ },
+ {
+  "id": "chicago-10",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 10,
+  "name": "芝加哥河滨步道",
+  "rarity": "SR",
+  "intro": "芝加哥河从市中心穿过去，两岸是密排的高楼，河滨步道贴着水面一层层铺开。皮艇与观光船在河里慢慢走，桥洞下挂着灯。坐在河边的台阶上，抬头是建筑的峡谷，水面把玻璃幕墙的倒影揉成一片碎光。",
+  "file": "art/chicago/10.jpg"
+ },
+ {
+  "id": "chicago-11",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 11,
+  "name": "密歇根湖",
+  "rarity": "SR",
+  "intro": "密歇根湖大得像海，湖岸线从市中心一直铺到北边，沙滩、码头与自行车道连成一片。夏天的湖面是深蓝的，帆船点点；冬天风把浪推到堤上，结出一层白冰。站在岸边，水一直铺到看不见的地方，城市像停在洋边。",
+  "file": "art/chicago/11.jpg"
+ },
+ {
+  "id": "chicago-12",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 12,
+  "name": "瑞格利球场",
+  "rarity": "SR",
+  "intro": "瑞格利球场是芝加哥小熊队的老主场，红砖墙爬满常春藤，门口的绿色霓虹招牌写着 Wrigley Field。看台是老式的钢架，球迷挤在座位上唱歌。第八局全场一起唱《带我去看棒球》，声音从球场传到街区的屋顶。",
+  "file": "art/chicago/12.jpg"
+ },
+ {
+  "id": "chicago-13",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 13,
+  "name": "林肯公园",
+  "rarity": "SR",
+  "intro": "林肯公园沿着湖岸铺开，草地、池塘与动物园连成一大片。温室里的棕榈与兰花四季常绿，园外的步道上跑步的人不断。秋天的树变成铜色，落叶堆在路边；冬天湖面结冰，只有几艘船还停在港口里。",
+  "file": "art/chicago/13.jpg"
+ },
+ {
+  "id": "chicago-14",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 14,
+  "name": "芝加哥剧院",
+  "rarity": "SR",
+  "intro": "芝加哥剧院的招牌立在州街上，白底红字一圈圈亮着，是老城最醒目的霓虹。厅内的天花板绘着金红相间的图案，吊灯像一颗倒挂的星。看演出的人从地毯上走过，幕布拉开前，整座大厅都在低声说话。",
+  "file": "art/chicago/14.jpg"
+ },
+ {
+  "id": "chicago-15",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 15,
+  "name": "华丽一英里",
+  "rarity": "SR",
+  "intro": "密歇根大道从河到橡树街这一段被叫作华丽一英里，两边是百货公司、老教堂与玻璃高楼。橱窗的灯在傍晚亮起，行人提着购物袋慢慢走。街角的报亭与咖啡摊还开着，风从湖那边吹来，把旗子吹得笔直。",
+  "file": "art/chicago/15.jpg"
+ },
+ {
+  "id": "chicago-16",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 16,
+  "name": "科学与工业博物馆",
+  "rarity": "SR",
+  "intro": "科学与工业博物馆占着昔日的博览会展馆，展厅大得能装下一整节火车与一艘潜艇。煤矿坑道可以走进去，头顶的灯一盏盏灭掉，只剩下回声。孩子围着龙卷风演示器转，大人趴在玻璃上看齿轮怎么咬合。",
+  "file": "art/chicago/16.jpg"
+ },
+ {
+  "id": "chicago-17",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 17,
+  "name": "芝加哥唐人街",
+  "rarity": "SR",
+  "intro": "芝加哥唐人街的入口立着一座中式牌楼，红柱绿顶对着街口的九龙壁。永活街两侧是点心铺、茶楼与杂货店，橱窗里挂着烧鸭。夏天街上有集市，灯笼从牌楼一直挂到巷子深处，锣鼓声从远处传来。",
+  "file": "art/chicago/17.jpg"
+ },
+ {
+  "id": "chicago-18",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 18,
+  "name": "芝加哥大学",
+  "rarity": "SR",
+  "intro": "芝加哥大学的校园是哥特式的，石墙、尖塔与拱廊围出一个个方院，像从英国搬来的一角。图书馆的阅览室高而安静，彩窗把光滤成暖色。赖特的罗比住宅就在附近，低矮的水平线条与校园的尖顶形成两种时代。",
+  "file": "art/chicago/18.jpg"
+ },
+ {
+  "id": "chicago-19",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 19,
+  "name": "北河区",
+  "rarity": "SR",
+  "intro": "北河区在河以北，旧仓库被改成画廊、餐厅与酒吧，砖墙上留着褪色的广告字。傍晚街上人渐渐多起来，门口的服务生招呼客人，音乐从半开的门里漏出。走到河边，高楼的灯落在水里，夜色正好。",
+  "file": "art/chicago/19.jpg"
+ },
+ {
+  "id": "chicago-20",
+  "city": "芝加哥",
+  "citySlug": "chicago",
+  "idx": 20,
+  "name": "阿德勒天文馆",
+  "rarity": "SR",
+  "intro": "阿德勒天文馆在一座小岛上，铜绿的圆顶对着湖与天际线。馆内的星空剧场把银河投在穹顶，观众仰着头，像躺在野地里。馆外的日晷与雕塑排成一列，回望城市，高楼在水中排成另一座城，湖风从台阶上掠过。",
+  "file": "art/chicago/20.jpg"
+ },
+ {
+  "id": "washingtondc-01",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 1,
+  "name": "美国国会大厦",
+  "rarity": "UR",
+  "intro": "国会大厦坐在国会山的顶端，白色大理石立面与层层台阶托起中央的穹顶，穹顶上的自由雕像面向城市。国家广场从脚下一直铺到林肯纪念堂，两侧是博物馆与榆树。傍晚穹顶被夕照染成蜜色，台阶上坐着人，看整条轴线慢慢暗下去。",
+  "file": "art/washingtondc/01.jpg"
+ },
+ {
+  "id": "washingtondc-02",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 2,
+  "name": "白宫",
+  "rarity": "SR",
+  "intro": "白宫藏在拉斐特广场北侧，白色的门廊与柱廊被铁栅栏与草坪围住。南草坪的喷泉在风里扬起水雾，北面的车道上来往的车都很安静。游客贴着栏杆张望，特勤人员站在屋顶与树后，权力在这里显得出奇地日常。",
+  "file": "art/washingtondc/02.jpg"
+ },
+ {
+  "id": "washingtondc-03",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 3,
+  "name": "华盛顿纪念碑",
+  "rarity": "SR",
+  "intro": "华盛顿纪念碑是一根白色方尖碑，高一百六十多米，从国家广场的任何角度都能看见。碑身没有装饰，只在顶端收成尖角，倒映在长长的水池里。乘电梯上去，四个方向各有小窗，城市与河流在脚下摊平。",
+  "file": "art/washingtondc/03.jpg"
+ },
+ {
+  "id": "washingtondc-04",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 4,
+  "name": "林肯纪念堂",
+  "rarity": "SR",
+  "intro": "林肯纪念堂是一座希腊神庙式的白色建筑，三十六根柱子对着倒影池。厅内的林肯坐像由大理石雕成，目光朝向华盛顿纪念碑。台阶上常有人坐着，清晨的雾浮在水面，碑与堂在一条轴线上遥遥相对。",
+  "file": "art/washingtondc/04.jpg"
+ },
+ {
+  "id": "washingtondc-05",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 5,
+  "name": "杰斐逊纪念堂",
+  "rarity": "SR",
+  "intro": "杰斐逊纪念堂立在潮汐湖南岸，圆形的柱廊与低矮的穹顶被樱花树围住。厅内的青铜像站在穹顶下，四周墙上刻着他写的句子。春天湖面漂着花瓣，柱子把影子投在水里，风一过，倒影就散成碎纹。",
+  "file": "art/washingtondc/05.jpg"
+ },
+ {
+  "id": "washingtondc-06",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 6,
+  "name": "国家广场",
+  "rarity": "SR",
+  "intro": "国家广场是一条长长的绿带，从国会山直通林肯纪念堂，两侧排着史密森尼的博物馆群。草坪上有人在踢球，有人骑单车，纪念碑与旗杆在远处立着。樱花季最挤，平日里却空得能听见风筝线的响声。",
+  "file": "art/washingtondc/06.jpg"
+ },
+ {
+  "id": "washingtondc-07",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 7,
+  "name": "国家自然历史博物馆",
+  "rarity": "SR",
+  "intro": "自然历史博物馆的圆顶大厅中央站着那头著名的非洲象，灯光从上方落下。展柜里有蓝鲸的模型、宝石与陨石，希望钻石在暗处泛着蓝光。孩子趴在玻璃前数恐龙肋骨，大人抬头看天花板的穹顶画。",
+  "file": "art/washingtondc/07.jpg"
+ },
+ {
+  "id": "washingtondc-08",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 8,
+  "name": "国家航空航天博物馆",
+  "rarity": "SR",
+  "intro": "航空航天博物馆的大厅里挂着飞机与火箭，从莱特兄弟的双翼机到阿波罗登月的返回舱，全部悬在头顶。登月舱的灰色外壳还带着灼痕，参观的人从下方走过，抬头看得很久。孩子按着模拟器，屏幕上的轨道一圈圈转。",
+  "file": "art/washingtondc/08.jpg"
+ },
+ {
+  "id": "washingtondc-09",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 9,
+  "name": "国家美术馆",
+  "rarity": "SR",
+  "intro": "国家美术馆分东西两馆，西馆是古典的圆顶大厅，东馆是贝聿铭设计的三角玻璃。达·芬奇的《吉内薇拉》藏在西馆的展厅深处，东馆的移动雕塑在光里缓慢旋转。两馆之间有一条地下通道，走过去像穿过时代。",
+  "file": "art/washingtondc/09.jpg"
+ },
+ {
+  "id": "washingtondc-10",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 10,
+  "name": "越战纪念碑",
+  "rarity": "SR",
+  "intro": "越战纪念碑是一道黑色的花岗岩墙，从草坡里切下去，像一条折回的伤口。墙上密密刻着五万多个名字，人弯腰在纸上拓印。有人在墙前放下花与旗，倒影里能看见自己的脸，安静得只剩脚步声。",
+  "file": "art/washingtondc/10.jpg"
+ },
+ {
+  "id": "washingtondc-11",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 11,
+  "name": "马丁·路德·金纪念碑",
+  "rarity": "SR",
+  "intro": "马丁·路德·金纪念碑立在潮汐湖的西北角，一块巨石被从中切开，他从石缝里走出来。石面上刻着「走出绝望之山」的句子，两侧是弧形石墙。冬天湖面安静，石像望着水，像还在说那天的梦。",
+  "file": "art/washingtondc/11.jpg"
+ },
+ {
+  "id": "washingtondc-12",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 12,
+  "name": "潮汐湖樱花",
+  "rarity": "SR",
+  "intro": "每年三月底，潮汐湖一圈的樱花一起开，粉白的花把湖岸压得很低。花瓣落在水面上，划船的人慢慢穿过。清晨的雾还没散，摄影师架着三脚架等光；傍晚人挤在树下，风一吹就是一场花雨，湖面浮着一层花瓣。",
+  "file": "art/washingtondc/12.jpg"
+ },
+ {
+  "id": "washingtondc-13",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 13,
+  "name": "乔治城",
+  "rarity": "SR",
+  "intro": "乔治城是城西的老街区，联邦式的联排屋刷成各种颜色，门口挂着铜牌与花篮。M 街两侧是店铺与餐馆，运河边的小路安静得多。石铺的巷子里停着车，学生从坡上走下来，像走进十九世纪。",
+  "file": "art/washingtondc/13.jpg"
+ },
+ {
+  "id": "washingtondc-14",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 14,
+  "name": "国会图书馆",
+  "rarity": "SR",
+  "intro": "国会图书馆的主阅览室是一个巨大的圆厅，穹顶画着彩绘，书架一圈圈升到高处。读者在长桌上伏案，台灯把桌面照成一小块暖黄。馆藏里有《古腾堡圣经》与杰斐逊的私人书库，推门进去，声音会不自觉地放轻。",
+  "file": "art/washingtondc/14.jpg"
+ },
+ {
+  "id": "washingtondc-15",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 15,
+  "name": "美国最高法院",
+  "rarity": "SR",
+  "intro": "最高法院的大理石立面刻着「Equal Justice Under Law」，台阶宽阔，柱廊庄重。推开铜门，庭内深红的帷幕与高背座椅显得肃穆，旁听席安静。门前常有举着标语的人，警察站在阴影里，石板被晒得发白。",
+  "file": "art/washingtondc/15.jpg"
+ },
+ {
+  "id": "washingtondc-16",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 16,
+  "name": "联合车站",
+  "rarity": "SR",
+  "intro": "联合车站是一座布杂艺术的宫殿，花岗岩外墙、拱形大窗与巨大的候车厅像为帝国准备的。厅内的石膏柱与金色装饰在灯下泛暖，旅客拖着箱子从石地上走过。地下是美食广场，披萨与咖啡的味道混在一起。",
+  "file": "art/washingtondc/16.jpg"
+ },
+ {
+  "id": "washingtondc-17",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 17,
+  "name": "阿灵顿国家公墓",
+  "rarity": "SR",
+  "intro": "阿灵顿国家公墓在河对岸的山坡上，白色的墓碑一排排铺开，弧形排列得像波纹。无名战士墓前，卫兵每隔一段时间踏步换岗，动作一丝不乱。站在坡顶回望，林肯纪念堂与华盛顿纪念碑在河那边立着。",
+  "file": "art/washingtondc/17.jpg"
+ },
+ {
+  "id": "washingtondc-18",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 18,
+  "name": "肯尼迪表演艺术中心",
+  "rarity": "SR",
+  "intro": "肯尼迪中心立在波托马克河边，白色的大理石柱廊把整座建筑撑得很高，像一座悬在空中的殿堂。厅内的红地毯与水晶灯依次亮起，演出前大厅里到处是人。露台上能看见河水与对岸的乔治城，风把旗吹响。",
+  "file": "art/washingtondc/18.jpg"
+ },
+ {
+  "id": "washingtondc-19",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 19,
+  "name": "国家档案馆",
+  "rarity": "SR",
+  "intro": "国家档案馆的圆形大厅里灯光压得很低，正中玻璃柜内摆着《独立宣言》《宪法》与《权利法案》。纸面泛黄，墨迹在灯下清晰，参观的人排成一列慢慢走过。库房里的空气被严格控制，历史的重量落在这几页纸上。",
+  "file": "art/washingtondc/19.jpg"
+ },
+ {
+  "id": "washingtondc-20",
+  "city": "华盛顿特区",
+  "citySlug": "washingtondc",
+  "idx": 20,
+  "name": "罗斯福纪念公园",
+  "rarity": "SR",
+  "intro": "罗斯福纪念公园在潮汐湖的一侧，四段露天空间代表他的四个任期，石墙、跌水与青铜像连成一条路线。罗斯福与狗的雕像坐在石阶旁，游客会挨着坐下拍照。水从花岗岩上层层落下，树影把整片园区压得很静。",
+  "file": "art/washingtondc/20.jpg"
+ },
+ {
+  "id": "sanfrancisco-01",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 1,
+  "name": "金门大桥",
+  "rarity": "UR",
+  "intro": "金门大桥横跨海峡入口，两座桥塔把国际橘的钢索拉成两道弧，雾从海上漫过来时只露出塔尖。桥面的人行道窄窄一条，风大得要把人推着走。走到桥中央回望，旧金山的坡城一层层叠起，海湾里的船拖着白痕。",
+  "file": "art/sanfrancisco/01.jpg"
+ },
+ {
+  "id": "sanfrancisco-02",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 2,
+  "name": "渔人码头",
+  "rarity": "SR",
+  "intro": "渔人码头沿杰斐逊街铺开，木栈道上是海鲜摊、酸面包汤与街头艺人。海狮在 39 号码头的浮台上晒太阳，叫声一阵阵传过来。远处恶魔岛浮在雾里，观光船一艘接一艘出港，风带着海腥味。",
+  "file": "art/sanfrancisco/02.jpg"
+ },
+ {
+  "id": "sanfrancisco-03",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 3,
+  "name": "恶魔岛",
+  "rarity": "SR",
+  "intro": "恶魔岛在海湾中央，白色主楼与岗塔立在一块光秃的岩石上。这里曾是联邦监狱，牢房窄得只能放一张床，铁门上的漆掉了又刷。坐渡轮靠近，海风冷得刺骨，岛上的桉树与旧墙都带着一种说不出的安静。",
+  "file": "art/sanfrancisco/03.jpg"
+ },
+ {
+  "id": "sanfrancisco-04",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 4,
+  "name": "九曲花街",
+  "rarity": "SR",
+  "intro": "九曲花街是伦巴底街最陡的一段，八个急弯折在一条砖砌的坡道上，两侧种满绣球与玫瑰。车要一点点挪下来，司机探着头看轮子；行人沿台阶往上走，走到顶就看见海湾与科伊特塔。花开时整条坡像一条彩带。",
+  "file": "art/sanfrancisco/04.jpg"
+ },
+ {
+  "id": "sanfrancisco-05",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 5,
+  "name": "联合广场",
+  "rarity": "SR",
+  "intro": "联合广场是市中心的心脏，四周是百货公司与老酒店，中央的纪念碑与棕榈树被电车轨道围住。节日时广场上摆出溜冰场或圣诞树，平日里人坐在台阶上等人。缆车从坡下哐当哐当上来，铃声响过整个街区。",
+  "file": "art/sanfrancisco/05.jpg"
+ },
+ {
+  "id": "sanfrancisco-06",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 6,
+  "name": "旧金山唐人街",
+  "rarity": "SR",
+  "intro": "唐人街的龙门立在格兰特大道口，绿瓦红柱，两侧蹲着石狮。街里挂满红灯笼与中文招牌，点心铺的蒸笼冒着白气，药材店把整面墙做成抽屉。斜坡很陡，人往上走要低着头，电车从旁边的街道叮当而过。",
+  "file": "art/sanfrancisco/06.jpg"
+ },
+ {
+  "id": "sanfrancisco-07",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 7,
+  "name": "渡轮大厦",
+  "rarity": "SR",
+  "intro": "渡轮大厦立在海边，钟楼在整点敲响，市场里是奶酪、面包与生蚝摊。早市最热闹，本地人提着菜篮挑蘑菇，咖啡的香气一直飘到门外。走到后面的码头，海湾大桥横在海上，渡轮靠岸，风把桌布吹得鼓起。",
+  "file": "art/sanfrancisco/07.jpg"
+ },
+ {
+  "id": "sanfrancisco-08",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 8,
+  "name": "艺术宫",
+  "rarity": "SR",
+  "intro": "艺术宫原是万国博览会的展馆，如今只剩一座圆顶与柱廊，对着一个小湖。罗马式的柱子被藤蔓缠住，天鹅在湖里游，倒影把建筑拉成两半。周末常有人在这里拍婚纱，风一吹，水面就皱成一片银。",
+  "file": "art/sanfrancisco/08.jpg"
+ },
+ {
+  "id": "sanfrancisco-09",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 9,
+  "name": "双子峰",
+  "rarity": "SR",
+  "intro": "双子峰是城里的两座小山，车可以一直开到山顶的观景台。整座旧金山在脚下铺开，街道像格子一样压在坡上，海湾与金门大桥在远处。傍晚风很冷，人裹着外套看灯一盏盏亮起来，雾从西边涌进城市。",
+  "file": "art/sanfrancisco/09.jpg"
+ },
+ {
+  "id": "sanfrancisco-10",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 10,
+  "name": "金门公园",
+  "rarity": "SR",
+  "intro": "金门公园从市中心一直伸到海边，比纽约的中央公园还长。园里有湖、温室、风车与日本茶园，骑单车的人从桉树林下穿过。周末的草坪上有人野餐、打鼓、放风筝，雾从太平洋那边漫过来，把树梢压得很低。",
+  "file": "art/sanfrancisco/10.jpg"
+ },
+ {
+  "id": "sanfrancisco-11",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 11,
+  "name": "加州科学院",
+  "rarity": "SR",
+  "intro": "加州科学院顶着起伏的绿色屋顶，整座建筑像从地里长出来的草丘。馆内有四层楼高的雨林穹顶，蝴蝶在头顶飞，水下展区里是亚马逊的鱼。屋顶的玻璃天窗会自己打开散热，科学在这里被做成了可以走进去的生态。",
+  "file": "art/sanfrancisco/11.jpg"
+ },
+ {
+  "id": "sanfrancisco-12",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 12,
+  "name": "德扬博物馆",
+  "rarity": "SR",
+  "intro": "德扬博物馆在金门公园里，铜板包着的塔楼被氧化成斑驳的绿褐色，表面刻着细密的孔。馆内的美国艺术与非洲藏品沿长廊摆开，塔顶的观景层能看见公园与海湾。铜墙在夕阳下变成暖色，像一块被时间摸旧的金属。",
+  "file": "art/sanfrancisco/12.jpg"
+ },
+ {
+  "id": "sanfrancisco-13",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 13,
+  "name": "日本茶园",
+  "rarity": "SR",
+  "intro": "日本茶园藏在金门公园里，是北美最老的日式庭园。拱桥、石灯与修剪的松树围着一池锦鲤，五重塔立在坡上。春天樱花压满枝头，夏天有抹茶与点心。小径转一个弯就换一处景，脚步声在碎石上很轻。",
+  "file": "art/sanfrancisco/13.jpg"
+ },
+ {
+  "id": "sanfrancisco-14",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 14,
+  "name": "甲骨文球场",
+  "rarity": "SR",
+  "intro": "甲骨文球场是旧金山巨人队的主场，球场紧贴着海湾，右外野的栏杆外就是水。比赛时有人划着皮艇等本垒打落水，看台上的人举着手套。第八局全场一起唱《带我回旧金山》，海风把旗子吹得直响。",
+  "file": "art/sanfrancisco/14.jpg"
+ },
+ {
+  "id": "sanfrancisco-15",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 15,
+  "name": "彩绘女士",
+  "rarity": "SR",
+  "intro": "彩绘女士是阿拉莫广场旁的一排维多利亚式联排屋，六栋房子刷成不同的颜色，尖顶与凸窗一层层排开。草坪的坡上总有人坐着拍照，城市的高楼在她们背后升起。黄昏时屋子的颜色变暖，像一排立着的旧明信片。",
+  "file": "art/sanfrancisco/15.jpg"
+ },
+ {
+  "id": "sanfrancisco-16",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 16,
+  "name": "卡斯楚剧院",
+  "rarity": "SR",
+  "intro": "卡斯楚剧院立在卡斯楚街上，霓虹招牌与西班牙殖民式的立面在夜里发亮。厅内的天花板像一顶星形的帐篷，管风琴在开场前升起。这里放过无数老电影，观众会在字幕响起时一起鼓掌，街区至今仍挂着彩虹旗。",
+  "file": "art/sanfrancisco/16.jpg"
+ },
+ {
+  "id": "sanfrancisco-17",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 17,
+  "name": "海湾大桥",
+  "rarity": "SR",
+  "intro": "海湾大桥从市中心跨到奥克兰，西段是新桥，白色的塔与斜拉的钢索在海上排成一列。夜里桥上的灯串成一条光带，从渡轮大厦的码头看过去，桥拱与倒影合成一只眼睛。车流在桥上不停，海面被风推得发亮。",
+  "file": "art/sanfrancisco/17.jpg"
+ },
+ {
+  "id": "sanfrancisco-18",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 18,
+  "name": "科伊特塔",
+  "rarity": "SR",
+  "intro": "科伊特塔立在电报山上，是一根白色的圆柱，顶上收成一个小平台。塔内的壁画绘着上世纪三十年代的加州生活，颜色还很鲜。乘电梯到顶上，港口、海湾大桥与整片屋顶都在下面，风从窗口灌进来。",
+  "file": "art/sanfrancisco/18.jpg"
+ },
+ {
+  "id": "sanfrancisco-19",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 19,
+  "name": "海特-阿什伯里",
+  "rarity": "SR",
+  "intro": "海特-阿什伯里的街角还留着「嬉皮士之丘」的名声，维多利亚式的房子被刷成紫色与绿色。二手唱片店、旧书铺与卖扎染的店铺挤在街边，墙上是褪色的壁画。走在坡道上，能闻到咖啡与熏香混在一起的味道。",
+  "file": "art/sanfrancisco/19.jpg"
+ },
+ {
+  "id": "sanfrancisco-20",
+  "city": "旧金山",
+  "citySlug": "sanfrancisco",
+  "idx": 20,
+  "name": "39号码头",
+  "rarity": "SR",
+  "intro": "39号码头伸进海湾，木栈道上是纪念品店、螃蟹摊与旋转木马。成群的加州海狮趴在浮台上，晒太阳、争吵、扑通跳进水里。栈道尽头能望见恶魔岛与金门大桥，海鸥在头顶抢食，风里全是海的味道。",
+  "file": "art/sanfrancisco/20.jpg"
+ },
+ {
+  "id": "losangeles-01",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 1,
+  "name": "好莱坞标志",
+  "rarity": "UR",
+  "intro": "好莱坞标志钉在圣莫尼卡山的南坡上，九个白色字母每个都有十几米高。从山下的街区抬头，字母被灌木与尘土托着，远远看去并不大；走到近处才知道它们有多重。黄昏时山坡变成金色，字母投下长长的影子，整座城市在脚下发亮。",
+  "file": "art/losangeles/01.jpg"
+ },
+ {
+  "id": "losangeles-02",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 2,
+  "name": "格里菲斯天文台",
+  "rarity": "SR",
+  "intro": "格里菲斯天文台立在好莱坞的山脊上，白色外墙与黑色圆顶对着整片洛杉矶盆地。馆内的傅科摆一格一格地转，穹顶投影把星空铺满。日落时露台挤满人，看城市从灰蓝变成橘红，灯从山脚一路亮到海边。",
+  "file": "art/losangeles/02.jpg"
+ },
+ {
+  "id": "losangeles-03",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 3,
+  "name": "好莱坞星光大道",
+  "rarity": "SR",
+  "intro": "星光大道沿好莱坞大道的人行道铺开，粉色水磨石里嵌着两千多颗铜边五角星。每颗星上刻着名字，游客低头找自己认得的那个，蹲下来拍照。街上有人扮成电影角色招揽合影，戏院的招牌在头顶一直亮到深夜。",
+  "file": "art/losangeles/03.jpg"
+ },
+ {
+  "id": "losangeles-04",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 4,
+  "name": "好莱坞环球影城",
+  "rarity": "SR",
+  "intro": "环球影城建在山坡上，游览车沿着片场绕一圈，经过假街景、洪水与火灾现场。影城里有过山车与特效表演，孩子在水花里尖叫。入口的红毯与地球仪雕塑前排着长队，加州的太阳把整座园区晒得发白。",
+  "file": "art/losangeles/04.jpg"
+ },
+ {
+  "id": "losangeles-05",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 5,
+  "name": "圣莫尼卡海滩",
+  "rarity": "SR",
+  "intro": "圣莫尼卡海滩从码头两侧铺开，沙滩很宽，太平洋的浪一层层推上来。码头上的摩天轮与过山车在日落时亮起，玩滑板的人从坡道上冲下。沙滩排球的网一排排立着，海鸥在垃圾桶边踱步，风里带着盐味。",
+  "file": "art/losangeles/05.jpg"
+ },
+ {
+  "id": "losangeles-06",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 6,
+  "name": "威尼斯海滩",
+  "rarity": "SR",
+  "intro": "威尼斯海滩的步道比沙滩更热闹，滑板场、篮球场与肌肉海滩挨在一起。街头艺人弹着鼓，卖画的人把作品铺在地上，穿轮滑的人从人群里穿过去。棕榈树在步道边排成一行，落日把整条海岸染成橘色。",
+  "file": "art/losangeles/06.jpg"
+ },
+ {
+  "id": "losangeles-07",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 7,
+  "name": "比佛利山庄",
+  "rarity": "SR",
+  "intro": "比佛利山庄的街道被梧桐与棕榈围住，白色的大宅藏在树篱后面，门口停着擦得发亮的车。罗迪欧大道上的橱窗摆得讲究，店员站在门内。走在人行道上，喷泉的水声很轻，整片街区安静得像被修剪过。",
+  "file": "art/losangeles/07.jpg"
+ },
+ {
+  "id": "losangeles-08",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 8,
+  "name": "罗迪欧大道",
+  "rarity": "SR",
+  "intro": "罗迪欧大道从比佛利山庄的坡上一路下去，两侧是奢侈品牌的旗舰店，橱窗像一座座小剧场。街上的人在逛街，也有人只是来看橱窗与车。黄昏时路灯与橱窗一齐亮起，棕榈树的影子落在人行道上。",
+  "file": "art/losangeles/08.jpg"
+ },
+ {
+  "id": "losangeles-09",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 9,
+  "name": "盖蒂中心",
+  "rarity": "SR",
+  "intro": "盖蒂中心建在圣莫尼卡山的顶上，白色的建筑群由石墙与曲线连成，花园里种着仙人掌与橄榄树。馆藏有凡·高的《鸢尾花》与古典雕塑，露台的视野能一直看到海边。坐缆车上山，城市的噪音被留在坡下。",
+  "file": "art/losangeles/09.jpg"
+ },
+ {
+  "id": "losangeles-10",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 10,
+  "name": "洛杉矶县艺术博物馆",
+  "rarity": "SR",
+  "intro": "洛杉矶县艺术博物馆的入口立着一排黄色灯柱，Urban Light 在夜里亮成一片。馆内的展品从古代器物到当代装置，庭院的棕榈与水池把光切开。看完展出来，灯柱下总有人在拍照，城市的夜才刚刚开始。",
+  "file": "art/losangeles/10.jpg"
+ },
+ {
+  "id": "losangeles-11",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 11,
+  "name": "道奇体育场",
+  "rarity": "SR",
+  "intro": "道奇体育场嵌在山谷里，看台一层层往上，背后是圣盖博山的轮廓。开赛前球迷在场外排队，蓝色球衣铺满座位。第七局全场静下来听广播，随后一起伸展手臂；远处的棕榈树被夕阳照着，球场像一只盛满人的碗。",
+  "file": "art/losangeles/11.jpg"
+ },
+ {
+  "id": "losangeles-12",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 12,
+  "name": "加密网竞技场",
+  "rarity": "SR",
+  "intro": "加密网竞技场在市中心，湖人队与国王队的比赛夜，门口聚满穿球衣的人。馆内的灯从穹顶压下来，球场被照得发亮，观众席的声浪一层高过一层。场外的大屏幕播着比赛，路过的人也停下来抬头看。",
+  "file": "art/losangeles/12.jpg"
+ },
+ {
+  "id": "losangeles-13",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 13,
+  "name": "迪士尼乐园",
+  "rarity": "SR",
+  "intro": "迪士尼乐园在阿纳海姆，主街的钟楼与城堡一眼就能认出来。花车巡游时音乐从街两头涌来，扮成角色的演员向孩子挥手。晚上城堡上放烟花，人挤在主街的尽头仰头看，光落在每个人的脸上。",
+  "file": "art/losangeles/13.jpg"
+ },
+ {
+  "id": "losangeles-14",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 14,
+  "name": "中央市场",
+  "rarity": "SR",
+  "intro": "中央市场从一九一七年开到现在，铁架天花板下挤着几十个摊位，墨西哥卷饼、烧腊与鲜榨果汁挨在一起。厨师在铁板前翻动食材，油声与叫号声混成一片。坐在高脚凳上吃一份早餐，看市中心的人来来去去。",
+  "file": "art/losangeles/14.jpg"
+ },
+ {
+  "id": "losangeles-15",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 15,
+  "name": "洛杉矶市政厅",
+  "rarity": "SR",
+  "intro": "洛杉矶市政厅是一座白色的塔楼，顶上收成金字塔形，据说是照古希腊的摩索拉斯陵墓建的。台阶前的广场有喷泉与旗杆，办手续的人在门口排队。登到观景层，市中心的玻璃楼与远处的山连成一条线。",
+  "file": "art/losangeles/15.jpg"
+ },
+ {
+  "id": "losangeles-16",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 16,
+  "name": "华兹塔",
+  "rarity": "SR",
+  "intro": "华兹塔在城南的居民区里，是意大利移民西蒙·罗迪亚用废铁、瓷片与玻璃独自搭起的三座高塔。塔身缠满钢筋与彩色的碎片，像从地里长出来的奇异植物。走近看，每一圈都嵌着瓶盖与贝壳，风一吹，铁架轻轻作响。",
+  "file": "art/losangeles/16.jpg"
+ },
+ {
+  "id": "losangeles-17",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 17,
+  "name": "马里布海滩",
+  "rarity": "SR",
+  "intro": "马里布海滩沿着一号公路铺开，崖壁与太平洋之间只有一条窄窄的沙带。冲浪的人抱着板走向浪线，海鸟在礁石上站着。黄昏时公路上的车灯一盏盏亮起，海面把最后的光反回来，山影压在海平线上。",
+  "file": "art/losangeles/17.jpg"
+ },
+ {
+  "id": "losangeles-18",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 18,
+  "name": "鲁尼恩峡谷",
+  "rarity": "SR",
+  "intro": "鲁尼恩峡谷在好莱坞的山里，土路一圈圈盘上去，跑步的人和遛狗的人擦身而过。坡顶的平地能看见整片洛杉矶，从市中心的高楼到海边的雾。清晨空气还凉，草地上有人做瑜伽，城市的声响被山挡在外面。",
+  "file": "art/losangeles/18.jpg"
+ },
+ {
+  "id": "losangeles-19",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 19,
+  "name": "布洛德博物馆",
+  "rarity": "SR",
+  "intro": "布洛德博物馆在市中心，白色的蜂窝状立面像一层折纸。馆内是当代艺术的私人收藏，草间弥生的无限镜屋要排队进去，进去只有几十秒。展厅里巨幅的画与雕塑铺开，免费开放，门口总有人排着队。",
+  "file": "art/losangeles/19.jpg"
+ },
+ {
+  "id": "losangeles-20",
+  "city": "洛杉矶",
+  "citySlug": "losangeles",
+  "idx": 20,
+  "name": "小东京",
+  "rarity": "SR",
+  "intro": "小东京在市中心北边，入口的牌楼写着日文，街上挂着纸灯笼。拉面店门口排着队，超市里摆着调味料与便当，书店的架上是漫画。广场上有太鼓表演，鼓声一起，整条街的人都停下来看，鼓点压着脚步。",
+  "file": "art/losangeles/20.jpg"
+ },
+ {
+  "id": "buenosaires-01",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 1,
+  "name": "方尖碑",
+  "rarity": "UR",
+  "intro": "方尖碑立在七月九日大道的正中央，六十七米高的白色碑身没有多余装饰，只有四面的窗与顶端的尖角。夜里车流从碑两侧涌过，灯把碑照得像一块竖起的骨头。节日时人从四面八方聚到碑下，欢呼声在楼群间回响。",
+  "file": "art/buenosaires/01.jpg"
+ },
+ {
+  "id": "buenosaires-02",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 2,
+  "name": "五月广场",
+  "rarity": "SR",
+  "intro": "五月广场是布宜诺斯艾利斯的起点，中央的金字塔纪念碑上立着自由女神像。广场四周是玫瑰宫、大都会教堂与市政厅，石板被无数脚步磨得发亮。周四下午，五月广场的母亲们戴白头巾绕行，沉默而固执。",
+  "file": "art/buenosaires/02.jpg"
+ },
+ {
+  "id": "buenosaires-03",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 3,
+  "name": "玫瑰宫",
+  "rarity": "SR",
+  "intro": "玫瑰宫是总统府，粉红色的外墙对着五月广场，据说那颜色是为了调和两派的政治分歧。中央的阳台是庇隆夫人讲话的地方，门口有卫兵站岗。傍晚灯光打上去，粉色变得更深，广场上的鸽子在脚边踱步。",
+  "file": "art/buenosaires/03.jpg"
+ },
+ {
+  "id": "buenosaires-04",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 4,
+  "name": "大都会教堂",
+  "rarity": "SR",
+  "intro": "大都会教堂就在玫瑰宫旁边，新古典式的立面与三角山墙被柱廊撑起，圣马丁的陵墓在侧殿里。堂内的灯光很暗，金色祭坛在远处发亮，柱子把空间切成一个个影子。推门进去，外面的车声忽然远了这个城市的喧闹。",
+  "file": "art/buenosaires/04.jpg"
+ },
+ {
+  "id": "buenosaires-05",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 5,
+  "name": "博卡区卡米尼托",
+  "rarity": "SR",
+  "intro": "卡米尼托是博卡区的一段彩色街道，铁皮房子被刷成黄、蓝、红三种颜色，据说是用旧船漆剩下的颜料。探戈的舞者在街头摆开步子，游客围着拍照。二楼的阳台挂着洗好的衣服，铁皮在太阳下发烫。",
+  "file": "art/buenosaires/05.jpg"
+ },
+ {
+  "id": "buenosaires-06",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 6,
+  "name": "圣泰尔莫",
+  "rarity": "SR",
+  "intro": "圣泰尔莫的老街是石板铺的，低矮的房子带着铁花阳台，周末的集市把广场摆满。古董店、旧书摊与卖马黛茶具的摊位一路排开，探戈的手风琴从某个院子飘出来。多雷戈广场上有人在跳舞，围观的人也踩着拍子。",
+  "file": "art/buenosaires/06.jpg"
+ },
+ {
+  "id": "buenosaires-07",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 7,
+  "name": "雷科莱塔公墓",
+  "rarity": "SR",
+  "intro": "雷科莱塔公墓像一座小城，墓道两侧是雕像与家族墓室，大理石在树影下泛白。贝隆夫人的墓前总放着花，猫从石棺上跳过。走进深处，安静得能听见自己的脚步，雕像的目光从各处落下来，花束在门口堆着。",
+  "file": "art/buenosaires/07.jpg"
+ },
+ {
+  "id": "buenosaires-08",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 8,
+  "name": "阿根廷钢花",
+  "rarity": "SR",
+  "intro": "阿根廷钢花立在美术馆前的广场上，六片不锈钢花瓣由机械装置控制，随日照开合。白天花瓣张开，夜里收拢，金属把天空与树影都收进去。旁边的喷泉把水雾吹到花上，走过的人会停下来等它动。",
+  "file": "art/buenosaires/08.jpg"
+ },
+ {
+  "id": "buenosaires-09",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 9,
+  "name": "雅典人书店",
+  "rarity": "SR",
+  "intro": "雅典人书店开在一座旧剧院里，穹顶的壁画、包厢与红丝绒帷幕都还留着。舞台被改成咖啡座，人坐在上面翻书，抬头就是原来的观众席。灯光压在书架上，整间店像一场还没散场的演出，楼梯上有人轻声说话。",
+  "file": "art/buenosaires/09.jpg"
+ },
+ {
+  "id": "buenosaires-10",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 10,
+  "name": "科隆剧院",
+  "rarity": "SR",
+  "intro": "科隆剧院是世界最好的歌剧院之一，马蹄形的观众席一层层叠起，金色与深红的装饰在灯下泛光。穹顶画着音乐与舞蹈的寓意，乐池能升降。开演前，人从大理石楼梯上来，鞋跟敲在地上有很轻的回声。",
+  "file": "art/buenosaires/10.jpg"
+ },
+ {
+  "id": "buenosaires-11",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 11,
+  "name": "七月九日大道",
+  "rarity": "SR",
+  "intro": "七月九日大道宽得惊人，十几条车道并排，行人要分几段才过得去。两侧是老楼与剧院的立面，方尖碑立在正中。傍晚车灯连成两条长河，路边的人站在安全岛上等灯，风把报纸卷起来，路边的树影被拉得很长。",
+  "file": "art/buenosaires/11.jpg"
+ },
+ {
+  "id": "buenosaires-12",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 12,
+  "name": "国会大厦",
+  "rarity": "SR",
+  "intro": "国会大厦在七月九日大道西端，绿色的铜穹顶压在一排柱廊上，穹顶下是阿根廷的盾徽。台阶前的广场有大片草坪与喷泉，傍晚有人遛狗。穹顶的铜被雨水泡出青绿，在夕阳里像一块旧首饰，台阶上坐着晒太阳的人。",
+  "file": "art/buenosaires/12.jpg"
+ },
+ {
+  "id": "buenosaires-13",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 13,
+  "name": "马德罗港",
+  "rarity": "SR",
+  "intro": "马德罗港是旧码头改的新区，红砖仓库变成公寓与餐馆，水边停着游艇。栈道沿运河伸出去，跑步的人与推婴儿车的人并排。夜里玻璃楼与桥的灯落在水里，风从拉普拉塔河吹来，带着一点咸味。",
+  "file": "art/buenosaires/13.jpg"
+ },
+ {
+  "id": "buenosaires-14",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 14,
+  "name": "女人桥",
+  "rarity": "SR",
+  "intro": "女人桥横跨马德罗港的船坞，白色的桥身斜拉成一条弧，据说形状像一个正在跳舞的女人。桥面能旋转九十度，让船通过。黄昏时桥的白在灰蓝的水上特别干净，桥下的咖啡馆把桌子摆到栈道边。",
+  "file": "art/buenosaires/14.jpg"
+ },
+ {
+  "id": "buenosaires-15",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 15,
+  "name": "巴勒莫玫瑰园",
+  "rarity": "SR",
+  "intro": "巴勒莫玫瑰园在三月二日公园里，几千株玫瑰沿小径排开，拱廊与水池把花围住。春天花一起开，香气压得很低，人在花架下走。园外的草坪连着湖，跑步的人绕水一圈，落日在树后收成一条金线。",
+  "file": "art/buenosaires/15.jpg"
+ },
+ {
+  "id": "buenosaires-16",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 16,
+  "name": "日本花园",
+  "rarity": "SR",
+  "intro": "日本花园在三日二日公园里，是南美最大的日式庭园之一。太鼓桥跨过锦鲤池，石灯与修剪的松树排在岸边，茶室里点着抹茶。四月的银杏把园子染黄，人在桥上停留，水面倒影被风揉散，锦鲤在桥下慢慢转身。",
+  "file": "art/buenosaires/16.jpg"
+ },
+ {
+  "id": "buenosaires-17",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 17,
+  "name": "马尔巴博物馆",
+  "rarity": "SR",
+  "intro": "马尔巴博物馆在巴勒莫，白墙与天窗把光引进展厅，收藏着阿根廷最重要的现代艺术。楼梯一层层往上，画与雕塑摆在开阔的空间里。走出屋顶的露台，城市在树冠后面铺开，风把布宜诺斯艾利斯的下午吹得很慢。",
+  "file": "art/buenosaires/17.jpg"
+ },
+ {
+  "id": "buenosaires-18",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 18,
+  "name": "拉普拉塔河",
+  "rarity": "SR",
+  "intro": "拉普拉塔河宽得像海，从布宜诺斯艾利斯的岸边望过去，对岸根本看不见。河水是浑浊的黄褐色，风大的时候浪拍上堤岸。傍晚人在滨水步道上散步，货船慢慢进出港口，天空把水面染成一片铁灰。",
+  "file": "art/buenosaires/18.jpg"
+ },
+ {
+  "id": "buenosaires-19",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 19,
+  "name": "伽利略天文馆",
+  "rarity": "SR",
+  "intro": "伽利略天文馆在巴勒莫的公园里，圆顶与斜塔的造型像一座停在草地上的飞行器。馆内的天象厅把南半球的星空投在穹顶，观众仰头找南十字。夜里外墙的灯亮起来，草地上的望远镜排成一列，等人来看月亮。",
+  "file": "art/buenosaires/19.jpg"
+ },
+ {
+  "id": "buenosaires-20",
+  "city": "布宜诺斯艾利斯",
+  "citySlug": "buenosaires",
+  "idx": 20,
+  "name": "圣马丁广场",
+  "rarity": "SR",
+  "intro": "圣马丁广场在雷蒂罗区，广场中央立着圣马丁将军的骑马像，底座上刻着解放南美的战役。四周是梧桐、老酒店与使馆的旗杆，鸽子在石板上走来走去。傍晚风从河口吹来，树影把广场切成几块安静的光。",
+  "file": "art/buenosaires/20.jpg"
+ },
+ {
+  "id": "lhasa-01",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 1,
+  "name": "布达拉宫",
+  "rarity": "UR",
+  "intro": "布达拉宫建在红山之上，白宫与红宫层层叠起，石墙顺着山势向上收，金顶在高原的阳光下亮得刺眼。台阶一级级向上，人走得慢，气也喘得重。站在宫前的平台上，整座拉萨河谷在脚下展开，风里带着酥油与尘土的味道。",
+  "file": "art/lhasa/01.jpg"
+ },
+ {
+  "id": "lhasa-02",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 2,
+  "name": "大昭寺",
+  "rarity": "SR",
+  "intro": "大昭寺在八廓街的中心，金顶与经幢在阳光下反光，门前总有磕长头的人。殿内的酥油灯一排排燃着，光落在壁画与柱子上，空气里全是酥油的味道。转经的人绕着殿堂一圈圈走，木地板被磨得发亮。",
+  "file": "art/lhasa/02.jpg"
+ },
+ {
+  "id": "lhasa-03",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 3,
+  "name": "八廓街",
+  "rarity": "SR",
+  "intro": "八廓街绕着大昭寺一圈，石板路两侧是白墙藏式房屋，店铺挂着唐卡、藏香与银器。转经的人顺时针走着，手里转着经筒，脚步不停。清晨人还不多，桑烟从煨桑炉里升起来，整条街都浸在一种缓慢的节奏里。",
+  "file": "art/lhasa/03.jpg"
+ },
+ {
+  "id": "lhasa-04",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 4,
+  "name": "罗布林卡",
+  "rarity": "SR",
+  "intro": "罗布林卡曾是夏宫，园子里种着高原上少见的树木，宫殿藏在绿荫之间。格桑颇章的黄墙与彩绘门廊对着草坪，水池把树影收进去。夏天花开得最盛，人在树下喝茶，风穿过林梢，这里像拉萨的另一面。",
+  "file": "art/lhasa/04.jpg"
+ },
+ {
+  "id": "lhasa-05",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 5,
+  "name": "色拉寺",
+  "rarity": "SR",
+  "intro": "色拉寺在北郊的山脚下，白墙与红墙的扎仓连成一片，金顶在坡上排开。下午的辩经场上，僧人两两相对，击掌与问答声此起彼伏。院里的老树把光切成碎片，游客站在外围，安静地看着这场激烈的讨论。",
+  "file": "art/lhasa/05.jpg"
+ },
+ {
+  "id": "lhasa-06",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 6,
+  "name": "哲蚌寺",
+  "rarity": "SR",
+  "intro": "哲蚌寺依着根培乌孜山铺开，白色的建筑群一层层堆上去，远看像山坡上晾着的米堆。寺内的巷道窄而陡，墙上的白灰被手摸得发亮。爬到高处回望，拉萨河谷在脚下摊开，云影从山上慢慢移过去。",
+  "file": "art/lhasa/06.jpg"
+ },
+ {
+  "id": "lhasa-07",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 7,
+  "name": "甘丹寺",
+  "rarity": "SR",
+  "intro": "甘丹寺建在达孜的山脊上，寺庙沿着山势排开，红白墙与金顶对着空阔的河谷。路绕着山转上来，海拔高，走几步就要停一下。清晨的桑烟从院落里升起，僧人披着袈裟走过石阶，山谷里只剩风声。",
+  "file": "art/lhasa/07.jpg"
+ },
+ {
+  "id": "lhasa-08",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 8,
+  "name": "小昭寺",
+  "rarity": "SR",
+  "intro": "小昭寺在老城的巷子里，规模不大，门口的经幡被风吹得猎猎响。殿内的柱子裹着彩色的绸带，酥油灯把佛像照得温暖。来朝拜的人不多，院子里很静，只有转经筒转动时的轻响，光从高窗落进来，落在旧木柱上。",
+  "file": "art/lhasa/08.jpg"
+ },
+ {
+  "id": "lhasa-09",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 9,
+  "name": "药王山",
+  "rarity": "SR",
+  "intro": "药王山在布达拉宫的西侧，是拍布达拉宫最好的角度。山坡上的观景台立着经幡与玛尼堆，天没亮就有人架起相机等第一缕光。日出时红山被照亮，金顶先亮起来，整座宫殿慢慢从暗蓝里浮出。",
+  "file": "art/lhasa/09.jpg"
+ },
+ {
+  "id": "lhasa-10",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 10,
+  "name": "纳木错",
+  "rarity": "SR",
+  "intro": "纳木错在拉萨以北的高原上，湖面蓝得发暗，远处是念青唐古拉山的雪线。湖边的经幡与玛尼堆一排排立着，风大得说不成话。人站在岸上，水一直铺到雪山脚下，云影在湖面移动，像另一个天空。",
+  "file": "art/lhasa/10.jpg"
+ },
+ {
+  "id": "lhasa-11",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 11,
+  "name": "羊卓雍措",
+  "rarity": "SR",
+  "intro": "羊卓雍措在山南的盘山公路下方，湖水是一种说不清的青绿色，像被山围住的一块玉。观景台在岗巴拉山口，风把经幡吹成直线，牦牛与藏獒被主人牵着等游客合影。云影掠过湖面，颜色一块深一块浅。",
+  "file": "art/lhasa/11.jpg"
+ },
+ {
+  "id": "lhasa-12",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 12,
+  "name": "拉萨河",
+  "rarity": "SR",
+  "intro": "拉萨河从城边缓缓流过，河面宽阔，水是浅蓝的，滩上长着柳树与草。傍晚人沿河散步，骑车的人从桥上过，远处的山被夕阳染成紫色。河边安静，只有水声与偶尔的鸟叫，城市在这条河旁显得很轻。",
+  "file": "art/lhasa/12.jpg"
+ },
+ {
+  "id": "lhasa-13",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 13,
+  "name": "西藏博物馆",
+  "rarity": "SR",
+  "intro": "西藏博物馆在罗布林卡旁，外墙做成藏式建筑的样式，展厅里摆着唐卡、法器与旧时的文书。一幅幅唐卡的金线在灯下细得看不清，佛像的姿态安静。看完出来，阳光刺眼，院子里的经幡还在响。",
+  "file": "art/lhasa/13.jpg"
+ },
+ {
+  "id": "lhasa-14",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 14,
+  "name": "布达拉宫广场",
+  "rarity": "SR",
+  "intro": "布达拉宫广场铺在红山脚下，地面是浅色的石板，中央立着国旗与纪念碑。傍晚广场上喷泉开起来，水柱在灯下变成彩色。人坐在台阶上抬头看布达拉宫，宫殿被灯光照亮，白墙红墙都比白天更清楚。",
+  "file": "art/lhasa/14.jpg"
+ },
+ {
+  "id": "lhasa-15",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 15,
+  "name": "宗角禄康公园",
+  "rarity": "SR",
+  "intro": "宗角禄康公园在布达拉宫背后，一池水把红山与金顶收进倒影。园里的柳树很老，枝条垂到水面，藏民在树下喝茶、下棋。清晨有人在这里转经，脚步绕着湖走，水面被风一吹，宫殿的影子就散了。",
+  "file": "art/lhasa/15.jpg"
+ },
+ {
+  "id": "lhasa-16",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 16,
+  "name": "帕邦喀寺",
+  "rarity": "SR",
+  "intro": "帕邦喀寺建在北郊的巨石上，据说拉萨最早的文字就在这里被创出来。寺庙贴着岩石修，石缝里塞着经幡与玛尼石，殿内的壁画颜色已经很旧。站在寺前的平台上，拉萨河谷在下方铺开，风把经幡吹得满满。",
+  "file": "art/lhasa/16.jpg"
+ },
+ {
+  "id": "lhasa-17",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 17,
+  "name": "拉鲁湿地",
+  "rarity": "SR",
+  "intro": "拉鲁湿地在城北，是城市边上少见的高原湿地。芦苇与草甸一片片铺开，水面上有野鸭与黑颈鹤，远处是光秃的山。木栈道从草里穿过去，人走得很轻，怕惊动水鸟。傍晚光变低，芦苇穗被照成金色。",
+  "file": "art/lhasa/17.jpg"
+ },
+ {
+  "id": "lhasa-18",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 18,
+  "name": "玛吉阿米",
+  "rarity": "SR",
+  "intro": "玛吉阿米在八廓街的转角，一栋黄墙的小楼，二层的窗对着转经的人流。传说这里是仓央嘉措遇见那位姑娘的地方，如今是餐馆，墙上贴满客人的留言。坐在窗边喝一壶甜茶，看楼下的人一圈圈走过。",
+  "file": "art/lhasa/18.jpg"
+ },
+ {
+  "id": "lhasa-19",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 19,
+  "name": "西藏大学",
+  "rarity": "SR",
+  "intro": "西藏大学在新校区，藏式屋顶与现代楼体拼在一起，白墙上的窗框刷成深红。校园里种着左旋柳，学生抱着书从广场走过，操场上有人在打球。教学楼的走廊里挂着唐卡与书法，高原的阳光从高窗落进来。",
+  "file": "art/lhasa/19.jpg"
+ },
+ {
+  "id": "lhasa-20",
+  "city": "拉萨",
+  "citySlug": "lhasa",
+  "idx": 20,
+  "name": "楚布寺",
+  "rarity": "SR",
+  "intro": "楚布寺在拉萨西边的山谷里，寺庙沿坡铺开，白墙与红墙被山影罩住。殿内的佛像与经卷在酥油灯下显得很静，院子里有狗趴着晒太阳。山风从谷口灌进来，经幡响成一片，远处的雪线在云里时隐时现。",
+  "file": "art/lhasa/20.jpg"
+ },
+ {
+  "id": "urumqi-01",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 1,
+  "name": "天山天池",
+  "rarity": "UR",
+  "intro": "天池挂在博格达峰的山腰上，湖水是一种沉静的深蓝，四周是云杉与裸露的岩壁。雪峰在湖的另一端立着，山顶的冰雪终年不化。沿栈道走到湖边，风从水面吹来，带着凉意，云影在水上慢慢移，像有人在天上推着。",
+  "file": "art/urumqi/01.jpg"
+ },
+ {
+  "id": "urumqi-02",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 2,
+  "name": "红山公园",
+  "rarity": "SR",
+  "intro": "红山公园在市中心，赭红色的山岩从平地拔起，山顶的镇龙塔对着整座城市。石阶一路向上，两侧是榆树与花坛，早晨有人在这里打拳。登到塔边，乌鲁木齐的楼群在脚下铺开，远处的天山雪线横在天边。",
+  "file": "art/urumqi/02.jpg"
+ },
+ {
+  "id": "urumqi-03",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 3,
+  "name": "新疆国际大巴扎",
+  "rarity": "SR",
+  "intro": "国际大巴扎的塔楼做成伊斯兰风格，砖砌的拱门与穹顶对着广场。市场里摊子一路排开，干果、地毯、英吉沙小刀与铜器摆得满满，空气里混着孜然与玫瑰香。摊主热情地招呼，称一袋葡萄干，再喝一碗酸奶。",
+  "file": "art/urumqi/03.jpg"
+ },
+ {
+  "id": "urumqi-04",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 4,
+  "name": "新疆博物馆",
+  "rarity": "SR",
+  "intro": "新疆博物馆的展厅里摆着从丝路沿线出土的文物，干尸、织物与壁画隔着玻璃静静躺着。一幅幅织锦的颜色还很清楚，铜器上的纹路细得像刻在时间里。参观的人走得很慢，讲解员的声音压得很低。",
+  "file": "art/urumqi/04.jpg"
+ },
+ {
+  "id": "urumqi-05",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 5,
+  "name": "人民广场",
+  "rarity": "SR",
+  "intro": "人民广场在市中心，四周是商场与机关大楼，中央的纪念碑对着宽阔的步道。傍晚喷泉开起来，孩子在水边跑，老人坐在长椅上聊天。广场上的灯一盏盏亮起，车流绕着一圈走，这里是城市最直白的一面。",
+  "file": "art/urumqi/05.jpg"
+ },
+ {
+  "id": "urumqi-06",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 6,
+  "name": "水磨沟公园",
+  "rarity": "SR",
+  "intro": "水磨沟公园在城东的河谷里，泉水从石缝中涌出，汇成一条清凉的溪。两岸的树很密，木栈道贴着水走，夏天进来就凉了几度。溪边有石磨的旧迹，孩子在浅水里踩水，风把树叶吹得沙沙响，石阶上长着薄薄的青苔。",
+  "file": "art/urumqi/06.jpg"
+ },
+ {
+  "id": "urumqi-07",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 7,
+  "name": "南山牧场",
+  "rarity": "SR",
+  "intro": "南山牧场在城郊的天山北坡，草场沿山谷铺开，云杉一片片立在山脊上。毡房散在草坡间，马与羊慢慢移动，牧人的吆喝声传得很远。夏天草绿得发亮，骑一段马，风从耳边过，山里的空气凉而干净。",
+  "file": "art/urumqi/07.jpg"
+ },
+ {
+  "id": "urumqi-08",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 8,
+  "name": "达坂城风力发电站",
+  "rarity": "SR",
+  "intro": "达坂城的风车立在戈壁与山口之间，白色的塔杆一排排伸向远处，叶片在风里转得很稳。这里是著名的风口，风大得能把人推着走，天蓝得没有一点杂色。公路从风车阵中穿过去，远山压在地平线上。",
+  "file": "art/urumqi/08.jpg"
+ },
+ {
+  "id": "urumqi-09",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 9,
+  "name": "雅玛里克山",
+  "rarity": "SR",
+  "intro": "雅玛里克山在城西，维吾尔语的意思是「骑骆驼的人」，山形确实像一峰卧着的骆驼。山坡上种着耐旱的树，步道一圈圈盘上去。傍晚登到高处，整座乌鲁木齐在脚下亮起，天山的轮廓压在西边的天际。",
+  "file": "art/urumqi/09.jpg"
+ },
+ {
+  "id": "urumqi-10",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 10,
+  "name": "天山大峡谷",
+  "rarity": "SR",
+  "intro": "天山大峡谷在城南的山区，峡谷两侧是层叠的岩壁，颜色从灰到赭红一层层变。谷底的溪水清得见石头，云杉长在坡上，风一过就响。沿着栈道往里走，越走越窄，抬头只剩一线天光，谷风带着石头与草的味道。",
+  "file": "art/urumqi/10.jpg"
+ },
+ {
+  "id": "urumqi-11",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 11,
+  "name": "白杨沟",
+  "rarity": "SR",
+  "intro": "白杨沟在天山北麓，沟里长满白杨与云杉，溪水从雪线那边流下来。夏天草坡上开着小花，毡房前晾着奶疙瘩，牧羊犬趴在地上。走到沟的深处，瀑布从岩壁上挂下来，水声盖住了说话声，沟口的草坡上散着几顶毡房。",
+  "file": "art/urumqi/11.jpg"
+ },
+ {
+  "id": "urumqi-12",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 12,
+  "name": "菊花台",
+  "rarity": "SR",
+  "intro": "菊花台在南山的一片高山草甸上，夏天野菊开满坡，黄白的花一直铺到云杉林边。台地平坦，风大而凉，哈萨克牧民的毡房散在其间。站在草坡上，远处是连绵的天山，云影在草地上走得很慢。",
+  "file": "art/urumqi/12.jpg"
+ },
+ {
+  "id": "urumqi-13",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 13,
+  "name": "新疆大学",
+  "rarity": "SR",
+  "intro": "新疆大学的本部在友好路旁，校园里种着榆树与白杨，教学楼是朴素的红砖与白色楼体。学生抱着书穿过渡口，操场上有人在跑步，食堂门口排着队。秋天的树叶变黄，落在自行车棚上，校园安静而日常。",
+  "file": "art/urumqi/13.jpg"
+ },
+ {
+  "id": "urumqi-14",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 14,
+  "name": "乌鲁木齐植物园",
+  "rarity": "SR",
+  "intro": "植物园在城北，收集着适应干旱与高寒的植物，沙生区、月季园与温室各有各的样子。夏天的花境开得满，蝴蝶在灌木间飞，温室里的热带植物把空气弄得潮润。周末家长带着孩子来认树，草地上铺着野餐垫。",
+  "file": "art/urumqi/14.jpg"
+ },
+ {
+  "id": "urumqi-15",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 15,
+  "name": "南湖广场",
+  "rarity": "SR",
+  "intro": "南湖广场靠着人民公园，广场很大，喷泉与灯柱排成规整的行列。夏夜人最多，跳广场舞的音乐从几处同时响起，孩子踩着滑板穿过人群。湖边的柳树垂到水面，风吹过来，灯影在水里碎成一片。",
+  "file": "art/urumqi/15.jpg"
+ },
+ {
+  "id": "urumqi-16",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 16,
+  "name": "乌拉泊古城",
+  "rarity": "SR",
+  "intro": "乌拉泊古城在城南的戈壁上，是唐代的轮台故城，夯土的城墙只剩断续的残段。风把地面吹得干干净净，碎石与陶片散在土墙脚下。站在城址中间，四周空得能听见风，天山在远处压着一条白线。",
+  "file": "art/urumqi/16.jpg"
+ },
+ {
+  "id": "urumqi-17",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 17,
+  "name": "红光山",
+  "rarity": "SR",
+  "intro": "红光山在城东北，山坡上修着大佛与寺庙，红色的墙与金色的顶在阳光下很显眼。台阶一路向上，两侧是松树与经幡，来上香的人不少。站在山门前回望，乌鲁木齐的楼群铺到天边，天山的雪在云里露出一点。",
+  "file": "art/urumqi/17.jpg"
+ },
+ {
+  "id": "urumqi-18",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 18,
+  "name": "新疆国际会展中心",
+  "rarity": "SR",
+  "intro": "会展中心在红光山旁，几片弧形的屋顶像张开的翅膀，玻璃幕墙把天空收进去。博览会期间，人群从各处涌来，展台摆着干果、机械与手工艺品。广场很空旷，旗杆排成一列，风把旗吹得笔直。",
+  "file": "art/urumqi/18.jpg"
+ },
+ {
+  "id": "urumqi-19",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 19,
+  "name": "二道桥市场",
+  "rarity": "SR",
+  "intro": "二道桥市场在老城，维吾尔风格的建筑围着一条热闹的街，摊上摆着馕、烤包子与手抓饭。铜器铺的壶一只只挂着，地毯卷成筒立在墙边。烤炉的热气混着香料味，摊主用两种语言招呼客人，馕坑的热气从门口涌出来。",
+  "file": "art/urumqi/19.jpg"
+ },
+ {
+  "id": "urumqi-20",
+  "city": "乌鲁木齐",
+  "citySlug": "urumqi",
+  "idx": 20,
+  "name": "丝绸之路国际滑雪场",
+  "rarity": "SR",
+  "intro": "滑雪场在南山，雪道从山顶一路铺下来，缆车把人和板送到高处。冬天的雪干而松，滑下去时风从耳边掠过，两侧的云杉压着雪。山顶的视野很开阔，天山的一道道山脊在阳光下显出阴影，雪粒被风吹成一层薄雾。",
+  "file": "art/urumqi/20.jpg"
+ },
+ {
+  "id": "seoul-01",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 1,
+  "name": "景福宫",
+  "rarity": "UR",
+  "intro": "景福宫是朝鲜王朝的正宫，光化门后的石板路一直通到勤政殿，重檐的屋顶在阳光下压出深色的线。庆会楼浮在池上，四十八根石柱把楼阁托起，水面把飞檐收成倒影。守门将换岗时鼓声一响，穿韩服的人从宫门里走过，像一段被借来的旧时光。",
+  "file": "art/seoul/01.jpg"
+ },
+ {
+  "id": "seoul-02",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 2,
+  "name": "光化门广场",
+  "rarity": "SR",
+  "intro": "光化门广场从宫门一直铺到市政厅，中央立着世宗大王的金色坐像，背后是日晷与浑天仪。喷泉在夏天开得热闹，孩子在水柱间跑。广场两侧是车道与高楼，节日时舞台搭起来，人挤在草地上看演出。",
+  "file": "art/seoul/02.jpg"
+ },
+ {
+  "id": "seoul-03",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 3,
+  "name": "昌德宫",
+  "rarity": "SR",
+  "intro": "昌德宫是朝鲜王朝的离宫，殿宇顺着地势铺开，不讲究对称，倒像从山形里长出来。后苑的池塘与亭子藏在树间，秋天的枫叶把水面染红。走在木板与石阶上，能听见脚下的声响，宫墙外的城市被树挡得干净。",
+  "file": "art/seoul/03.jpg"
+ },
+ {
+  "id": "seoul-04",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 4,
+  "name": "北村韩屋村",
+  "rarity": "SR",
+  "intro": "北村在景福宫与昌德宫之间，坡上的巷子两侧是黑瓦屋顶的韩屋，墙头压着瓦当。清晨人少，石板路上只有送报的自行车，屋檐的影子一条条落在墙上。住在这里的人还在过日子，门口摆着酱缸与花盆。",
+  "file": "art/seoul/04.jpg"
+ },
+ {
+  "id": "seoul-05",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 5,
+  "name": "N首尔塔",
+  "rarity": "SR",
+  "intro": "N首尔塔立在南山顶上，白色的塔身从树海里伸出来，夜里会被灯光染成各种颜色。缆车把人送上去，观景台的玻璃外是整座首尔，汉江在远处横着一条亮线。栏杆上挂满情侣的锁，风把纸片吹得翻动。",
+  "file": "art/seoul/05.jpg"
+ },
+ {
+  "id": "seoul-06",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 6,
+  "name": "明洞",
+  "rarity": "SR",
+  "intro": "明洞的街窄而密，化妆品店、服装店与小摊把两侧挤满，招牌一层叠一层。夜里灯全亮起来，人流像水一样缓慢移动，叫卖声混着音乐。街边摊的辣炒年糕冒着热气，纸杯里装着鱼糕汤，站在路边就能吃完。",
+  "file": "art/seoul/06.jpg"
+ },
+ {
+  "id": "seoul-07",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 7,
+  "name": "东大门设计广场",
+  "rarity": "SR",
+  "intro": "东大门设计广场是一座巨大的曲面建筑，银灰色的铝板弯成流动的形状，像一艘停在地上的飞船。馆内是展览、设计与市集，夜里外墙亮起一片光。旁边的东大门市场通宵营业，布料与衣服堆到天花板，人声不断。",
+  "file": "art/seoul/07.jpg"
+ },
+ {
+  "id": "seoul-08",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 8,
+  "name": "清溪川",
+  "rarity": "SR",
+  "intro": "清溪川从市中心穿过，是一条被重新挖开的旧河道，水浅浅地流，两岸是步道与石阶。夏天人把脚泡在水里，孩子追着小鱼跑。夜里桥洞与岸边的灯亮起来，水声盖住了车流，高楼在头顶排成峡谷。",
+  "file": "art/seoul/08.jpg"
+ },
+ {
+  "id": "seoul-09",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 9,
+  "name": "弘大",
+  "rarity": "SR",
+  "intro": "弘大是年轻人聚集的街区，巷子里是咖啡馆、唱片店与小剧场。周末的公园里，独立乐队在草地上演出，舞者在路边围出一圈。墙上画满涂鸦，夜里酒吧的灯亮到很晚，空气里有种不太安分的活力。",
+  "file": "art/seoul/09.jpg"
+ },
+ {
+  "id": "seoul-10",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 10,
+  "name": "乐天世界塔",
+  "rarity": "SR",
+  "intro": "乐天世界塔高五百多米，玻璃幕墙从地面直上，收成一个尖。第一百一十七层的观景台能看见整座首尔，汉江在楼群之间弯过去。晴天时远处的山也清楚，云在脚下走，电梯上升时耳朵会有轻微的压迫感。",
+  "file": "art/seoul/10.jpg"
+ },
+ {
+  "id": "seoul-11",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 11,
+  "name": "汉江公园",
+  "rarity": "SR",
+  "intro": "汉江公园沿江铺开，草坪、自行车道与野餐区连成一片。夏天傍晚，人带着炸鸡与啤酒坐在江边，帐篷一顶顶支起来。江风把热气吹散，桥上的灯落在水面，远处的楼群亮成一排，江水把灯光拉成一条条长线。",
+  "file": "art/seoul/11.jpg"
+ },
+ {
+  "id": "seoul-12",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 12,
+  "name": "梨花洞壁画村",
+  "rarity": "SR",
+  "intro": "梨花洞在骆山的坡上，窄巷的墙面画满壁画，花朵、鱼与楼梯一路爬上去。居民还住在这里，门口摆着花盆与鞋。走到高处，首尔的屋顶在脚下铺开，夕阳把墙面照得很暖，游客轻声拍照，一只猫从画着花的墙下走过。",
+  "file": "art/seoul/12.jpg"
+ },
+ {
+  "id": "seoul-13",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 13,
+  "name": "广藏市场",
+  "rarity": "SR",
+  "intro": "广藏市场从清晨开到夜里，棚顶下的摊位一排排挤着，绿豆饼在铁板上冒油，麻药紫菜包饭卷得飞快。大妈们挥着刀，客人坐在长凳上吃，热气与喊声混在一起。市场深处是绸缎与韩服的铺子，布匹堆得很高。",
+  "file": "art/seoul/13.jpg"
+ },
+ {
+  "id": "seoul-14",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 14,
+  "name": "仁寺洞",
+  "rarity": "SR",
+  "intro": "仁寺洞的街不宽，两侧是画廊、古董店与茶屋，招牌多用手写的汉字与韩文。Ssamziegil 的院子里，楼梯绕着中庭上去，墙上贴满便条。找一间茶屋坐下，窗外是人流，杯里的五味子茶酸甜。",
+  "file": "art/seoul/14.jpg"
+ },
+ {
+  "id": "seoul-15",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 15,
+  "name": "德寿宫",
+  "rarity": "SR",
+  "intro": "德寿宫在市中心，石造殿的西洋柱廊与传统的殿宇挨在一起，是朝鲜王朝末年的影子。秋天的银杏把宫道铺成金色，墙外的车流声隐约传来。傍晚宫门亮灯，石墙上的影子被拉得很长，散步的人慢慢走过。",
+  "file": "art/seoul/15.jpg"
+ },
+ {
+  "id": "seoul-16",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 16,
+  "name": "梨花女子大学",
+  "rarity": "SR",
+  "intro": "梨花女大的校园顺着坡建，最出名的是那条切进地下的峡谷，两侧是玻璃教室，尽头是图书馆。学生沿着台阶走下去，像走进一条被掀开的地层。校园里的老楼是石造的，秋天银杏落满小路，阶梯上有人坐着看书。",
+  "file": "art/seoul/16.jpg"
+ },
+ {
+  "id": "seoul-17",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 17,
+  "name": "崇礼门",
+  "rarity": "SR",
+  "intro": "崇礼门是首尔旧城墙的南大门，石砌的基座上立着两层木结构楼阁，屋檐层层挑出。它在高楼之间显得低矮，却把整条街的视线拉住。夜里灯打在木构上，斗拱的影子落在墙面，车流从门前的环岛绕过去。",
+  "file": "art/seoul/17.jpg"
+ },
+ {
+  "id": "seoul-18",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 18,
+  "name": "昌庆宫",
+  "rarity": "SR",
+  "intro": "昌庆宫与昌德宫相邻，殿宇之间有大片树林与池塘，春天樱花与梅花一起开。明政殿是朝鲜王朝现存最老的殿宇，屋檐的颜色已经旧了。园里的步道安静，老人坐在长椅上，落叶堆在石阶边，池边的亭子把影子投在水里。",
+  "file": "art/seoul/18.jpg"
+ },
+ {
+  "id": "seoul-19",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 19,
+  "name": "盘浦大桥月光彩虹喷泉",
+  "rarity": "SR",
+  "intro": "盘浦大桥的喷泉从桥身两侧喷出，水柱在灯光里变成彩虹的颜色，一段一段落进汉江。晚上表演开始时，江边坐满人，游船从水柱旁边慢慢开过。风把水雾吹到岸上，光在雾里散成一层薄薄的彩。",
+  "file": "art/seoul/19.jpg"
+ },
+ {
+  "id": "seoul-20",
+  "city": "首尔",
+  "citySlug": "seoul",
+  "idx": 20,
+  "name": "圣水洞",
+  "rarity": "SR",
+  "intro": "圣水洞原是工厂区，红砖厂房被改成咖啡馆、买手店与展览空间，烟囱还留在屋顶上。巷子里墙面粗糙，门口摆着旧机器改的花盆。周末人从各处来，端着咖啡在砖墙间走，新旧混在一起却不别扭。",
+  "file": "art/seoul/20.jpg"
  }
 ];

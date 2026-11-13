@@ -22,7 +22,11 @@
     london: [51.51, -0.13], paris: [48.86, 2.35], srilanka: [7.87, 80.77], rome: [41.90, 12.50],
     kyoto: [35.01, 135.77], singapore: [1.35, 103.82], dali: [25.61, 100.27],
     chongqing: [29.56, 106.55], iceland: [64.15, -21.94], venice: [45.44, 12.32],
-    amsterdam: [52.37, 4.90], barcelona: [41.39, 2.17], switzerland: [46.95, 7.45], sydney: [-33.87, 151.21]
+    amsterdam: [52.37, 4.90], barcelona: [41.39, 2.17], switzerland: [46.95, 7.45], sydney: [-33.87, 151.21],
+    munich: [48.14, 11.58], toronto: [43.65, -79.38], vancouver: [49.28, -123.12],
+    chicago: [41.88, -87.63], washingtondc: [38.91, -77.04], sanfrancisco: [37.77, -122.42],
+    losangeles: [34.05, -118.24], buenosaires: [-34.60, -58.38], lhasa: [29.65, 91.14],
+    urumqi: [43.83, 87.62], seoul: [37.57, 126.98]
   };
 
   /* ── 简化陆地轮廓（经纬度，[lat,lng]）——手绘近似，够看即可 ── */

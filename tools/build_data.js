@@ -15,7 +15,9 @@ const CITY_ORDER = [
   'beijing', 'shanghai', 'hongkong', 'hangzhou', 'tokyo',
   'newyork', 'london', 'paris', 'srilanka', 'rome',
   'kyoto', 'singapore', 'dali', 'chongqing',
-  'iceland', 'venice', 'amsterdam', 'barcelona', 'switzerland', 'sydney'
+  'iceland', 'venice', 'amsterdam', 'barcelona', 'switzerland', 'sydney',
+  'munich', 'toronto', 'vancouver', 'chicago', 'washingtondc',
+  'sanfrancisco', 'losangeles', 'buenosaires', 'lhasa', 'urumqi', 'seoul'
 ];
 
 // 大洲归类：相册按这个分组
@@ -25,7 +27,12 @@ const CONTINENT = {
   london: 'europe', paris: 'europe', rome: 'europe', iceland: 'europe', venice: 'europe',
   amsterdam: 'europe', barcelona: 'europe', switzerland: 'europe',
   newyork: 'namerica',
-  sydney: 'oceania'
+  sydney: 'oceania',
+  munich: 'europe',
+  toronto: 'namerica', vancouver: 'namerica', chicago: 'namerica',
+  washingtondc: 'namerica', sanfrancisco: 'namerica', losangeles: 'namerica',
+  buenosaires: 'samerica',
+  lhasa: 'asia', urumqi: 'asia', seoul: 'asia'
 };
 
 // 整片地方就是一个国家（收集度最后一档文案用「国」）

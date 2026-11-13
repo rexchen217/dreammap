@@ -1,0 +1,27 @@
+{
+  "citySlug": "lhasa",
+  "city": "拉萨",
+  "sub": "LHASA",
+  "cards": [
+    {"id":"lhasa-01","name":"布达拉宫","rarity":"UR","intro":"布达拉宫建在红山之上，白宫与红宫层层叠起，石墙顺着山势向上收，金顶在高原的阳光下亮得刺眼。台阶一级级向上，人走得慢，气也喘得重。站在宫前的平台上，整座拉萨河谷在脚下展开，风里带着酥油与尘土的味道。","subject":"the Potala Palace in Lhasa, white and red palace complex on a hill, golden roofs, blue sky, prayer flags"},
+    {"id":"lhasa-02","name":"大昭寺","rarity":"SR","intro":"大昭寺在八廓街的中心，金顶与经幢在阳光下反光，门前总有磕长头的人。殿内的酥油灯一排排燃着，光落在壁画与柱子上，空气里全是酥油的味道。转经的人绕着殿堂一圈圈走，木地板被磨得发亮。","subject":"Jokhang Temple in Lhasa, golden roof and prayer flags, pilgrims prostrating at the entrance, butter lamps inside"},
+    {"id":"lhasa-03","name":"八廓街","rarity":"SR","intro":"八廓街绕着大昭寺一圈，石板路两侧是白墙藏式房屋，店铺挂着唐卡、藏香与银器。转经的人顺时针走着，手里转着经筒，脚步不停。清晨人还不多，桑烟从煨桑炉里升起来，整条街都浸在一种缓慢的节奏里。","subject":"Barkhor Street in Lhasa, circular street around Jokhang Temple, Tibetan shops, pilgrims with prayer wheels, white houses"},
+    {"id":"lhasa-04","name":"罗布林卡","rarity":"SR","intro":"罗布林卡曾是夏宫，园子里种着高原上少见的树木，宫殿藏在绿荫之间。格桑颇章的黄墙与彩绘门廊对着草坪，水池把树影收进去。夏天花开得最盛，人在树下喝茶，风穿过林梢，这里像拉萨的另一面。","subject":"Norbulingka summer palace in Lhasa, yellow Tibetan palace among green trees, gardens and pond, blue sky"},
+    {"id":"lhasa-05","name":"色拉寺","rarity":"SR","intro":"色拉寺在北郊的山脚下，白墙与红墙的扎仓连成一片，金顶在坡上排开。下午的辩经场上，僧人两两相对，击掌与问答声此起彼伏。院里的老树把光切成碎片，游客站在外围，安静地看着这场激烈的讨论。","subject":"Sera Monastery in Lhasa, white and red monastery buildings, monks debating in the courtyard, trees and golden roofs"},
+    {"id":"lhasa-06","name":"哲蚌寺","rarity":"SR","intro":"哲蚌寺依着根培乌孜山铺开，白色的建筑群一层层堆上去，远看像山坡上晾着的米堆。寺内的巷道窄而陡，墙上的白灰被手摸得发亮。爬到高处回望，拉萨河谷在脚下摊开，云影从山上慢慢移过去。","subject":"Drepung Monastery in Lhasa, white monastery buildings cascading down a hillside, narrow lanes, valley view"},
+    {"id":"lhasa-07","name":"甘丹寺","rarity":"SR","intro":"甘丹寺建在达孜的山脊上，寺庙沿着山势排开，红白墙与金顶对着空阔的河谷。路绕着山转上来，海拔高，走几步就要停一下。清晨的桑烟从院落里升起，僧人披着袈裟走过石阶，山谷里只剩风声。","subject":"Ganden Monastery near Lhasa, monastery complex on a mountain ridge, red and white walls, golden roofs, valley below"},
+    {"id":"lhasa-08","name":"小昭寺","rarity":"SR","intro":"小昭寺在老城的巷子里，规模不大，门口的经幡被风吹得猎猎响。殿内的柱子裹着彩色的绸带，酥油灯把佛像照得温暖。来朝拜的人不多，院子里很静，只有转经筒转动时的轻响，光从高窗落进来，落在旧木柱上。","subject":"Ramoche Temple in Lhasa, small Tibetan temple with prayer flags, colorful pillars, butter lamps, quiet courtyard"},
+    {"id":"lhasa-09","name":"药王山","rarity":"SR","intro":"药王山在布达拉宫的西侧，是拍布达拉宫最好的角度。山坡上的观景台立着经幡与玛尼堆，天没亮就有人架起相机等第一缕光。日出时红山被照亮，金顶先亮起来，整座宫殿慢慢从暗蓝里浮出。","subject":"Chakpori Hill in Lhasa, viewpoint facing the Potala Palace, prayer flags and mani stones, sunrise light"},
+    {"id":"lhasa-10","name":"纳木错","rarity":"SR","intro":"纳木错在拉萨以北的高原上，湖面蓝得发暗，远处是念青唐古拉山的雪线。湖边的经幡与玛尼堆一排排立着，风大得说不成话。人站在岸上，水一直铺到雪山脚下，云影在湖面移动，像另一个天空。","subject":"Namtso Lake north of Lhasa, deep blue high altitude lake, snow mountains behind, prayer flags and mani stones"},
+    {"id":"lhasa-11","name":"羊卓雍措","rarity":"SR","intro":"羊卓雍措在山南的盘山公路下方，湖水是一种说不清的青绿色，像被山围住的一块玉。观景台在岗巴拉山口，风把经幡吹成直线，牦牛与藏獒被主人牵着等游客合影。云影掠过湖面，颜色一块深一块浅。","subject":"Yamdrok Lake in Tibet, turquoise lake seen from a mountain pass, prayer flags, snow peaks, winding road"},
+    {"id":"lhasa-12","name":"拉萨河","rarity":"SR","intro":"拉萨河从城边缓缓流过，河面宽阔，水是浅蓝的，滩上长着柳树与草。傍晚人沿河散步，骑车的人从桥上过，远处的山被夕阳染成紫色。河边安静，只有水声与偶尔的鸟叫，城市在这条河旁显得很轻。","subject":"Lhasa River, wide shallow blue river with willow trees on the banks, distant mountains, evening light"},
+    {"id":"lhasa-13","name":"西藏博物馆","rarity":"SR","intro":"西藏博物馆在罗布林卡旁，外墙做成藏式建筑的样式，展厅里摆着唐卡、法器与旧时的文书。一幅幅唐卡的金线在灯下细得看不清，佛像的姿态安静。看完出来，阳光刺眼，院子里的经幡还在响。","subject":"Tibet Museum in Lhasa, Tibetan style building, thangka paintings and artifacts in exhibition halls"},
+    {"id":"lhasa-14","name":"布达拉宫广场","rarity":"SR","intro":"布达拉宫广场铺在红山脚下，地面是浅色的石板，中央立着国旗与纪念碑。傍晚广场上喷泉开起来，水柱在灯下变成彩色。人坐在台阶上抬头看布达拉宫，宫殿被灯光照亮，白墙红墙都比白天更清楚。","subject":"Potala Palace Square in Lhasa, wide paved plaza, fountain at dusk, illuminated Potala Palace in the background"},
+    {"id":"lhasa-15","name":"宗角禄康公园","rarity":"SR","intro":"宗角禄康公园在布达拉宫背后，一池水把红山与金顶收进倒影。园里的柳树很老，枝条垂到水面，藏民在树下喝茶、下棋。清晨有人在这里转经，脚步绕着湖走，水面被风一吹，宫殿的影子就散了。","subject":"Zongjiao Lukang Park behind the Potala Palace in Lhasa, pond reflecting the palace, old willow trees, locals relaxing"},
+    {"id":"lhasa-16","name":"帕邦喀寺","rarity":"SR","intro":"帕邦喀寺建在北郊的巨石上，据说拉萨最早的文字就在这里被创出来。寺庙贴着岩石修，石缝里塞着经幡与玛尼石，殿内的壁画颜色已经很旧。站在寺前的平台上，拉萨河谷在下方铺开，风把经幡吹得满满。","subject":"Pabonka Monastery near Lhasa, small temple built on a huge rock, prayer flags, view over the valley"},
+    {"id":"lhasa-17","name":"拉鲁湿地","rarity":"SR","intro":"拉鲁湿地在城北，是城市边上少见的高原湿地。芦苇与草甸一片片铺开，水面上有野鸭与黑颈鹤，远处是光秃的山。木栈道从草里穿过去，人走得很轻，怕惊动水鸟。傍晚光变低，芦苇穗被照成金色。","subject":"Lhalu Wetland in Lhasa, highland marsh with reeds and ponds, migratory birds, wooden boardwalk, mountains behind"},
+    {"id":"lhasa-18","name":"玛吉阿米","rarity":"SR","intro":"玛吉阿米在八廓街的转角，一栋黄墙的小楼，二层的窗对着转经的人流。传说这里是仓央嘉措遇见那位姑娘的地方，如今是餐馆，墙上贴满客人的留言。坐在窗边喝一壶甜茶，看楼下的人一圈圈走过。","subject":"Makye Ame restaurant in Barkhor Street Lhasa, yellow Tibetan building on a corner, window overlooking pilgrims"},
+    {"id":"lhasa-19","name":"西藏大学","rarity":"SR","intro":"西藏大学在新校区，藏式屋顶与现代楼体拼在一起，白墙上的窗框刷成深红。校园里种着左旋柳，学生抱着书从广场走过，操场上有人在打球。教学楼的走廊里挂着唐卡与书法，高原的阳光从高窗落进来。","subject":"Tibet University campus in Lhasa, Tibetan style rooftops on modern buildings, students walking, poplar trees"},
+    {"id":"lhasa-20","name":"楚布寺","rarity":"SR","intro":"楚布寺在拉萨西边的山谷里，寺庙沿坡铺开，白墙与红墙被山影罩住。殿内的佛像与经卷在酥油灯下显得很静，院子里有狗趴着晒太阳。山风从谷口灌进来，经幡响成一片，远处的雪线在云里时隐时现。","subject":"Tsurpu Monastery west of Lhasa, monastery buildings in a mountain valley, prayer flags, snow peaks in clouds"}
+  ]
+}
