@@ -1,6 +1,6 @@
 {
   "name": "dreammap-android",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "梦想地图 安卓版（Capacitor 封装）",
   "scripts": {

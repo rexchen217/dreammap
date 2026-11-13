@@ -36,7 +36,9 @@
       unlock: { colors: [], stickers: [] },
       claimed: {}, log: [], seenDream: 0,
       sync: { url: '', key: '', at: '' },
-      set: { theme: 'dusk', sfx: 0.6 }
+      set: { theme: 'dusk', sfx: 0.6, fog: false },
+      quota: {},                 // 每月「延长 DDL」额度用量：{ '2026-11': 1 }
+      rep: { on: 0, late: 0 }    // 信誉只影响装饰，不影响任何操作
     };
   }
 
@@ -54,6 +56,11 @@
     s.set = Object.assign(b.set, s.set || {});
     if (typeof s.set.sfx !== 'number' || !isFinite(s.set.sfx)) s.set.sfx = 0.6;
     s.set.sfx = Math.max(0, Math.min(1, s.set.sfx));
+    s.set.fog = !!s.set.fog;
+    if (!s.quota || typeof s.quota !== 'object') s.quota = {};
+    s.rep = Object.assign({ on: 0, late: 0 }, s.rep || {});
+    s.rep.on = Math.max(0, +s.rep.on || 0);
+    s.rep.late = Math.max(0, +s.rep.late || 0);
     ['notes', 'tombstones', 'log', 'links'].forEach(k => { if (!Array.isArray(s[k])) s[k] = []; });
     // 便利贴字段修补：防旧版本 / 部分写入 / sync merge 引入脏 x/y/z
     const fixNote = n => {
@@ -68,6 +75,20 @@
       n.type = n.type || 'small';
       n.text = n.text || '';
       n.status = n.status || 'active';
+      // 时间计划：一次性截止日 / 连续打卡，字段不全就丢掉，避免算出奇怪的逾期
+      if (n.plan && (n.plan.mode === 'ddl' || n.plan.mode === 'span')) {
+        if (n.plan.mode === 'ddl') {
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(String(n.plan.due || ''))) delete n.plan;
+        } else {
+          n.plan.days = Math.max(2, Math.min(365, Math.round(+n.plan.days) || 21));
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(String(n.plan.start || ''))) {
+            n.plan.start = dateKey(n.createdAt);
+          }
+          if (!Array.isArray(n.plan.checks)) n.plan.checks = [];
+          n.plan.checks = n.plan.checks.filter(k => /^\d{4}-\d{2}-\d{2}$/.test(String(k)));
+        }
+      } else if (n.plan) delete n.plan;
+      if (n.redeem && !n.redeem.at) delete n.redeem;
       return n;
     };
     s.notes = s.notes.map(fixNote).filter(Boolean);
@@ -152,6 +173,7 @@
     if (o.cardId) n.cardId = o.cardId;
     if (o.img) n.img = o.img;
     if (o.font) n.font = o.font;
+    if (o.plan) n.plan = o.plan;
     S.notes.push(n);
     if (n.type === 'dream' && !S.profile.dream) { S.profile.dream = n.text; S.profile.updatedAt = at; }
     touch('notes'); return n;
@@ -196,6 +218,13 @@
     if (n.type === 'dream') { givePick(1); S.seenDream = (S.seenDream || 0) + 1; }
     if (n.parent) stepDone(n.id);
 
+    // 信誉只用于装饰解锁，不加减心愿币、不锁任何功能；只有设了时间的才计入
+    const ps = planState(n);
+    if (ps) {
+      if ((ps.mode === 'ddl' && ps.stage > 0) || (ps.mode === 'span' && ps.breaks > 0)) S.rep.late += 1;
+      else S.rep.on += 1;
+    }
+
     touch('notes');
     return { note: n, base, combo, ticket, allDone: S.notes.filter(x => x.status === 'active').length === 0 };
   }
@@ -203,6 +232,136 @@
   const doneNotes = () => S.notes.filter(n => n.status === 'done');
   const noteById = id => S.notes.find(n => n.id === id);
   const notesOf = type => S.notes.filter(n => n.type === type);
+
+  /* ═══════════════════════════════════════
+     时间属性：一次性 DDL / 连续打卡
+     惩罚只有视觉折旧：不删数据、不扣币、不锁功能
+     ═══════════════════════════════════════ */
+  const DAY = 86400000;
+  const EXT_PER_MONTH = 3, EXT_DAYS = 3;   // 每月 3 次「延长 DDL」，每次 3 天
+  const REP_TIERS = [0, 10, 30, 60];
+  // 'YYYY-MM-DD' 按本地零点解析，避免时区把日子算偏
+  const ymd = k => {
+    const a = String(k || '').split('-').map(Number);
+    return new Date(a[0] || 2000, (a[1] || 1) - 1, a[2] || 1).getTime();
+  };
+
+  const planOf = n => (n && n.plan && (n.plan.mode === 'ddl' || n.plan.mode === 'span')) ? n.plan : null;
+
+  // 连续打卡天数：从今天（今天没打则从昨天）往前数
+  function streakOf(p) {
+    const set = {};
+    (p.checks || []).forEach(k => { set[k] = 1; });
+    let cur = Date.now();
+    if (!set[dateKey(cur)]) cur = dayStart(cur) - DAY;
+    let n = 0;
+    while (set[dateKey(cur)]) { n++; cur = dayStart(cur) - DAY; }
+    return n;
+  }
+  // 断签天数：开始到今天之间没打卡的日子（今天还没打不算断）
+  function breaksOf(p) {
+    const start = ymd(p.start) || dayStart(Date.now());
+    const today = dayStart(Date.now());
+    const checked = {};
+    (p.checks || []).forEach(k => { checked[k] = 1; });
+    let miss = 0;
+    for (let t = start; t < today; t += DAY) {
+      if (!checked[dateKey(t)]) miss++;
+    }
+    return miss;
+  }
+
+  /* 逾期阶段：wear 0~1 给 CSS 用；DDL 分 24h / 72h 两档，连续打卡只给轻度提示 */
+  function planState(n, nowT) {
+    const p = planOf(n);
+    if (!p) return null;
+    const now = nowT || Date.now();
+    const out = {
+      mode: p.mode, stage: 0, wear: 0, lateMs: 0, lateDays: 0,
+      streak: 0, breaks: 0, checkedToday: false, days: 0,
+      redeemed: !!(n.redeem && n.redeem.at)
+    };
+    if (p.mode === 'ddl') {
+      const dueT = ymd(p.due) + DAY;     // 截止日当天 24:00
+      out.due = p.due;
+      out.lateMs = Math.max(0, now - dueT);
+      out.leftDays = Math.ceil((dueT - now) / DAY);
+      if (!out.lateMs) out.stage = 0;
+      else if (out.lateMs <= DAY) out.stage = 1;
+      else if (out.lateMs <= 3 * DAY) out.stage = 2;
+      else out.stage = 3;
+      out.lateDays = out.lateMs > 0 ? Math.max(1, Math.floor(out.lateMs / DAY)) : 0;
+      out.wear = out.stage === 1 ? 0.25 : out.stage === 2 ? 0.6 : out.stage === 3 ? 1 : 0;
+    } else {
+      out.days = p.days || 21;
+      out.streak = streakOf(p);
+      out.breaks = breaksOf(p);
+      out.checkedToday = (p.checks || []).indexOf(dateKey(now)) >= 0;
+      out.stage = out.breaks > 0 ? 1 : 0;
+      out.wear = out.breaks ? Math.min(0.3, out.breaks * 0.05) : 0;   // 断签已有重置惩罚，只轻提示
+    }
+    if (out.redeemed && out.wear > 0) {
+      out.wear = Math.round(out.wear * 0.3 * 100) / 100;   // 赎回约恢复七成
+      out.stage = out.wear >= 0.9 ? 3 : out.wear >= 0.5 ? 2 : out.wear > 0.05 ? 1 : 0;
+    }
+    out.wear = Math.max(0, Math.min(1, out.wear));
+    return out;
+  }
+
+  function checkinNote(id) {
+    const n = S.notes.find(x => x.id === id);
+    const p = planOf(n);
+    if (!p || p.mode !== 'span' || n.status === 'done') return null;
+    const today = dateKey();
+    p.checks = p.checks || [];
+    if (p.checks.indexOf(today) >= 0) return { note: n, already: true, streak: streakOf(p), done: false };
+    p.checks.push(today);
+    n.updatedAt = nowISO();
+    const streak = streakOf(p);
+    touch('notes');
+    return { note: n, already: false, streak, done: streak >= (p.days || 21) };
+  }
+
+  // 赎回：补一次完成 / 写一句延期原因；不改内容、不删数据
+  function redeemNote(id, kind, text) {
+    const n = S.notes.find(x => x.id === id);
+    const p = planOf(n);
+    if (!p) return null;
+    n.redeem = { at: nowISO(), kind: kind === 'reason' ? 'reason' : 'makeup', text: (text || '').slice(0, 60) };
+    if (n.redeem.kind === 'makeup' && p.mode === 'span') {
+      p.checks = p.checks || [];
+      if (p.checks.indexOf(dateKey()) < 0) p.checks.push(dateKey());
+    }
+    n.updatedAt = nowISO();
+    touch('notes');
+    return n;
+  }
+
+  /* 每月延长额度：防止靠「假完成」绕过去 */
+  const monthKey = () => dateKey().slice(0, 7);
+  const extUsed = () => Math.max(0, +S.quota[monthKey()] || 0);
+  const extLeft = () => Math.max(0, EXT_PER_MONTH - extUsed());
+  function extendNote(id, days) {
+    const n = S.notes.find(x => x.id === id);
+    const p = planOf(n);
+    if (!p || p.mode !== 'ddl' || extLeft() <= 0) return null;
+    const d = Math.max(1, Math.round(+days) || EXT_DAYS);
+    p.due = dateKey(ymd(p.due) + d * DAY);
+    S.quota[monthKey()] = extUsed() + 1;
+    n.extends = (n.extends || 0) + 1;
+    n.updatedAt = nowISO();
+    touch('notes');
+    return { note: n, due: p.due, left: extLeft() };
+  }
+
+  /* 信誉：只用来看装饰，不参与任何核心判定 */
+  const repScore = () => Math.max(0, (S.rep.on || 0) * 2 - (S.rep.late || 0));
+  function repLevel() {
+    let lv = 0;
+    REP_TIERS.forEach((k, i) => { if (repScore() >= k) lv = i; });
+    return lv;
+  }
+  const REP_GIFT = { 2: '星星贴免费', 3: '珊瑚纸色免费' };
 
   /* ══════ 便利贴连线 ══════ */
   const links = () => S.links;
@@ -349,10 +508,12 @@
   /* ══════ 外观解锁 ══════ */
   const hasColor = id => {
     const c = window.UI.colorOf(id);
+    if (id === 'coral' && repLevel() >= 3) return true;   // 信誉 Lv.3 的装饰礼物
     return !!c.free || S.unlock.colors.indexOf(id) >= 0;
   };
   const hasSticker = id => {
     const s = window.UI.stickerOf(id);
+    if (id === 'star' && repLevel() >= 2) return true;    // 信誉 Lv.2 的装饰礼物
     return !!s.free || S.unlock.stickers.indexOf(id) >= 0;
   };
   function unlockColor(id) {
@@ -409,6 +570,10 @@
   }
   function setSfx(v) {
     S.set.sfx = Math.max(0, Math.min(1, +v || 0));
+    touch('set');
+  }
+  function setFog(v) {
+    S.set.fog = !!v;
     touch('set');
   }
   function setSync(url, key) {
@@ -501,6 +666,8 @@
     out.pulls = mapMax(L.pulls, R.pulls);
     out.claimed = Object.assign({}, R.claimed, L.claimed);
     out.seenDream = numMax(L.seenDream, R.seenDream);
+    out.quota = mapMax(L.quota, R.quota);          // 延长额度取用得更多的一侧，防止绕额度
+    out.rep = { on: numMax(L.rep.on, R.rep.on), late: numMax(L.rep.late, R.rep.late) };
 
     // 存钱罐：取余额更高的一侧；打卡链取并集
     out.piggy = (R.piggy.saved > L.piggy.saved) ? R.piggy : L.piggy;
@@ -617,7 +784,9 @@
     addStep, stepsOf, stepDone, dropStep,
     MILESTONE_CLAIM: claim, claimKey, isClaimed, ACH_CLAIM: claimAch,
     hasColor, hasSticker, unlockColor, unlockSticker,
-    setProfile, setSync, setSfx, wipe,
+    setProfile, setSync, setSfx, setFog, wipe,
+    planState, checkinNote, redeemNote, extendNote, extLeft, extUsed, EXT_PER_MONTH, EXT_DAYS,
+    repLevel, repScore, REP_GIFT,
     syncState, syncOn, syncNow: doSync, pullThrottled, syncUrl,
     merge
   };

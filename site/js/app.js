@@ -322,8 +322,15 @@
         '</div>' +
         '<label class="pf-l">换形象</label>' +
         '<div class="pf-groups">' + groupHTML() + '</div>' +
-        '<div class="pick-grid av pf-avs" id="pf-avs"></div>',
+        '<div class="pick-grid av pf-avs" id="pf-avs"></div>' +
+        '<label class="pf-l">长期没完成的便利贴</label>' +
+        '<label class="pf-check"><input type="checkbox" id="pf-fog"' + (S.set.fog ? ' checked' : '') + '> 在地图上的逾期便利贴周围加一层灰雾（只影响观感）</label>' +
+        '<div class="cp-tip">信誉 Lv.' + ST.repLevel() + '：只影响装饰' +
+        (ST.repLevel() >= 3 ? '（星星贴、珊瑚纸色已免费开放）' : ST.repLevel() >= 2 ? '（星星贴已免费开放）' : '（准时完成会慢慢解锁贴纸与纸色）') +
+        '，不改变任何操作。</div>',
       onMount: (m, close) => {
+        const fog = $('#pf-fog', m);
+        if (fog) fog.onchange = () => { ST.setFog(fog.checked); Wall.render(); };
         const paintPick = () => {
           AV.paint($('#pf-av', m), pick, 4);
           $$('.pick-cell', m).forEach(b => b.classList.toggle('on', b.dataset.id === pick));

@@ -1,6 +1,6 @@
 {
   "name": "dreammap-desktop",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "梦想地图 桌面版（内嵌本机同步服务）",
   "main": "main.js",
   "author": "DreamMap",

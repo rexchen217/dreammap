@@ -63,6 +63,18 @@
   const containerFor = type => type === 'dream' ? el('w-dreams') : PAN();
   const typeLabel = { small: '小目标', goal: '目标', dream: '梦想', photo: '照片', quote: '激励语' };
 
+  /* ── 时间属性：逾期只做视觉折旧，文案保持中性 ── */
+  function dueText(ps) {
+    if (!ps) return '';
+    if (ps.mode === 'ddl') {
+      if (ps.lateMs > 0) return '迟了 ' + ps.lateDays + ' 天' + (ps.redeemed ? ' · 已赎回' : '');
+      if (ps.leftDays <= 1) return '今天截止';
+      return '剩 ' + ps.leftDays + ' 天';
+    }
+    return '连续 ' + ps.streak + '/' + ps.days + (ps.breaks > 0 ? ' · 断签 ' + ps.breaks : '') + (ps.checkedToday ? '' : '');
+  }
+  const wearClass = w => w >= 0.9 ? 'od-3' : w >= 0.5 ? 'od-2' : w > 0.05 ? 'od-1' : '';
+
   /* ══════ 背景墙视图（可缩放 / 可拖动） ══════ */
   const VIEW_MIN = 0.4, VIEW_MAX = 2.6;
   let view = { s: 1, tx: 0, ty: 0 };
@@ -315,9 +327,11 @@
   /* ── 渲染一张便利贴 ── */
   function noteNode(n) {
     const c = colorOf(n.color), sk = stickerOf(n.sticker);
+    const ps = ST.planState ? ST.planState(n) : null;
     const d = document.createElement('div');
     d.className = 'note t-' + n.type + (n.type === 'dream' ? ' dream' : '') +
-      (n.type === 'quote' ? ' qf-' + (n.font || 'kai') : '');
+      (n.type === 'quote' ? ' qf-' + (n.font || 'kai') : '') +
+      (ps ? ' has-plan ' + wearClass(ps.wear) : '');
     d.dataset.id = n.id;
     d.style.left = n.x + 'px';
     d.style.top = n.y + 'px';
@@ -343,11 +357,13 @@
     const doneN = steps.filter(s => s.doneAt).length;
     d.classList.toggle('has-img', !!(n.img && n.type === 'dream'));
     d.innerHTML =
+      '<i class="n-gray"></i><i class="n-wear"></i>' +
       (sk.mark ? '<i class="stk stk-' + sk.mark + '"></i>' : '') +
       (n.img && n.type === 'dream' ? '<div class="n-img"><img src="' + n.img + '" alt="" draggable="false"></div>' : '') +
       '<div class="n-tag">' + typeLabel[n.type] + '</div>' +
       '<div class="n-txt">' + esc(n.text) + '</div>' +
       '<div class="n-meta">' + U.dateCN(n.createdAt) + '</div>' +
+      (ps ? '<div class="n-due' + (ps.stage ? ' late' : '') + '">' + dueText(ps) + '</div>' : '') +
       (n.type === 'dream'
         ? '<div class="n-steps' + (steps.length ? ' has' : '') + '">' +
           (steps.length ? '里程碑 ' + doneN + ' / ' + steps.length : '＋ 拆成小目标') + '</div>'
@@ -436,6 +452,7 @@
         lastTap = 0;
         if (n.type === 'photo') openPhoto(n.id);
         else if (n.type === 'quote') toast('这句话不用完成，留着陪你走', 'ok');
+        else if (n.plan && n.plan.mode === 'span') askCheckin(n.id);
         else askComplete(n.id);
       }
       else {
@@ -500,22 +517,126 @@
     });
   }
 
+  /* ── 连续打卡 ── */
+  function askCheckin(id) {
+    const n = ST.noteById(id);
+    if (!n || !n.plan) return;
+    const ps = ST.planState(n);
+    if (ps && ps.checkedToday) {
+      toast('今天已经打过卡了', 'ok', '连续 ' + ps.streak + ' / ' + ps.days + ' 天');
+      return;
+    }
+    const days = n.plan.days || 21;
+    confirmDlg('今天为「' + n.text + '」打卡？',
+      '连续 ' + (ps ? ps.streak : 0) + ' / ' + days + ' 天。断一天从零算，但便利贴不会消失。', '打卡').then(ok => {
+        if (!ok) return;
+        const r = ST.checkinNote(id);
+        if (!r) { toast('这张不需要打卡', 'warn'); return; }
+        if (r.done) { toast('连续 ' + days + ' 天，满勤了', 'ok'); complete(id); return; }
+        render();
+        toast('打卡 ＋1', 'ok', '连续 ' + r.streak + ' / ' + days + ' 天');
+        if (window.APP && APP.refresh) APP.refresh();
+      });
+  }
+
+  /* ── 赎回：补一次完成 / 写一句延期原因 ── */
+  function askRedeem(id) {
+    const n = ST.noteById(id);
+    const ps = n && ST.planState(n);
+    if (!n || !ps) return;
+    const late = ps.mode === 'ddl' ? '迟了 ' + ps.lateDays + ' 天' : '断签 ' + ps.breaks + ' 天';
+    dialog({
+      title: '把这张赎回来',
+      desc: '补一次，或者写一句为什么延期。它不会消失，只是不再那么旧。',
+      ok: '关闭', cancel: null,
+      body: '<div class="cp-tip">记成「' + late + '」，不会写成「失败」。赎回来后视觉恢复到七成左右。</div>' +
+        '<div class="md-row" style="margin-top:12px">' +
+        '<button class="pix-btn ghost sm" data-x="makeup">补一次完成</button>' +
+        '<button class="pix-btn ghost sm" data-x="reason">写一句延期原因</button>' +
+        '</div>',
+      onMount: (m, close) => {
+        $('[data-x="makeup"]', m).onclick = () => {
+          close(false);
+          ST.redeemNote(id, 'makeup');
+          render();
+          toast('补上了', 'ok', late + '，已经记下');
+        };
+        $('[data-x="reason"]', m).onclick = () => {
+          close(false);
+          let reason = '';
+          dialog({
+            title: '写一句延期原因',
+            desc: '只给你自己看，怎么写都行。',
+            ok: '记下', cancel: '取消',
+            body: '<input class="pix-input" id="rd-reason" maxlength="60" placeholder="例如：这个月加班太多，缓一缓">',
+            onMount: m2 => {
+              const inp = $('#rd-reason', m2);
+              if (inp) {
+                inp.oninput = () => { reason = inp.value; };
+                setTimeout(() => inp.focus(), 120);
+              }
+            }
+          }).then(v => {
+            if (v !== true) return;
+            ST.redeemNote(id, 'reason', reason);
+            render();
+            toast('记下了', 'ok', '这张便利贴淡回来一些');
+          });
+        };
+      }
+    });
+  }
+
+  /* ── 延长 DDL：每月 3 次，每次 3 天 ── */
+  function askExtend(id) {
+    const n = ST.noteById(id);
+    const ps = n && ST.planState(n);
+    if (!n || !ps || ps.mode !== 'ddl') return;
+    if (ST.extLeft() <= 0) {
+      toast('本月延长额度用完了', 'warn', '每月 3 次，下个月 1 号恢复');
+      return;
+    }
+    confirmDlg('把截止日往后延 ' + ST.EXT_DAYS + ' 天？',
+      '本月还剩 ' + ST.extLeft() + ' 次延长额度。额度用完就只能等下次了。', '延长').then(ok => {
+        if (!ok) return;
+        const r = ST.extendNote(id, ST.EXT_DAYS);
+        if (!r) { toast('额度用完了', 'warn'); return; }
+        render();
+        toast('延到 ' + U.dateCN(r.due), 'ok', '本月还剩 ' + r.left + ' 次');
+      });
+  }
+
   /* ── 便利贴长按菜单 ── */
   function openNoteMenu(id) {
     const n = ST.noteById(id);
     if (!n) return;
     if (navigator.vibrate) try { navigator.vibrate(12); } catch (_) { }
+    const ps = ST.planState ? ST.planState(n) : null;
+    let acts = '<div class="md-row"><button class="pix-btn ghost sm" data-x="edit">编辑内容</button>' +
+      '<button class="pix-btn ghost sm" data-x="link">连线到另一张</button>' +
+      '<button class="pix-btn ghost sm" data-x="del">撕掉这张</button></div>';
+    if (ps) {
+      acts = '<div class="md-row">' +
+        (ps.mode === 'span' ? '<button class="pix-btn ghost sm" data-x="check">今天打卡</button>' : '') +
+        (ps.stage > 0 ? '<button class="pix-btn ghost sm" data-x="redeem">赎回这张</button>' : '') +
+        (ps.mode === 'ddl' ? '<button class="pix-btn ghost sm" data-x="ext">延长 DDL（剩 ' + ST.extLeft() + ' 次）</button>' : '') +
+        '</div>' + acts;
+    }
     dialog({
       title: '这张便利贴',
-      desc: n.text,
+      desc: n.text + (ps ? '\n' + dueText(ps) : ''),
       ok: '标记完成',
       cancel: '取消',
-      body: '<div class="md-row"><button class="pix-btn ghost sm" data-x="edit">编辑内容</button>' +
-        '<button class="pix-btn ghost sm" data-x="link">连线到另一张</button>' +
-        '<button class="pix-btn ghost sm" data-x="del">撕掉这张</button></div>',
+      body: acts + (ps ? '<div class="cp-tip">逾期只影响这张纸的样子，不改内容、不扣心愿币、不锁功能。</div>' : ''),
       onMount: (m, close) => {
         $('[data-x="edit"]', m).onclick = () => { close(false); openComposer({ editId: id }); };
         $('[data-x="link"]', m).onclick = () => { close(false); startLink(id); };
+        const ck = $('[data-x="check"]', m);
+        if (ck) ck.onclick = () => { close(false); askCheckin(id); };
+        const rd = $('[data-x="redeem"]', m);
+        if (rd) rd.onclick = () => { close(false); askRedeem(id); };
+        const ex = $('[data-x="ext"]', m);
+        if (ex) ex.onclick = () => { close(false); askExtend(id); };
         $('[data-x="del"]', m).onclick = () => {
           close(false);
           confirmDlg('撕掉这张便利贴？', '「' + n.text + '」会从墙上消失，不计入完成统计。', '撕掉', true).then(ok => {
@@ -643,6 +764,7 @@
   function render() {
     layout(); zoomUI();
     const all = ST.activeNotes();
+    el('wall').classList.toggle('fog-on', !!ST.S.set.fog);   // 逾期灰雾：默认关闭
     zTop = all.reduce((m, n) => Math.max(m, n.z || 0), 20);
     const dreams = all.filter(n => n.type === 'dream');
     const others = all.filter(n => n.type !== 'dream');
@@ -730,7 +852,10 @@
       sticker: n ? n.sticker : 'pin',
       text: n ? n.text : '',
       img: (n && n.img) || '',
-      font: (n && n.font) || 'kai'
+      font: (n && n.font) || 'kai',
+      planMode: n && n.plan ? n.plan.mode : 'none',
+      due: n && n.plan && n.plan.mode === 'ddl' ? n.plan.due : '',
+      days: n && n.plan && n.plan.mode === 'span' ? n.plan.days : 21
     };
     pendingPos = o.pos || null;
 
@@ -751,6 +876,28 @@
       '</div>' +
       '<div class="cp-lbl">写点什么</div>' +
       '<textarea id="cp-text" class="pix-input" rows="2" maxlength="60" placeholder="' + PLACE[st.type] + '">' + esc(st.text) + '</textarea>' +
+      '<div class="cp-sec" id="cp-sec-plan">' +
+      '<div class="cp-lbl">时间<span class="cp-warn" id="cp-plan-warn"></span></div>' +
+      '<div class="cp-fonts" id="cp-plan-modes">' +
+      '<button class="qfb" data-p="none" type="button">不限时</button>' +
+      '<button class="qfb" data-p="ddl" type="button">截止日</button>' +
+      '<button class="qfb" data-p="span" type="button">连续天数</button>' +
+      '</div>' +
+      '<div class="cp-plan-row" id="cp-plan-ddl" hidden>' +
+      '<input type="date" class="pix-input" id="cp-due">' +
+      '<span class="cp-tip-inline">当天 24:00 截止</span>' +
+      '</div>' +
+      '<div class="cp-plan-row" id="cp-plan-span" hidden>' +
+      '<input type="number" class="pix-input num" id="cp-days" min="2" max="365" value="' + st.days + '">' +
+      '<span class="cp-tip-inline">天，每天打卡</span>' +
+      '<span class="cp-chips" id="cp-day-chips">' +
+      '<button type="button" data-d="7">7 天</button>' +
+      '<button type="button" data-d="21">21 天</button>' +
+      '<button type="button" data-d="30">30 天</button>' +
+      '</span>' +
+      '</div>' +
+      '<div class="cp-tip">逾期只让这张纸慢慢变旧：不删、不扣币、不锁功能。断签从零算，也不额外罚。</div>' +
+      '</div>' +
       '<div class="cp-sec" id="cp-sec-font" hidden>' +
       '<div class="cp-lbl">字体风格</div>' +
       '<div class="cp-fonts" id="cp-fonts"></div>' +
@@ -855,13 +1002,37 @@
     };
     paintImg();
 
+    function paintPlan() {
+      $$('#cp-plan-modes .qfb').forEach(b => b.classList.toggle('on', b.dataset.p === st.planMode));
+      const ddl = el('cp-plan-ddl'), span = el('cp-plan-span');
+      if (ddl) ddl.hidden = st.planMode !== 'ddl';
+      if (span) span.hidden = st.planMode !== 'span';
+      const due = el('cp-due');
+      if (due && st.planMode === 'ddl' && !due.value) {
+        due.value = st.due || U.dateKey(U.dayStart(Date.now()) + 3 * 86400000);
+        st.due = due.value;
+      }
+      if (due) due.onchange = () => { st.due = due.value; };
+      const dn = el('cp-days');
+      if (dn) dn.oninput = () => { st.days = Math.max(2, Math.min(365, Math.round(+dn.value) || 21)); };
+      $$('#cp-day-chips button').forEach(b => b.onclick = () => {
+        st.days = +b.dataset.d;
+        if (dn) dn.value = st.days;
+      });
+      const warn2 = el('cp-plan-warn');
+      if (warn2) warn2.textContent = st.planMode === 'ddl' ? '本月延长额度剩 ' + ST.extLeft() + ' 次' : '';
+    }
+    $$('#cp-plan-modes .qfb').forEach(b => b.onclick = () => { st.planMode = b.dataset.p; paintPlan(); });
+
     // 梦想便利贴固定为鎏金纸，选色对它无效，直接收起这一块
     function syncType() {
       el('cp-sec-color').hidden = (st.type === 'dream');
       el('cp-sec-img').hidden = (st.type !== 'dream');
       el('cp-sec-font').hidden = (st.type !== 'quote');
-      $('.pix-input', box).placeholder = PLACE[st.type];
+      el('cp-sec-plan').hidden = !(st.type === 'small' || st.type === 'goal');
+      el('cp-text').placeholder = PLACE[st.type];
       paintPreview();
+      paintPlan();
       $$('#cp-type button').forEach(x => x.classList.toggle('on', x.dataset.t === st.type));
     }
     $$('#cp-type button').forEach(b => b.onclick = () => { st.type = b.dataset.t; syncType(); });
@@ -873,13 +1044,28 @@
     el('cp-save').onclick = () => {
       const txt = el('cp-text').value.trim();
       if (!txt) { toast('还没写内容呢', 'warn'); el('cp-text').focus(); return; }
+      // 时间计划：只有小目标 / 目标能设
+      let plan = null;
+      if (st.type === 'small' || st.type === 'goal') {
+        if (st.planMode === 'ddl' && st.due) plan = { mode: 'ddl', due: st.due };
+        else if (st.planMode === 'span') {
+          const oldP = n && n.plan && n.plan.mode === 'span' ? n.plan : null;
+          plan = {
+            mode: 'span',
+            days: Math.max(2, Math.min(365, Math.round(+st.days) || 21)),
+            start: oldP ? oldP.start : U.dateKey(),
+            checks: oldP ? (oldP.checks || []).slice() : []
+          };
+        }
+      }
       if (editId) {
         const old = ST.noteById(editId);
         const moved = old && old.type !== st.type;
         ST.updateNote(editId, {
           text: txt, color: st.color, sticker: st.sticker, type: st.type,
           img: st.type === 'dream' ? (st.img || '') : '',
-          font: st.type === 'quote' ? st.font : ''
+          font: st.type === 'quote' ? st.font : '',
+          plan: plan
         });
         if (moved && old.type === 'dream') { /* 类型变了，重新计算位置 */ }
         close(); render(); toast('已更新', 'ok');
@@ -895,11 +1081,15 @@
         ST.addNote({
           type: st.type, text: txt, color: st.color, sticker: st.sticker,
           x: pos.x, y: pos.y, img: st.type === 'dream' ? (st.img || '') : '',
-          font: st.type === 'quote' ? st.font : ''
+          font: st.type === 'quote' ? st.font : '',
+          plan: plan
         });
         close(); render();
         toast('贴上了', 'ok', st.type === 'dream' ? '这是梦想，慢慢来'
-          : st.type === 'quote' ? '这句话会一直在墙上陪着你' : '双击它就能标记完成');
+          : st.type === 'quote' ? '这句话会一直在墙上陪着你'
+            : plan && plan.mode === 'span' ? '每天来打个卡，断一天从零算'
+              : plan && plan.mode === 'ddl' ? '到点没完成，它会慢慢变旧，但一直留在墙上'
+                : '双击它就能标记完成');
         if (window.APP && APP.refresh) APP.refresh();
       }
     };
